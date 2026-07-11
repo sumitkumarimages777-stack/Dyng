@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>DU Societies & Events – Society Profiles, Past Events & Recruitments | Dyng</title>
-  <meta name="description" content="Every DU society in one place — profiles with past events, upcoming fests, auditions and recruitment alerts. Follow your college societies, RSVP to events, never miss an audition again. On Dyng.">
+  <title>DU Events – Fests, Auditions, Concerts & Hackathons Near You | Dyng</title>
+  <meta name="description" content="Discover every DU event in one feed — fests, society auditions, concerts, hackathons and workshops. Filter by category, RSVP in one tap, get passes. Plus society profiles with full event history. On Dyng.">
   <link rel="canonical" href="https://www.dyng.in/events">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dyng">
-  <meta property="og:title" content="DU Societies & Events – One feed for every fest, audition & recruitment | Dyng">
-  <meta property="og:description" content="Society profiles with their event history, upcoming events & recruitment status. The society noticeboard DU never had.">
+  <meta property="og:title" content="DU Events – Every fest, audition & concert in one feed | Dyng">
+  <meta property="og:description" content="District-style event discovery for DU. RSVP to fests, auditions, hackathons & concerts — never hear about it after it's over.">
   <meta property="og:url" content="https://www.dyng.in/events">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "DU Societies & Events on Dyng",
-    "description": "Directory of Delhi University societies with profiles, past event archives, upcoming events and recruitment alerts.",
+    "name": "DU Events & Societies on Dyng",
+    "description": "Event discovery feed for Delhi University — fests, auditions, concerts, hackathons — plus society profiles with past event archives.",
     "isPartOf": {"@type": "WebSite", "name": "Dyng", "url": "https://www.dyng.in"},
     "breadcrumb": {
       "@type": "BreadcrumbList",
@@ -46,7 +46,7 @@
     h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif;line-height:1.15}
     a{color:inherit;text-decoration:none}
     button{font-family:inherit;cursor:pointer}
-    .wrap{max-width:860px;margin:0 auto;padding:0 16px}
+    .wrap{max-width:960px;margin:0 auto;padding:0 16px}
     .btn{display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;border:none;transition:transform .15s, box-shadow .15s}
     .btn:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
     .btn-lime{background:var(--lime);color:var(--navy-deep)}
@@ -64,25 +64,61 @@
     .nav-right a{color:rgba(255,255,255,.85)}
     .nav-right a:hover{color:var(--lime)}
 
-    .page-head{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--white);padding:28px 0 70px;text-align:center}
+    .page-head{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--white);padding:26px 0 78px;text-align:center}
     .page-head h1{font-size:clamp(24px,4.5vw,34px);font-weight:800}
     .page-head h1 em{font-style:normal;color:var(--lime)}
-    .page-head p{color:rgba(255,255,255,.72);font-size:14.5px;max-width:500px;margin:8px auto 0}
+    .page-head p{color:rgba(255,255,255,.72);font-size:14.5px;max-width:520px;margin:8px auto 0}
 
-    /* ============ DIRECTORY VIEW ============ */
-    .filter-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;margin-top:-46px;position:relative;z-index:2}
+    /* ============ MAIN TOGGLE (Events / Societies) ============ */
+    .main-toggle{display:flex;gap:6px;background:var(--white);border-radius:999px;box-shadow:var(--shadow);padding:6px;margin:-50px auto 0;position:relative;z-index:2;max-width:400px}
+    .main-toggle button{flex:1;border:none;background:transparent;border-radius:999px;padding:12px;font-size:14.5px;font-weight:800;color:#8A93B0;transition:all .15s}
+    .main-toggle button.on{background:var(--navy);color:var(--white)}
+
+    /* ============ FILTERS ============ */
+    .filter-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:12px 14px;margin-top:14px}
     .chip-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px}
     .chip-row::-webkit-scrollbar{display:none}
+    .chip-row + .chip-row{margin-top:8px}
+    .chip-label{flex:none;font-size:11px;font-weight:700;color:#8A93B0;text-transform:uppercase;letter-spacing:.06em;align-self:center;min-width:44px}
     .chip{flex:none;border:1.5px solid var(--line);background:var(--white);border-radius:999px;padding:7px 15px;font-size:13px;font-weight:600;transition:all .15s}
     .chip:hover{border-color:var(--lime)}
     .chip.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
-    .feed-meta{display:flex;justify-content:space-between;align-items:center;margin:18px 0 12px;font-size:13px;color:#5A6482}
+    .feed-meta{display:flex;justify-content:space-between;align-items:center;margin:16px 0 12px;font-size:13px;color:#5A6482}
     .feed-meta strong{color:var(--navy)}
 
+    /* ============ EVENT DISCOVERY CARDS (District-style) ============ */
+    .ev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:34px}
+    .evc{background:var(--white);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .15s;animation:pop .25s ease}
+    @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+    .evc:hover{transform:translateY(-4px)}
+    .evc-banner{height:140px;position:relative;display:grid;place-items:center;font-size:52px}
+    .evc-banner::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%, rgba(255,255,255,.25), transparent 55%)}
+    .date-chip{position:absolute;top:12px;left:12px;background:var(--white);border-radius:12px;padding:6px 11px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.2);z-index:1}
+    .date-chip .d{font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;color:var(--navy);line-height:1}
+    .date-chip .m{font-size:9.5px;font-weight:800;color:var(--lime-deep);text-transform:uppercase;letter-spacing:.06em}
+    .price-chip{position:absolute;top:12px;right:12px;border-radius:999px;padding:5px 12px;font-size:11px;font-weight:800;z-index:1;box-shadow:0 4px 14px rgba(0,0,0,.15)}
+    .price-chip.free{background:var(--lime);color:var(--navy-deep)}
+    .price-chip.paid{background:var(--white);color:var(--navy)}
+    .evc-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
+    .evc-cat{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--lime-deep);margin-bottom:5px}
+    .evc-body h3{font-size:16.5px;color:var(--navy);margin-bottom:5px}
+    .evc-body .by{font-size:12.5px;color:#8A93B0;margin-bottom:4px}
+    .evc-body .by b{color:var(--navy);font-weight:700}
+    .evc-body .venue{font-size:12.5px;color:#5A6482;margin-bottom:12px}
+    .evc-foot{margin-top:auto;display:flex;align-items:center;gap:8px;border-top:1.5px dashed var(--line);padding-top:12px}
+    .rsvp{background:var(--lime);color:var(--navy-deep);border:none;border-radius:999px;padding:9px 16px;font-size:12.5px;font-weight:800;flex:1}
+    .rsvp.done{background:var(--mist);color:var(--lime-deep)}
+    .share-b{border:1.5px solid var(--line);background:var(--white);border-radius:999px;width:38px;height:38px;display:grid;place-items:center;font-size:15px;flex:none}
+    .share-b:hover{border-color:#25D366}
+    .going-pill{font-size:11.5px;color:#8A93B0;font-weight:600;white-space:nowrap}
+    .empty{background:var(--white);border:1.5px dashed var(--line);border-radius:var(--radius);padding:38px 20px;text-align:center;color:#5A6482;font-size:14px;grid-column:1/-1}
+
+    /* ============ SOCIETIES ============ */
+    .hidden{display:none}
     .soc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:30px}
     .soc-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;text-align:left;border:none;transition:transform .15s;position:relative;display:block;width:100%}
     .soc-card:hover{transform:translateY(-3px)}
-    .soc-logo{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:22px;color:var(--white);margin-bottom:12px}
+    .soc-logo{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:24px;color:var(--white);margin-bottom:12px}
     .soc-card h3{font-size:16.5px;color:var(--navy)}
     .soc-card .col{font-size:12.5px;color:#8A93B0;margin:2px 0 10px}
     .soc-card .cat{display:inline-block;font-size:11px;font-weight:700;background:var(--mist);color:var(--navy);border-radius:999px;padding:3px 10px;text-transform:uppercase;letter-spacing:.04em}
@@ -91,19 +127,17 @@
     .rec-badge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:800;background:var(--lime);color:var(--navy-deep);border-radius:999px;padding:3px 9px;animation:pulse 1.8s infinite}
     @keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
 
-    /* ============ PROFILE VIEW ============ */
-    .hidden{display:none}
     .back{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--navy);margin:16px 0 12px;background:var(--white);border:1.5px solid var(--line);border-radius:999px;padding:8px 16px}
     .back:hover{border-color:var(--lime)}
     .profile-hero{background:var(--white);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:16px}
-    .banner{height:110px;position:relative}
+    .banner{height:110px}
     .p-head{padding:0 22px 22px;display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-top:-32px}
-    .p-logo{width:76px;height:76px;border-radius:20px;display:grid;place-items:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:30px;color:var(--white);border:4px solid var(--white);box-shadow:var(--shadow)}
+    .p-logo{width:76px;height:76px;border-radius:20px;display:grid;place-items:center;font-size:32px;color:var(--white);border:4px solid var(--white);box-shadow:var(--shadow)}
     .p-id{flex:1;min-width:200px;padding-top:36px}
     .p-id h2{font-size:22px;color:var(--navy)}
     .p-id .sub{font-size:13px;color:#8A93B0}
     .p-actions{display:flex;gap:8px;padding-top:36px}
-    .p-stats{display:flex;gap:0;border-top:1.5px solid var(--line);padding:14px 22px;flex-wrap:wrap}
+    .p-stats{display:flex;border-top:1.5px solid var(--line);padding:14px 22px;flex-wrap:wrap}
     .p-stats div{flex:1;min-width:90px;text-align:center}
     .p-stats strong{display:block;font-family:'Bricolage Grotesque';font-size:20px;color:var(--navy)}
     .p-stats span{font-size:11.5px;color:#8A93B0;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
@@ -111,11 +145,9 @@
     .rec-banner{margin:0 22px 20px;background:linear-gradient(120deg,#EAF5D3,#DDEBBC);border:1.5px solid var(--lime);border-radius:13px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
     .rec-banner .t{font-size:13.5px;font-weight:700;color:#4C6E0B}
     .rec-banner .d{font-size:12px;color:#6E8532}
-
     .tabs{display:flex;gap:8px;margin-bottom:14px}
     .tab{flex:1;background:var(--white);border:1.5px solid var(--line);border-radius:999px;padding:10px;font-size:13.5px;font-weight:700;color:#5A6482}
     .tab.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
-
     .ev{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:12px;display:flex;gap:16px}
     .ev-date{flex:none;width:58px;text-align:center;background:var(--mist);border-radius:13px;padding:10px 4px;align-self:flex-start}
     .ev-date .d{font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;color:var(--navy);line-height:1}
@@ -129,8 +161,6 @@
     .ev-tags span{font-size:11.5px;background:var(--mist);color:var(--navy);border-radius:999px;padding:3px 10px;font-weight:600}
     .ev-tags .hl{background:var(--navy);color:var(--lime)}
     .ev-foot{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .rsvp{background:var(--lime);color:var(--navy-deep);border:none;border-radius:999px;padding:8px 18px;font-size:12.5px;font-weight:800}
-    .rsvp.done{background:var(--mist);color:var(--lime-deep)}
     .going{font-size:12px;color:#8A93B0}
     .past-strip{display:flex;gap:6px;margin-top:4px}
     .past-strip i{flex:1;height:52px;border-radius:9px;display:grid;place-items:center;font-size:18px;font-style:normal}
@@ -138,7 +168,6 @@
     .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:var(--white);border-radius:999px;padding:12px 22px;font-size:13.5px;font-weight:600;box-shadow:0 12px 32px rgba(0,0,0,.3);z-index:200;transition:transform .3s ease;max-width:92vw;text-align:center}
     .toast.show{transform:translateX(-50%) translateY(0)}
     .toast .lime{color:var(--lime)}
-
     footer{text-align:center;padding:30px 16px 40px;font-size:13px;color:#8A93B0}
     footer a{color:var(--lime-deep);font-weight:600}
     @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -162,17 +191,51 @@
 
 <div class="page-head">
   <div class="wrap">
-    <h1>Every society. Every event. <em>One noticeboard.</em></h1>
-    <p>Society profiles with their full event history, upcoming fests & auditions, and recruitment alerts — so you never hear about it after it's over.</p>
+    <h1>What's happening at DU <em>this month.</em></h1>
+    <p>Fests, auditions, concerts, hackathons — discover everything, RSVP in one tap. Plus every society's profile & event history.</p>
   </div>
 </div>
 
 <main class="wrap">
 
-  <!-- ============ DIRECTORY ============ -->
-  <div id="directory">
+  <!-- MAIN TOGGLE -->
+  <div class="main-toggle" role="tablist" aria-label="Switch between events and societies">
+    <button class="on" id="mtEvents" onclick="setView('events')" role="tab">🎟️ Events</button>
+    <button id="mtSocs" onclick="setView('socs')" role="tab">🏛️ Societies</button>
+  </div>
+
+  <!-- ============ EVENTS DISCOVERY VIEW ============ -->
+  <div id="eventsView">
+    <div class="filter-card" role="group" aria-label="Filter events">
+      <div class="chip-row" id="evCatChips">
+        <span class="chip-label">Type</span>
+        <button class="chip on" data-v="all">All events</button>
+        <button class="chip" data-v="Fest">🎪 Fests</button>
+        <button class="chip" data-v="Audition">🎭 Auditions</button>
+        <button class="chip" data-v="Concert">🎶 Concerts</button>
+        <button class="chip" data-v="Hackathon">💻 Hackathons</button>
+        <button class="chip" data-v="Workshop">🛠️ Workshops</button>
+        <button class="chip" data-v="Comedy">😂 Comedy</button>
+      </div>
+      <div class="chip-row" id="evPriceChips">
+        <span class="chip-label">Entry</span>
+        <button class="chip on" data-v="all">Any</button>
+        <button class="chip" data-v="free">Free entry</button>
+        <button class="chip" data-v="paid">Ticketed</button>
+      </div>
+    </div>
+    <div class="feed-meta">
+      <span><strong id="evCount">0</strong> upcoming events across DU</span>
+      <button class="btn btn-outline" style="padding:9px 16px;font-size:12.5px" onclick="toast('🎪 Society admins can post events after claiming their profile')">+ Post an event</button>
+    </div>
+    <div class="ev-grid" id="evGrid"></div>
+  </div>
+
+  <!-- ============ SOCIETIES VIEW ============ -->
+  <div id="socsView" class="hidden">
     <div class="filter-card" role="group" aria-label="Filter societies">
       <div class="chip-row" id="catChips">
+        <span class="chip-label">Type</span>
         <button class="chip on" data-v="all">All societies</button>
         <button class="chip" data-v="Dramatics">🎭 Dramatics</button>
         <button class="chip" data-v="Music">🎶 Music</button>
@@ -188,20 +251,15 @@
     <div class="soc-grid" id="socGrid"></div>
   </div>
 
-  <!-- ============ PROFILE ============ -->
+  <!-- ============ SOCIETY PROFILE VIEW ============ -->
   <div id="profile" class="hidden">
-    <button class="back" onclick="showDirectory()">← All societies</button>
+    <button class="back" onclick="backFromProfile()">← All societies</button>
     <div class="profile-hero">
       <div class="banner" id="pBanner"></div>
       <div class="p-head">
         <div class="p-logo" id="pLogo"></div>
-        <div class="p-id">
-          <h2 id="pName"></h2>
-          <div class="sub" id="pSub"></div>
-        </div>
-        <div class="p-actions">
-          <button class="btn btn-lime" id="followBtn" onclick="toggleFollow()">+ Follow</button>
-        </div>
+        <div class="p-id"><h2 id="pName"></h2><div class="sub" id="pSub"></div></div>
+        <div class="p-actions"><button class="btn btn-lime" id="followBtn" onclick="toggleFollow()">+ Follow</button></div>
       </div>
       <div class="p-stats">
         <div><strong id="stFollowers"></strong><span>Followers</span></div>
@@ -215,7 +273,6 @@
         <button class="btn btn-navy" style="padding:9px 18px;font-size:13px" onclick="toast('📝 Application opens in the Dyng app')">Apply →</button>
       </div>
     </div>
-
     <div class="tabs" role="tablist">
       <button class="tab on" id="tabUp" onclick="setTab('up')" role="tab">Upcoming</button>
       <button class="tab" id="tabPast" onclick="setTab('past')" role="tab">Past events</button>
@@ -231,93 +288,157 @@
 </footer>
 
 <script>
-// ============ DEMO DATA (fictional societies; swap for API later) ============
+// ============ SOCIETY DATA (fictional demo; swap for API) ============
 const societies = [
-  {
-    id:'rangmanch', name:'Rangmanch', college:'Ramjas College', cat:'Dramatics',
-    color:'#7C3AED', emoji:'🎭', followers:2140, members:48, founded:1998, recruiting:true,
-    recDetail:'Stage & street theatre · Auditions till 24 Jul · Freshers welcome, no experience needed',
-    bio:'The dramatics society known for hard-hitting street plays on campus issues and an annual stage production that fills the auditorium twice over.',
-    upcoming:[
-      {d:18,m:'Jul',y:2026,title:'Fresher Auditions — Round 1',meta:'Ramjas Seminar Hall · 11 AM',desc:'Bring a 2-minute piece — monologue, improv, anything. Nukkad team auditions same day.',tags:['Audition','Open to all colleges'],going:126},
-      {d:9,m:'Aug',y:2026,title:'Nukkad: "Kiraya" — street play premiere',meta:'Arts Faculty Lawns · 1 PM',desc:'New street play on the student housing crisis. 25-member cast, live dhol.',tags:['Street play','Free entry'],going:342}
-    ],
-    past:[
-      {d:22,m:'Mar',y:2026,title:'Annual Production: "Andhera Quarter"',meta:'Sri Ram Centre · Sold out',desc:'Two-act stage play, 2 shows, 600+ audience. Won Best Production at Mood Indigo circuit.',tags:['Stage play','600+ attended','Award winner'],photos:['🎭','🎪','👏']},
-      {d:8,m:'Feb',y:2026,title:'Crossroads Nukkad Sweep',meta:'SRCC Crossroads',desc:'First place in street play at Crossroads with "Hisaab" — 14th circuit win of the season.',tags:['1st place','Street play'],photos:['🏆','🥁','🔥']},
-      {d:12,m:'Nov',y:2025,title:'Theatre Workshop with NSD alum',meta:'Ramjas Auditorium · 2 days',desc:'Voice, movement and devising workshop for 60 members, led by an NSD graduate.',tags:['Workshop','Members only'],photos:['🎬','🗣️','✨']}
-    ]
-  },
-  {
-    id:'aria', name:'Aria', college:'Hansraj College', cat:'Music',
-    color:'#DB2777', emoji:'🎶', followers:1730, members:35, founded:2004, recruiting:true,
-    recDetail:'Vocalists, guitarists, tabla & keys · Auditions 20–22 Jul · Western + Indian ensembles',
-    bio:'Hansraj\'s music society — two ensembles (Indian classical fusion and western acapella) with a competition streak across the DU circuit.',
-    upcoming:[
-      {d:20,m:'Jul',y:2026,title:'Auditions: Vocals & Instruments',meta:'Hansraj Music Room · 12 PM',desc:'Prepare one piece of your choice. Sight-singing round for acapella aspirants.',tags:['Audition'],going:98},
-      {d:30,m:'Aug',y:2026,title:'Monsoon Unplugged',meta:'Hansraj Lawns · 5 PM',desc:'Open-air evening set — fusion ensemble debuts three new arrangements.',tags:['Concert','Free entry'],going:210}
-    ],
-    past:[
-      {d:15,m:'Feb',y:2026,title:'1st place — Tempest (Venky)',meta:'Sri Venkateswara College',desc:'Acapella ensemble took first at Tempest with a 9-voice arrangement.',tags:['1st place','Acapella'],photos:['🏆','🎤','🎼']},
-      {d:19,m:'Oct',y:2025,title:'Antaragni Circuit Performance',meta:'IIT Kanpur',desc:'Invited fusion set at Antaragni — first outstation performance in 3 years.',tags:['Outstation','Fusion'],photos:['🚌','🎻','🌟']}
-    ]
-  },
-  {
-    id:'taal', name:'Taal', college:'Miranda House', cat:'Dance',
-    color:'#EA580C', emoji:'💃', followers:2860, members:42, founded:1995, recruiting:false,
-    bio:'Miranda House\'s choreography society — contemporary and Indian folk fusion, reigning champions of the North Campus circuit two years running.',
-    upcoming:[
-      {d:14,m:'Sep',y:2026,title:'Annual Showcase: "Dhara"',meta:'Miranda House Auditorium · 6 PM',desc:'45-minute production piece on rivers and migration. Passes via Dyng RSVP.',tags:['Showcase','Pass required'],going:415}
-    ],
-    past:[
-      {d:2,m:'Mar',y:2026,title:'1st place — Nexus (Sri Venkateswara)',meta:'South Campus',desc:'Won the choreo finals with "Reza" — 3rd consecutive circuit title of the season.',tags:['1st place','Choreography'],photos:['🏆','💫','🔥']},
-      {d:25,m:'Jan',y:2026,title:'Republic Day Folk Ensemble',meta:'College grounds',desc:'Folk fusion set for the college R-Day celebration — 26 dancers, live percussion.',tags:['Folk','College event'],photos:['🥁','🇮🇳','💃']},
-      {d:30,m:'Sep',y:2025,title:'Fresher Production: "Pehli Baarish"',meta:'Miranda House Amphitheatre',desc:'Debut piece by the incoming batch — choreographed entirely by first-years.',tags:['Freshers','Amphitheatre'],photos:['🌧️','🌸','👯']}
-    ]
-  },
-  {
-    id:'vaad', name:'Vaad-Vivaad', college:'Hindu College', cat:'Debating',
-    cat2:'Debating', color:'#0891B2', emoji:'🎤', followers:1420, members:28, founded:1989, recruiting:true,
-    recDetail:'English & Hindi parliamentary debating · Trials 26 Jul · Novice track available',
-    bio:'Parliamentary debating society with one of the oldest novice programs in DU — breaks at nationals every year in both English and Hindi.',
-    upcoming:[
-      {d:26,m:'Jul',y:2026,title:'Novice Trials',meta:'Hindu College · Room 14 · 10 AM',desc:'Asian Parliamentary format demo round, then trials. Zero experience required for novice track.',tags:['Trials','Novice friendly'],going:74}
-    ],
-    past:[
-      {d:11,m:'Jan',y:2026,title:'Breaking at Nationals — NLS Bangalore',meta:'NLSIU',desc:'Two teams broke to elimination rounds; one novice speaker in the top-10 tab.',tags:['Nationals','Break'],photos:['🏅','✈️','📣']},
-      {d:5,m:'Oct',y:2025,title:'Hosted: Hindu IV 2025',meta:'Hindu College · 3 days',desc:'Hosted 64 teams from 20+ colleges for the annual invitational — largest edition yet.',tags:['Host','64 teams'],photos:['🏛️','🗓️','🤝']}
-    ]
-  },
-  {
-    id:'bitwise', name:'Bitwise', college:'Kirori Mal College', cat:'Tech',
-    color:'#16A34A', emoji:'💻', followers:980, members:56, founded:2015, recruiting:false,
-    bio:'KMC\'s tech society — hackathons, open-source sprints and a mentorship pipeline that regularly places members in internships.',
-    upcoming:[
-      {d:23,m:'Aug',y:2026,title:'HackKMC 3.0',meta:'KMC Campus · 24 hours',desc:'Annual 24-hour hackathon. Theme: campus problems. ₹50k prize pool, teams of 4.',tags:['Hackathon','₹50k prizes','Open to all'],going:388}
-    ],
-    past:[
-      {d:16,m:'Feb',y:2026,title:'Open Source Week',meta:'Online + KMC labs',desc:'120 first-PRs merged across 5 mentored projects in one week.',tags:['Open source','120 PRs'],photos:['🐙','⌨️','🚀']},
-      {d:24,m:'Aug',y:2025,title:'HackKMC 2.0',meta:'KMC Campus',desc:'300+ hackers, 61 teams. Winning build: a DU cutoff predictor used by 10k students.',tags:['Hackathon','300+ hackers'],photos:['🧑‍💻','🏆','⚡']}
-    ]
-  },
-  {
-    id:'prayaas', name:'Prayaas', college:'Lady Shri Ram College', cat:'Social',
-    color:'#CA8A04', emoji:'🌱', followers:1210, members:64, founded:2008, recruiting:true,
-    recDetail:'Teaching, fundraising & campaign teams · Rolling applications through August',
-    bio:'LSR\'s social impact collective — runs a daily teaching program for 80+ kids and campus-wide donation drives every semester.',
-    upcoming:[
-      {d:3,m:'Aug',y:2026,title:'Volunteer Orientation',meta:'LSR · Room 208 · 3 PM',desc:'Onboarding for the new teaching cohort — meet the kids\' program leads, pick your slot.',tags:['Volunteering','Orientation'],going:57}
-    ],
-    past:[
-      {d:14,m:'Dec',y:2025,title:'Winter Drive 2025',meta:'Across North & South Campus',desc:'Collected 2,300+ garments and 400 blankets across 6 college collection points.',tags:['Donation drive','2300+ items'],photos:['🧥','📦','❤️']}
-    ]
-  }
+  {id:'rangmanch',name:'Rangmanch',college:'Ramjas College',cat:'Dramatics',color:'#7C3AED',emoji:'🎭',followers:2140,members:48,founded:1998,recruiting:true,
+   recDetail:'Stage & street theatre · Auditions till 24 Jul · Freshers welcome',
+   bio:'The dramatics society known for hard-hitting street plays on campus issues and an annual stage production that fills the auditorium twice over.',
+   upcoming:[
+     {d:18,m:'Jul',y:2026,title:'Fresher Auditions — Round 1',meta:'Ramjas Seminar Hall · 11 AM',desc:'Bring a 2-minute piece — monologue, improv, anything.',tags:['Audition','Open to all'],going:126,ecat:'Audition',price:0,art:'🎭'},
+     {d:9,m:'Aug',y:2026,title:'Nukkad: "Kiraya" — street play premiere',meta:'Arts Faculty Lawns · 1 PM',desc:'New street play on the student housing crisis. Live dhol.',tags:['Street play','Free'],going:342,ecat:'Fest',price:0,art:'🥁'}
+   ],
+   past:[
+     {d:22,m:'Mar',y:2026,title:'Annual Production: "Andhera Quarter"',meta:'Sri Ram Centre · Sold out',desc:'Two-act stage play, 2 shows, 600+ audience.',tags:['Stage play','600+ attended'],photos:['🎭','🎪','👏']},
+     {d:8,m:'Feb',y:2026,title:'Crossroads Nukkad Sweep',meta:'SRCC',desc:'First place in street play — 14th circuit win of the season.',tags:['1st place'],photos:['🏆','🥁','🔥']},
+     {d:12,m:'Nov',y:2025,title:'Theatre Workshop with NSD alum',meta:'Ramjas Auditorium',desc:'Voice, movement and devising workshop for 60 members.',tags:['Workshop'],photos:['🎬','🗣️','✨']}
+   ]},
+  {id:'aria',name:'Aria',college:'Hansraj College',cat:'Music',color:'#DB2777',emoji:'🎶',followers:1730,members:35,founded:2004,recruiting:true,
+   recDetail:'Vocalists, guitarists, tabla & keys · Auditions 20–22 Jul',
+   bio:'Hansraj\'s music society — two ensembles (Indian classical fusion and western acapella) with a competition streak across the DU circuit.',
+   upcoming:[
+     {d:20,m:'Jul',y:2026,title:'Auditions: Vocals & Instruments',meta:'Hansraj Music Room · 12 PM',desc:'One piece of your choice. Sight-singing round for acapella.',tags:['Audition'],going:98,ecat:'Audition',price:0,art:'🎤'},
+     {d:30,m:'Aug',y:2026,title:'Monsoon Unplugged',meta:'Hansraj Lawns · 5 PM',desc:'Open-air evening set — fusion ensemble debuts new arrangements.',tags:['Concert','Free'],going:210,ecat:'Concert',price:0,art:'🎸'}
+   ],
+   past:[
+     {d:15,m:'Feb',y:2026,title:'1st place — Tempest (Venky)',meta:'Sri Venkateswara College',desc:'Acapella ensemble took first with a 9-voice arrangement.',tags:['1st place'],photos:['🏆','🎤','🎼']},
+     {d:19,m:'Oct',y:2025,title:'Antaragni Circuit Performance',meta:'IIT Kanpur',desc:'Invited fusion set — first outstation performance in 3 years.',tags:['Outstation'],photos:['🚌','🎻','🌟']}
+   ]},
+  {id:'taal',name:'Taal',college:'Miranda House',cat:'Dance',color:'#EA580C',emoji:'💃',followers:2860,members:42,founded:1995,recruiting:false,
+   bio:'Miranda House\'s choreography society — contemporary and folk fusion, reigning champions of the North Campus circuit two years running.',
+   upcoming:[
+     {d:14,m:'Sep',y:2026,title:'Annual Showcase: "Dhara"',meta:'Miranda House Auditorium · 6 PM',desc:'45-minute production piece on rivers and migration.',tags:['Showcase','Pass required'],going:415,ecat:'Concert',price:99,art:'💃'}
+   ],
+   past:[
+     {d:2,m:'Mar',y:2026,title:'1st place — Nexus (Venky)',meta:'South Campus',desc:'Won the choreo finals with "Reza" — 3rd consecutive title.',tags:['1st place'],photos:['🏆','💫','🔥']},
+     {d:25,m:'Jan',y:2026,title:'Republic Day Folk Ensemble',meta:'College grounds',desc:'Folk fusion set — 26 dancers, live percussion.',tags:['Folk'],photos:['🥁','🇮🇳','💃']},
+     {d:30,m:'Sep',y:2025,title:'Fresher Production: "Pehli Baarish"',meta:'Amphitheatre',desc:'Debut piece choreographed entirely by first-years.',tags:['Freshers'],photos:['🌧️','🌸','👯']}
+   ]},
+  {id:'vaad',name:'Vaad-Vivaad',college:'Hindu College',cat:'Debating',color:'#0891B2',emoji:'🎤',followers:1420,members:28,founded:1989,recruiting:true,
+   recDetail:'English & Hindi parliamentary debating · Trials 26 Jul · Novice track',
+   bio:'Parliamentary debating society with one of the oldest novice programs in DU — breaks at nationals every year.',
+   upcoming:[
+     {d:26,m:'Jul',y:2026,title:'Novice Debating Trials',meta:'Hindu College · Room 14 · 10 AM',desc:'Asian Parliamentary demo round, then trials. Zero experience needed.',tags:['Trials','Novice friendly'],going:74,ecat:'Audition',price:0,art:'🎙️'}
+   ],
+   past:[
+     {d:11,m:'Jan',y:2026,title:'Breaking at Nationals — NLS Bangalore',meta:'NLSIU',desc:'Two teams broke; one novice in the top-10 speaker tab.',tags:['Nationals'],photos:['🏅','✈️','📣']},
+     {d:5,m:'Oct',y:2025,title:'Hosted: Hindu IV 2025',meta:'Hindu College · 3 days',desc:'Hosted 64 teams from 20+ colleges — largest edition yet.',tags:['Host','64 teams'],photos:['🏛️','🗓️','🤝']}
+   ]},
+  {id:'bitwise',name:'Bitwise',college:'Kirori Mal College',cat:'Tech',color:'#16A34A',emoji:'💻',followers:980,members:56,founded:2015,recruiting:false,
+   bio:'KMC\'s tech society — hackathons, open-source sprints and a mentorship pipeline into internships.',
+   upcoming:[
+     {d:23,m:'Aug',y:2026,title:'HackKMC 3.0',meta:'KMC Campus · 24 hours',desc:'Annual 24-hour hackathon. Theme: campus problems. Teams of 4.',tags:['Hackathon','₹50k prizes'],going:388,ecat:'Hackathon',price:0,art:'⚡'}
+   ],
+   past:[
+     {d:16,m:'Feb',y:2026,title:'Open Source Week',meta:'Online + KMC labs',desc:'120 first-PRs merged across 5 mentored projects.',tags:['Open source'],photos:['🐙','⌨️','🚀']},
+     {d:24,m:'Aug',y:2025,title:'HackKMC 2.0',meta:'KMC Campus',desc:'300+ hackers, 61 teams. Winning build used by 10k students.',tags:['Hackathon'],photos:['🧑‍💻','🏆','⚡']}
+   ]},
+  {id:'prayaas',name:'Prayaas',college:'Lady Shri Ram College',cat:'Social',color:'#CA8A04',emoji:'🌱',followers:1210,members:64,founded:2008,recruiting:true,
+   recDetail:'Teaching, fundraising & campaign teams · Rolling applications',
+   bio:'LSR\'s social impact collective — daily teaching program for 80+ kids and campus-wide donation drives.',
+   upcoming:[
+     {d:3,m:'Aug',y:2026,title:'Volunteer Orientation',meta:'LSR · Room 208 · 3 PM',desc:'Onboarding for the new teaching cohort — pick your slot.',tags:['Volunteering'],going:57,ecat:'Workshop',price:0,art:'🌱'}
+   ],
+   past:[
+     {d:14,m:'Dec',y:2025,title:'Winter Drive 2025',meta:'North & South Campus',desc:'2,300+ garments and 400 blankets across 6 collection points.',tags:['Donation drive'],photos:['🧥','📦','❤️']}
+   ]}
 ];
 
-let currentSoc=null, currentTab='up', followed=new Set();
-const filters={cat:'all'};
+// ============ STANDALONE EVENTS (fests & big-ticket) ============
+const standaloneEvents = [
+  {d:16,m:'Aug',y:2026,title:'NorthFest \'26 — Day 1: Battle of Bands',by:'North Campus Fest Collective',college:'Multiple colleges',meta:'DU Sports Complex · 4 PM onwards',going:1240,ecat:'Fest',price:199,art:'🎪',grad:['#7C3AED','#DB2777']},
+  {d:17,m:'Aug',y:2026,title:'NorthFest \'26 — Day 2: EDM Night',by:'North Campus Fest Collective',college:'Multiple colleges',meta:'DU Sports Complex · 6 PM onwards',going:2180,ecat:'Fest',price:299,art:'🎧',grad:['#0891B2','#7C3AED']},
+  {d:2,m:'Aug',y:2026,title:'Open Mic: Comedy Night',by:'Hudson Social',college:'Hudson Lane',meta:'Hudson Lane · 7 PM · Ticketed',going:164,ecat:'Comedy',price:149,art:'😂',grad:['#EA580C','#CA8A04']},
+  {d:28,m:'Jul',y:2026,title:'Resume + LinkedIn Workshop',by:'Placement Cell',college:'SRCC',meta:'SRCC Auditorium · 2 PM',going:203,ecat:'Workshop',price:0,art:'💼',grad:['#16A34A','#0891B2']}
+];
 
-// ============ DIRECTORY ============
+const mOrd={Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12};
+
+function allEvents(){
+  const evs=[];
+  societies.forEach(s=>s.upcoming.forEach(e=>evs.push({...e,by:s.name,college:s.college,grad:[s.color,'#1B2E5B'],socId:s.id})));
+  standaloneEvents.forEach(e=>evs.push({...e}));
+  return evs.sort((a,b)=>(a.y-b.y)||(mOrd[a.m]-mOrd[b.m])||(a.d-b.d));
+}
+
+const evFilters={cat:'all',price:'all'};
+const filters={cat:'all'};
+let currentSoc=null,currentTab='up',followed=new Set();
+
+// ============ EVENTS DISCOVERY RENDER ============
+function renderEvents(){
+  const list=allEvents().filter(e=>{
+    if(evFilters.cat!=='all'&&e.ecat!==evFilters.cat)return false;
+    if(evFilters.price==='free'&&e.price!==0)return false;
+    if(evFilters.price==='paid'&&e.price===0)return false;
+    return true;
+  });
+  document.getElementById('evCount').textContent=list.length;
+  const g=document.getElementById('evGrid');
+  if(!list.length){g.innerHTML='<div class="empty"><strong style="display:block;font-family:\'Bricolage Grotesque\';color:var(--navy);margin-bottom:4px">Nothing matches</strong>Try a different category or entry filter.</div>';return;}
+  g.innerHTML=list.map((e,i)=>`
+    <article class="evc">
+      <div class="evc-banner" style="background:linear-gradient(135deg,${e.grad[0]},${e.grad[1]})">
+        <div class="date-chip"><div class="m">${e.m}</div><div class="d">${e.d}</div></div>
+        <span class="price-chip ${e.price===0?'free':'paid'}">${e.price===0?'FREE':'₹'+e.price}</span>
+        <span style="position:relative;z-index:0">${e.art}</span>
+      </div>
+      <div class="evc-body">
+        <div class="evc-cat">${e.ecat}</div>
+        <h3>${e.title}</h3>
+        <div class="by">by <b>${e.by}</b> · ${e.college}</div>
+        <div class="venue">📍 ${e.meta}</div>
+        <div class="evc-foot">
+          <button class="rsvp ${e.rsvped?'done':''}" onclick="rsvpFeed(${i})" id="frsvp-${i}">${e.rsvped?'✓ You\'re going':(e.price===0?'RSVP free':'Get pass')}</button>
+          <button class="share-b" onclick="shareEvent(${i})" aria-label="Share on WhatsApp">↗</button>
+          <span class="going-pill" id="fgoing-${i}">${e.going} going</span>
+        </div>
+      </div>
+    </article>`).join('');
+  window._feedList=list;
+}
+function rsvpFeed(i){
+  const e=window._feedList[i];
+  if(e.rsvped){toast('You\'re already on the list ✓');return;}
+  e.rsvped=true;e.going++;
+  const src=e.socId?societies.find(s=>s.id===e.socId).upcoming.find(u=>u.title===e.title):standaloneEvents.find(u=>u.title===e.title);
+  if(src){src.rsvped=true;src.going=e.going;}
+  document.getElementById('frsvp-'+i).textContent='✓ You\'re going';
+  document.getElementById('frsvp-'+i).classList.add('done');
+  document.getElementById('fgoing-'+i).textContent=e.going+' going';
+  toast(e.price===0?`🎟️ RSVP'd to <span class=lime>${e.title}</span> — reminder set`:`🎟️ Pass reserved for <span class=lime>${e.title}</span> — pay at checkout in the app`);
+}
+function shareEvent(i){
+  const e=window._feedList[i];
+  const msg=`🎟️ *${e.title}*\n\n📅 ${e.d} ${e.m} ${e.y}\n📍 ${e.meta}\n🎫 ${e.price===0?'FREE entry':'₹'+e.price}\n👥 ${e.going} already going\nby ${e.by} (${e.college})\n\n✅ RSVP on Dyng — every DU event, one feed\n👉 https://www.dyng.in/events`;
+  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
+  toast('Share card ready — <span class=lime>drop it in your group</span>');
+}
+
+// ============ VIEW TOGGLE ============
+function setView(v){
+  document.getElementById('mtEvents').classList.toggle('on',v==='events');
+  document.getElementById('mtSocs').classList.toggle('on',v==='socs');
+  document.getElementById('eventsView').classList.toggle('hidden',v!=='events');
+  document.getElementById('socsView').classList.toggle('hidden',v!=='socs');
+  document.getElementById('profile').classList.add('hidden');
+  if(v==='socs')renderDirectory();
+}
+function backFromProfile(){
+  document.getElementById('profile').classList.add('hidden');
+  document.getElementById('socsView').classList.remove('hidden');
+}
+
+// ============ SOCIETIES DIRECTORY ============
 function renderDirectory(){
   const list=societies.filter(s=>filters.cat==='all'||s.cat===filters.cat);
   document.getElementById('socCount').textContent=list.length;
@@ -326,8 +447,7 @@ function renderDirectory(){
     <button class="soc-card" onclick="showProfile('${s.id}')" aria-label="Open ${s.name} profile">
       ${s.recruiting?'<span class="rec-badge">RECRUITING</span>':''}
       <div class="soc-logo" style="background:${s.color}">${s.emoji}</div>
-      <h3>${s.name}</h3>
-      <div class="col">${s.college}</div>
+      <h3>${s.name}</h3><div class="col">${s.college}</div>
       <span class="cat">${s.cat}</span>
       <div class="soc-stats">
         <span><strong>${s.followers.toLocaleString('en-IN')}</strong> followers</span>
@@ -336,17 +456,19 @@ function renderDirectory(){
     </button>`).join('');
 }
 document.querySelectorAll('#catChips .chip').forEach(c=>{
-  c.onclick=()=>{
-    document.querySelectorAll('#catChips .chip').forEach(x=>x.classList.remove('on'));
-    c.classList.add('on');filters.cat=c.dataset.v;renderDirectory();
-  };
+  c.onclick=()=>{document.querySelectorAll('#catChips .chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');filters.cat=c.dataset.v;renderDirectory();};
+});
+document.querySelectorAll('#evCatChips .chip').forEach(c=>{
+  c.onclick=()=>{document.querySelectorAll('#evCatChips .chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');evFilters.cat=c.dataset.v;renderEvents();};
+});
+document.querySelectorAll('#evPriceChips .chip').forEach(c=>{
+  c.onclick=()=>{document.querySelectorAll('#evPriceChips .chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');evFilters.price=c.dataset.v;renderEvents();};
 });
 
-// ============ PROFILE ============
+// ============ SOCIETY PROFILE ============
 function showProfile(id){
-  currentSoc=societies.find(s=>s.id===id);
-  currentTab='up';
-  document.getElementById('directory').classList.add('hidden');
+  currentSoc=societies.find(s=>s.id===id);currentTab='up';
+  document.getElementById('socsView').classList.add('hidden');
   document.getElementById('profile').classList.remove('hidden');
   const s=currentSoc;
   document.getElementById('pBanner').style.background=`linear-gradient(120deg, ${s.color}, var(--navy))`;
@@ -361,13 +483,8 @@ function showProfile(id){
   const rb=document.getElementById('recBanner');
   if(s.recruiting){rb.classList.remove('hidden');document.getElementById('recDetail').textContent=s.recDetail;}
   else rb.classList.add('hidden');
-  updateFollowBtn();
-  setTab('up');
+  updateFollowBtn();setTab('up');
   window.scrollTo({top:0,behavior:'smooth'});
-}
-function showDirectory(){
-  document.getElementById('profile').classList.add('hidden');
-  document.getElementById('directory').classList.remove('hidden');
 }
 function updateFollowBtn(){
   const b=document.getElementById('followBtn');
@@ -376,33 +493,28 @@ function updateFollowBtn(){
 }
 function toggleFollow(){
   if(followed.has(currentSoc.id)){followed.delete(currentSoc.id);toast('Unfollowed '+currentSoc.name);}
-  else{followed.add(currentSoc.id);toast(`🔔 Following <span class=lime>${currentSoc.name}</span> — you'll get event & recruitment alerts`);}
+  else{followed.add(currentSoc.id);toast(`🔔 Following <span class=lime>${currentSoc.name}</span> — event & recruitment alerts on`);}
   updateFollowBtn();
 }
-
-// ============ EVENTS TABS ============
 function setTab(t){
   currentTab=t;
   document.getElementById('tabUp').classList.toggle('on',t==='up');
   document.getElementById('tabPast').classList.toggle('on',t==='past');
-  const s=currentSoc, list = t==='up'?s.upcoming:s.past;
-  const el=document.getElementById('eventList');
+  const s=currentSoc,list=t==='up'?s.upcoming:s.past,el=document.getElementById('eventList');
   if(!list.length){el.innerHTML='<div style="background:var(--white);border-radius:16px;padding:30px;text-align:center;color:#8A93B0;font-size:14px">Nothing here yet.</div>';return;}
   el.innerHTML=list.map((e,i)=>`
     <article class="ev">
       <div class="ev-date"><div class="m">${e.m}</div><div class="d">${e.d}</div><div class="y">${e.y}</div></div>
       <div class="ev-body">
-        <h4>${e.title}</h4>
-        <div class="meta">📍 ${e.meta}</div>
-        <p>${e.desc}</p>
+        <h4>${e.title}</h4><div class="meta">📍 ${e.meta}</div><p>${e.desc}</p>
         <div class="ev-tags">${e.tags.map((t,j)=>`<span class="${j===0?'hl':''}">${t}</span>`).join('')}</div>
         ${t==='up'
-          ? `<div class="ev-foot"><button class="rsvp" id="rsvp-${i}" onclick="rsvp(${i})">RSVP — I'm going</button><span class="going" id="going-${i}">${e.going} going</span></div>`
-          : `<div class="past-strip" aria-label="Event photos">${e.photos.map(p=>`<i style="background:${s.color}22">${p}</i>`).join('')}</div>`}
+          ?`<div class="ev-foot"><button class="rsvp ${e.rsvped?'done':''}" id="rsvp-${i}" onclick="rsvpProfile(${i})" style="flex:0 1 auto">${e.rsvped?'✓ You\'re going':'RSVP — I\'m going'}</button><span class="going" id="going-${i}">${e.going} going</span></div>`
+          :`<div class="past-strip" aria-label="Event photos">${e.photos.map(p=>`<i style="background:${s.color}22">${p}</i>`).join('')}</div>`}
       </div>
     </article>`).join('');
 }
-function rsvp(i){
+function rsvpProfile(i){
   const e=currentSoc.upcoming[i];
   if(e.rsvped){toast('You\'re already on the list ✓');return;}
   e.rsvped=true;e.going++;
@@ -419,7 +531,7 @@ function toast(html){
   clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3200);
 }
 
-renderDirectory();
+renderEvents();
 </script>
 </body>
 </html>
