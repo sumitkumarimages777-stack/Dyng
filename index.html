@@ -210,6 +210,57 @@
     .pm-actions .cmt{font-size:12.5px;color:#8A93B0}
     .pm-close{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.4);color:#fff;border:none;font-size:16px;z-index:2}
 
+
+    /* ============ EVENT DETAIL PAGE ============ */
+    .ed-hero{border-radius:22px;height:230px;position:relative;display:grid;place-items:center;font-size:88px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:-34px}
+    .ed-hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%, rgba(255,255,255,.28), transparent 55%)}
+    .ed-hero .date-chip{top:16px;left:16px;padding:8px 14px}
+    .ed-hero .date-chip .d{font-size:21px}
+    .ed-hero .price-chip{top:16px;right:16px;font-size:12.5px;padding:7px 15px}
+    .ed-card{background:var(--white);border-radius:22px;box-shadow:var(--shadow);padding:26px 24px;position:relative;margin:0 12px 16px}
+    .ed-card .evc-cat{font-size:11px}
+    .ed-card h2{font-size:clamp(21px,3vw,27px);color:var(--navy);margin-bottom:6px}
+    .ed-by{font-size:13.5px;color:#8A93B0;margin-bottom:16px}
+    .ed-by button{border:none;background:none;color:var(--lime-deep);font-weight:700;font-size:13.5px;padding:0}
+    .ed-by button:hover{text-decoration:underline}
+    .ed-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:18px}
+    .ed-meta div{background:var(--mist);border-radius:13px;padding:12px 14px}
+    .ed-meta .lbl{font-size:10.5px;font-weight:800;color:#8A93B0;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
+    .ed-meta .val{font-size:13.5px;font-weight:700;color:var(--navy)}
+    .ed-cta{display:flex;gap:10px;margin-bottom:22px;align-items:center}
+    .ed-cta .rsvp{flex:1;padding:14px;font-size:14.5px}
+    .ed-sec{margin-bottom:20px}
+    .ed-sec h3{font-size:15px;color:var(--navy);margin-bottom:8px}
+    .ed-sec p{font-size:14px;color:#5A6482}
+    .ed-sec ul{list-style:none}
+    .ed-sec li{padding:6px 0 6px 28px;position:relative;font-size:13.5px;color:var(--ink)}
+    .ed-sec li::before{content:"✓";position:absolute;left:0;top:6px;width:19px;height:19px;background:var(--mist);color:var(--lime-deep);border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:800}
+    .ed-org{display:flex;align-items:center;gap:14px;border:1.5px solid var(--line);border-radius:16px;padding:14px 16px}
+    .ed-org .pm-avatar{width:46px;height:46px;font-size:20px}
+    .ed-org .o-info{flex:1;min-width:0}
+    .ed-org b{font-size:14.5px;color:var(--navy);display:block}
+    .ed-org span{font-size:12px;color:#8A93B0}
+
+    /* ============ MULTIPLE VACANCIES ============ */
+    .vac-section{margin:0 22px 20px}
+    .vac-head{font-size:13.5px;font-weight:800;color:#4C6E0B;margin-bottom:10px;display:flex;align-items:center;gap:7px}
+    .vac-head .dot{width:9px;height:9px;border-radius:50%;background:var(--lime);animation:pulse 1.6s infinite}
+    .vac-card{background:linear-gradient(120deg,#F6FBE8,#EDF6D8);border:1.5px solid var(--lime);border-radius:14px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    .vac-info{flex:1;min-width:200px}
+    .vac-info h4{font-size:14.5px;color:var(--navy);margin-bottom:3px}
+    .vac-info p{font-size:12px;color:#5A6482;margin:0 0 7px}
+    .vac-facts{display:flex;gap:6px;flex-wrap:wrap}
+    .vac-facts span{font-size:11px;font-weight:700;background:var(--white);color:var(--navy);border-radius:999px;padding:3px 10px}
+    .vac-facts .seats{background:var(--navy);color:var(--lime)}
+    .vac-facts .closing{background:#FFE9C7;color:#8A5B00}
+
+    .vac-more{width:100%;border:1.5px dashed var(--lime);background:var(--white);border-radius:13px;padding:11px;font-size:13px;font-weight:800;color:var(--lime-deep);transition:all .15s}
+    .vac-more:hover{background:#F6FBE8}
+    .rec-tab-head{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+    .rec-tab-head h3{font-size:15.5px;color:var(--navy)}
+    .rec-tab-head span{font-size:12.5px;color:#5A6482}
+    .vac-rounds-mini{font-size:11.5px;color:#5A6482;margin-top:8px;line-height:1.7}
+    .vac-rounds-mini b{color:var(--navy)}
     /* ============ RECRUITMENT ROUNDS (Unstop-style) ============ */
     .rounds{position:relative;margin:6px 0 18px;padding-left:30px}
     .rounds::before{content:"";position:absolute;left:11px;top:10px;bottom:10px;width:2px;background:var(--line)}
@@ -328,6 +379,41 @@
     <div class="ev-grid" id="evGrid"></div>
   </div>
 
+
+  <!-- ============ EVENT DETAIL VIEW ============ -->
+  <div id="eventDetail" class="hidden">
+    <button class="back" onclick="closeEventDetail()">← All events</button>
+    <div class="ed-hero" id="edHero">
+      <div class="date-chip"><div class="m" id="edM"></div><div class="d" id="edD"></div></div>
+      <span class="price-chip" id="edPrice"></span>
+      <span style="position:relative;z-index:0" id="edArt"></span>
+    </div>
+    <div class="ed-card">
+      <div class="evc-cat" id="edCat"></div>
+      <h2 id="edTitle"></h2>
+      <div class="ed-by">by <button id="edBy" onclick="openOrganizer()"></button> · <span id="edCollege"></span></div>
+      <div class="ed-meta">
+        <div><div class="lbl">📅 Date</div><div class="val" id="edDate"></div></div>
+        <div><div class="lbl">📍 Venue & time</div><div class="val" id="edVenue"></div></div>
+        <div><div class="lbl">🎫 Entry</div><div class="val" id="edEntry"></div></div>
+        <div><div class="lbl">👥 Going</div><div class="val" id="edGoing"></div></div>
+      </div>
+      <div class="ed-cta">
+        <button class="rsvp" id="edRsvp" onclick="rsvpDetail()"></button>
+        <button class="share-b" onclick="shareDetail()" aria-label="Share on WhatsApp" style="width:48px;height:48px;font-size:18px">↗</button>
+      </div>
+      <div class="ed-sec"><h3>About this event</h3><p id="edAbout"></p></div>
+      <div class="ed-sec" id="edExpectWrap"><h3>What to expect</h3><ul id="edExpect"></ul></div>
+      <div class="ed-sec"><h3>Organizer</h3>
+        <div class="ed-org">
+          <div class="pm-avatar" id="edOrgAvatar"></div>
+          <div class="o-info"><b id="edOrgName"></b><span id="edOrgSub"></span></div>
+          <button class="btn btn-outline" id="edOrgBtn" style="padding:9px 16px;font-size:12.5px" onclick="openOrganizer()">View profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ============ SOCIETIES VIEW ============ -->
   <div id="socsView" class="hidden">
     <div class="filter-card" role="group" aria-label="Filter societies">
@@ -365,9 +451,9 @@
         <div><strong id="stMembers"></strong><span>Members</span></div>
       </div>
       <p class="p-bio" id="pBio"></p>
-      <div class="rec-banner hidden" id="recBanner">
-        <div><div class="t">🟢 Recruitment open — auditions live</div><div class="d" id="recDetail"></div></div>
-        <button class="btn btn-navy" style="padding:9px 18px;font-size:13px" onclick="openApply()">Apply →</button>
+      <div class="vac-section hidden" id="vacSection">
+        <div class="vac-head"><span class="dot"></span><span id="vacHead"></span></div>
+        <div id="vacList"></div>
       </div>
       <div class="highlights" id="hlRow" aria-label="Highlights"></div>
     </div>
@@ -376,6 +462,7 @@
       <button class="tab" id="tabUp" onclick="setTab('up')" role="tab">Upcoming</button>
       <button class="tab" id="tabPast" onclick="setTab('past')" role="tab">Past events</button>
       <button class="tab" id="tabTeam" onclick="setTab('team')" role="tab">Team</button>
+      <button class="tab" id="tabRec" onclick="setTab('rec')" role="tab">Recruitment</button>
     </div>
     <div id="eventList"></div>
   </div>
@@ -536,10 +623,18 @@ const societies = [
 
 // ============ STANDALONE EVENTS (fests & big-ticket) ============
 const standaloneEvents = [
-  {d:16,m:'Aug',y:2026,title:'NorthFest \'26 — Day 1: Battle of Bands',by:'North Campus Fest Collective',college:'Multiple colleges',meta:'DU Sports Complex · 4 PM onwards',going:1240,ecat:'Fest',price:199,art:'🎪',grad:['#7C3AED','#DB2777']},
-  {d:17,m:'Aug',y:2026,title:'NorthFest \'26 — Day 2: EDM Night',by:'North Campus Fest Collective',college:'Multiple colleges',meta:'DU Sports Complex · 6 PM onwards',going:2180,ecat:'Fest',price:299,art:'🎧',grad:['#0891B2','#7C3AED']},
-  {d:2,m:'Aug',y:2026,title:'Open Mic: Comedy Night',by:'Hudson Social',college:'Hudson Lane',meta:'Hudson Lane · 7 PM · Ticketed',going:164,ecat:'Comedy',price:149,art:'😂',grad:['#EA580C','#CA8A04']},
-  {d:28,m:'Jul',y:2026,title:'Resume + LinkedIn Workshop',by:'Placement Cell',college:'SRCC',meta:'SRCC Auditorium · 2 PM',going:203,ecat:'Workshop',price:0,art:'💼',grad:['#16A34A','#0891B2']}
+  {d:16,m:'Aug',y:2026,title:'NorthFest \'26 — Day 1: Battle of Bands',by:'North Campus Fest Collective',college:'Multiple colleges',meta:'DU Sports Complex · 4 PM onwards',going:1240,ecat:'Fest',price:199,art:'🎪',grad:['#7C3AED','#DB2777'],
+   about:'The biggest inter-college band showdown of the season. 12 bands from across DU battle it out live — rock, indie, fusion — judged by working musicians, with the crowd\'s vote counting for 20%. Food stalls, merch, and the loudest lawns in North Campus.',
+   expect:['12 bands · 3 genres · one winner takes ₹75k','Food & merch stalls from 3 PM','Crowd vote counts for 20% of the score','Entry pass covers both stages']},
+  {d:17,m:'Aug',y:2026,title:'NorthFest \'26 — Day 2: EDM Night',by:'North Campus Fest Collective',college:'Multiple colleges',meta:'DU Sports Complex · 6 PM onwards',going:2180,ecat:'Fest',price:299,art:'🎧',grad:['#0891B2','#7C3AED'],
+   about:'Headline EDM night to close NorthFest — a national touring DJ headlines with two DU student openers. Light rig, 20k-watt sound, and the biggest dance floor DU sees all year.',
+   expect:['Headline DJ set + 2 student openers','Gates open 6 PM, headliner at 8:30','Water stations & help desk on ground','College ID mandatory at entry']},
+  {d:2,m:'Aug',y:2026,title:'Open Mic: Comedy Night',by:'Hudson Social',college:'Hudson Lane',meta:'Hudson Lane · 7 PM · Ticketed',going:164,ecat:'Comedy',price:149,art:'😂',grad:['#EA580C','#CA8A04'],
+   about:'Ten comics, five minutes each, zero mercy — DU\'s funniest open mic returns to Hudson Lane. Two slots reserved for first-timers; sign up at the venue by 6:30 PM if you dare.',
+   expect:['10 comics · 5 minutes each','2 walk-in slots for first-timers','Ticket includes one beverage','Doors 6:30 PM · show 7 PM sharp']},
+  {d:28,m:'Jul',y:2026,title:'Resume + LinkedIn Workshop',by:'Placement Cell',college:'SRCC',meta:'SRCC Auditorium · 2 PM',going:203,ecat:'Workshop',price:0,art:'💼',grad:['#16A34A','#0891B2'],
+   about:'A hands-on 2-hour session on building a resume that survives the 6-second recruiter scan, plus a live LinkedIn profile teardown of volunteers from the audience. Open to all colleges and years.',
+   expect:['Live resume teardowns','LinkedIn profile checklist to take home','Q&A with placement coordinators','Open to all DU colleges, all years']}
 ];
 
 const mOrd={Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12};
@@ -567,7 +662,7 @@ function renderEvents(){
   const g=document.getElementById('evGrid');
   if(!list.length){g.innerHTML='<div class="empty"><strong style="display:block;font-family:\'Bricolage Grotesque\';color:var(--navy);margin-bottom:4px">Nothing matches</strong>Try a different category or entry filter.</div>';return;}
   g.innerHTML=list.map((e,i)=>`
-    <article class="evc">
+    <article class="evc" onclick="openEventDetail(${i})" style="cursor:pointer">
       <div class="evc-banner" style="background:linear-gradient(135deg,${e.grad[0]},${e.grad[1]})">
         <div class="date-chip"><div class="m">${e.m}</div><div class="d">${e.d}</div></div>
         <span class="price-chip ${e.price===0?'free':'paid'}">${e.price===0?'FREE':'₹'+e.price}</span>
@@ -579,8 +674,8 @@ function renderEvents(){
         <div class="by">by <b>${e.by}</b> · ${e.college}</div>
         <div class="venue">📍 ${e.meta}</div>
         <div class="evc-foot">
-          <button class="rsvp ${e.rsvped?'done':''}" onclick="rsvpFeed(${i})" id="frsvp-${i}">${e.rsvped?'✓ You\'re going':(e.price===0?'RSVP free':'Get pass')}</button>
-          <button class="share-b" onclick="shareEvent(${i})" aria-label="Share on WhatsApp">↗</button>
+          <button class="rsvp ${e.rsvped?'done':''}" onclick="event.stopPropagation();rsvpFeed(${i})" id="frsvp-${i}">${e.rsvped?'✓ You\'re going':(e.price===0?'RSVP free':'Get pass')}</button>
+          <button class="share-b" onclick="event.stopPropagation();shareEvent(${i})" aria-label="Share on WhatsApp">↗</button>
           <span class="going-pill" id="fgoing-${i}">${e.going} going</span>
         </div>
       </div>
@@ -605,6 +700,115 @@ function shareEvent(i){
   toast('Share card ready — <span class=lime>drop it in your group</span>');
 }
 
+
+// ============ EVENT DETAIL PAGE ============
+let currentEvent=null, currentEventIdx=null;
+function openEventDetail(i){
+  const e=window._feedList[i];currentEvent=e;currentEventIdx=i;
+  document.getElementById('eventsView').classList.add('hidden');
+  document.getElementById('eventDetail').classList.remove('hidden');
+  document.getElementById('edHero').style.background=`linear-gradient(135deg,${e.grad[0]},${e.grad[1]})`;
+  document.getElementById('edArt').textContent=e.art;
+  document.getElementById('edM').textContent=e.m;document.getElementById('edD').textContent=e.d;
+  const pc=document.getElementById('edPrice');
+  pc.textContent=e.price===0?'FREE':'₹'+e.price;
+  pc.className='price-chip '+(e.price===0?'free':'paid');
+  document.getElementById('edCat').textContent=e.ecat;
+  document.getElementById('edTitle').textContent=e.title;
+  document.getElementById('edBy').textContent=e.by;
+  document.getElementById('edCollege').textContent=e.college;
+  document.getElementById('edDate').textContent=`${e.d} ${e.m} ${e.y}`;
+  document.getElementById('edVenue').textContent=e.meta;
+  document.getElementById('edEntry').textContent=e.price===0?'Free entry':'₹'+e.price+' per pass';
+  document.getElementById('edGoing').textContent=e.going.toLocaleString('en-IN')+' going';
+  updateDetailRsvp();
+  document.getElementById('edAbout').textContent=e.about||e.desc||'';
+  const exWrap=document.getElementById('edExpectWrap');
+  if(e.expect&&e.expect.length){exWrap.classList.remove('hidden');document.getElementById('edExpect').innerHTML=e.expect.map(x=>`<li>${x}</li>`).join('');}
+  else if(e.tags&&e.tags.length){exWrap.classList.remove('hidden');document.getElementById('edExpect').innerHTML=e.tags.map(x=>`<li>${x}</li>`).join('');}
+  else exWrap.classList.add('hidden');
+  // Organizer card
+  const soc=e.socId?societies.find(s=>s.id===e.socId):null;
+  const av=document.getElementById('edOrgAvatar');
+  if(soc){av.style.background=soc.color;av.textContent=soc.emoji;
+    document.getElementById('edOrgName').textContent=soc.name;
+    document.getElementById('edOrgSub').textContent=`${soc.cat} Society · ${soc.college} · ${soc.followers.toLocaleString('en-IN')} followers`;
+    document.getElementById('edOrgBtn').classList.remove('hidden');
+  }else{av.style.background='var(--navy)';av.textContent='🎪';
+    document.getElementById('edOrgName').textContent=e.by;
+    document.getElementById('edOrgSub').textContent=e.college;
+    document.getElementById('edOrgBtn').classList.add('hidden');
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function closeEventDetail(){
+  document.getElementById('eventDetail').classList.add('hidden');
+  document.getElementById('eventsView').classList.remove('hidden');
+  renderEvents();
+}
+function updateDetailRsvp(){
+  const e=currentEvent,b=document.getElementById('edRsvp');
+  b.textContent=e.rsvped?'✓ You\'re going':(e.price===0?'RSVP free — I\'m going':'Get pass · ₹'+e.price);
+  b.classList.toggle('done',!!e.rsvped);
+}
+function rsvpDetail(){
+  const e=currentEvent;
+  if(e.rsvped){toast('You\'re already on the list ✓');return;}
+  e.rsvped=true;e.going++;
+  const src=e.socId?societies.find(s=>s.id===e.socId).upcoming.find(u=>u.title===e.title):standaloneEvents.find(u=>u.title===e.title);
+  if(src){src.rsvped=true;src.going=e.going;}
+  document.getElementById('edGoing').textContent=e.going.toLocaleString('en-IN')+' going';
+  updateDetailRsvp();
+  toast(e.price===0?`🎟️ RSVP'd — reminder set for ${e.d} ${e.m}`:`🎟️ Pass reserved — pay at checkout in the app`);
+}
+function shareDetail(){
+  const e=currentEvent;
+  const msg=`🎟️ *${e.title}*\n\n📅 ${e.d} ${e.m} ${e.y}\n📍 ${e.meta}\n🎫 ${e.price===0?'FREE entry':'₹'+e.price}\n👥 ${e.going} already going\nby ${e.by} (${e.college})\n\n✅ RSVP on Dyng — every DU event, one feed\n👉 https://www.dyng.in/events`;
+  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
+  toast('Share card ready — <span class=lime>drop it in your group</span>');
+}
+function openOrganizer(){
+  if(!currentEvent.socId)return;
+  document.getElementById('eventDetail').classList.add('hidden');
+  document.getElementById('mtEvents').classList.remove('on');
+  document.getElementById('mtSocs').classList.add('on');
+  showProfile(currentEvent.socId);
+}
+
+
+// ============ VACANCY CARD (shared by hero + Recruitment tab) ============
+function vacCardHTML(v,i,detailed){
+  return `<div class="vac-card">
+    <div class="vac-info">
+      <h4>${v.title}</h4>
+      <p>${v.desc}</p>
+      <div class="vac-facts">
+        <span class="seats">${v.seats} seats</span>
+        <span>${v.rounds.length} rounds</span>
+        <span class="closing">⏳ Apply by ${v.deadline}</span>
+      </div>
+      ${detailed?`<div class="vac-rounds-mini"><b>Process:</b> ${v.rounds.map(r=>r.name.replace(/Round \d+ · /,'')).join(' → ')}</div>`:''}
+    </div>
+    <button class="btn btn-navy" style="padding:9px 18px;font-size:13px" onclick="openApply(${i})">Apply →</button>
+  </div>`;
+}
+// ============ RECRUITMENT TAB ============
+function renderRecTab(){
+  const s=currentSoc, r=recruitment[s.id], el=document.getElementById('eventList');
+  if(!s.recruiting||!r||!r.vacancies.length){
+    el.innerHTML='<div class="tm-note">No open roles right now. <b>Follow '+s.name+'</b> to get an alert the moment recruitment opens.</div>';
+    return;
+  }
+  const totalSeats=r.vacancies.reduce((a,v)=>a+v.seats,0);
+  el.innerHTML=`
+    <div class="rec-tab-head">
+      <h3>🟢 ${r.vacancies.length} open vacancies · ${totalSeats} total seats</h3>
+      <span>Apply to as many as you like — each has its own rounds & tracker.</span>
+    </div>
+    ${r.vacancies.map((v,i)=>vacCardHTML(v,i,true)).join('')}
+    <div class="tm-note">📊 Applications go straight to the society's dashboard — you'll be tracked through every round with WhatsApp alerts at each stage.</div>`;
+}
+
 // ============ VIEW TOGGLE ============
 function setView(v){
   document.getElementById('mtEvents').classList.toggle('on',v==='events');
@@ -612,6 +816,7 @@ function setView(v){
   document.getElementById('eventsView').classList.toggle('hidden',v!=='events');
   document.getElementById('socsView').classList.toggle('hidden',v!=='socs');
   document.getElementById('profile').classList.add('hidden');
+  document.getElementById('eventDetail').classList.add('hidden');
   if(v==='socs')renderDirectory();
 }
 function backFromProfile(){
@@ -626,7 +831,7 @@ function renderDirectory(){
   document.getElementById('recCount').textContent=list.filter(s=>s.recruiting).length;
   document.getElementById('socGrid').innerHTML=list.map(s=>`
     <button class="soc-card" onclick="showProfile('${s.id}')" aria-label="Open ${s.name} profile">
-      ${s.recruiting?'<span class="rec-badge">RECRUITING</span>':''}
+      ${s.recruiting&&recruitment[s.id]?`<span class="rec-badge">${recruitment[s.id].vacancies.length} OPENING${recruitment[s.id].vacancies.length>1?'S':''}</span>`:''}
       <div class="soc-logo" style="background:${s.color}">${s.emoji}</div>
       <h3>${s.name}</h3><div class="col">${s.college}</div>
       <span class="cat">${s.cat}</span>
@@ -661,9 +866,14 @@ function showProfile(id){
   document.getElementById('stFounded').textContent=s.founded;
   document.getElementById('stMembers').textContent=s.members;
   document.getElementById('pBio').textContent=s.bio;
-  const rb=document.getElementById('recBanner');
-  if(s.recruiting){rb.classList.remove('hidden');document.getElementById('recDetail').textContent=s.recDetail;}
-  else rb.classList.add('hidden');
+  const vs=document.getElementById('vacSection'), r=recruitment[s.id];
+  if(s.recruiting&&r&&r.vacancies.length){
+    vs.classList.remove('hidden');
+    document.getElementById('vacHead').textContent=r.vacancies.length+' open vacanc'+(r.vacancies.length>1?'ies':'y')+' — recruitment live';
+    const shown=r.vacancies.slice(0,2);
+    document.getElementById('vacList').innerHTML=shown.map((v,i)=>vacCardHTML(v,i)).join('')
+      +(r.vacancies.length>2?`<button class="vac-more" onclick="setTab('rec')">View all ${r.vacancies.length} openings →</button>`:'');
+  } else vs.classList.add('hidden');
   updateFollowBtn();renderHighlights();setTab('posts');
   window.scrollTo({top:0,behavior:'smooth'});
 }
@@ -683,8 +893,10 @@ function setTab(t){
   document.getElementById('tabUp').classList.toggle('on',t==='up');
   document.getElementById('tabPast').classList.toggle('on',t==='past');
   document.getElementById('tabTeam').classList.toggle('on',t==='team');
+  document.getElementById('tabRec').classList.toggle('on',t==='rec');
   if(t==='posts'){renderPosts();return;}
   if(t==='team'){teamYear=null;renderTeam();return;}
+  if(t==='rec'){renderRecTab();return;}
   const s=currentSoc,list=t==='up'?s.upcoming:s.past,el=document.getElementById('eventList');
   if(!list.length){el.innerHTML='<div style="background:var(--white);border-radius:16px;padding:30px;text-align:center;color:#8A93B0;font-size:14px">Nothing here yet.</div>';return;}
   el.innerHTML=list.map((e,i)=>`
@@ -772,46 +984,79 @@ const teams = {
 
 // ============ RECRUITMENT: roles + audition slots per society ============
 const recruitment = {
-  rangmanch:{
-    roles:['Stage Acting','Street (Nukkad)','Production & Backstage','Writing'],
-    slots:['18 Jul · 11 AM','18 Jul · 2 PM','19 Jul · 11 AM','19 Jul · 2 PM'],
-    rounds:[
-      {name:'Registration',desc:'Fill the form, pick your track & audition slot.',date:'Till 17 Jul',mode:'Online · on Dyng',status:'live'},
-      {name:'Round 1 · Open Audition',desc:'2-minute piece of your choice — monologue, improv, anything.',date:'18–19 Jul',mode:'Ramjas Seminar Hall',status:'upcoming'},
-      {name:'Round 2 · Callback Workshop',desc:'Shortlisted candidates do a 2-hour group devising session with seniors.',date:'22 Jul',mode:'On campus',status:'upcoming'},
-      {name:'Round 3 · Interview',desc:'A chat with the core about commitment, rehearsal hours & which team fits you.',date:'23–24 Jul',mode:'On campus',status:'upcoming'},
-      {name:'Results',desc:'Final list announced in the app + WhatsApp.',date:'25 Jul',mode:'On Dyng',status:'upcoming'}
-    ]},
-  aria:{
-    roles:['Vocals (Western)','Vocals (Indian)','Guitar','Keys','Tabla / Percussion'],
-    slots:['20 Jul · 12 PM','20 Jul · 3 PM','21 Jul · 12 PM','22 Jul · 12 PM'],
-    rounds:[
-      {name:'Registration',desc:'Choose your instrument/voice track and audition slot.',date:'Till 19 Jul',mode:'Online · on Dyng',status:'live'},
-      {name:'Round 1 · Audition',desc:'One prepared piece, any language. Sight-singing for acapella aspirants.',date:'20–22 Jul',mode:'Hansraj Music Room',status:'upcoming'},
-      {name:'Round 2 · Ensemble Jam',desc:'Shortlisted candidates jam with the current ensemble — we check blend, not just skill.',date:'24 Jul',mode:'On campus',status:'upcoming'},
-      {name:'Results',desc:'Final ensemble list in the app + WhatsApp.',date:'26 Jul',mode:'On Dyng',status:'upcoming'}
-    ]},
-  vaad:{
-    roles:['English Parliamentary','Hindi Parliamentary','Adjudication'],
-    slots:['26 Jul · 10 AM','26 Jul · 1 PM'],
-    rounds:[
-      {name:'Registration',desc:'Pick your language track. Zero experience needed for the novice pool.',date:'Till 25 Jul',mode:'Online · on Dyng',status:'live'},
-      {name:'Round 1 · Demo + Trials',desc:'Watch a demo Asian Parliamentary round, then speak in a trial debate.',date:'26 Jul',mode:'Hindu College · Room 14',status:'upcoming'},
-      {name:'Round 2 · Rebuttal Round',desc:'Shortlisted speakers do a rebuttal-only exercise judged by the core.',date:'28 Jul',mode:'On campus',status:'upcoming'},
-      {name:'Results',desc:'Novice & main pool lists announced.',date:'30 Jul',mode:'On Dyng',status:'upcoming'}
-    ]},
-  prayaas:{
-    roles:['Teaching Volunteer','Fundraising Team','Campaigns Team'],
-    slots:['3 Aug · 3 PM','5 Aug · 3 PM','8 Aug · 11 AM'],
-    rounds:[
-      {name:'Registration',desc:'Choose your team and orientation slot.',date:'Rolling · till 31 Aug',mode:'Online · on Dyng',status:'live'},
-      {name:'Round 1 · Orientation',desc:'Meet the program leads, understand the commitment, pick your weekly slot.',date:'Aug, multiple dates',mode:'LSR · Room 208',status:'upcoming'},
-      {name:'Round 2 · Trial Week',desc:'One supervised week with the teaching/fundraising team.',date:'Within 2 weeks of orientation',mode:'On ground',status:'upcoming'},
-      {name:'Confirmation',desc:'Membership confirmed after trial week.',date:'Rolling',mode:'On Dyng',status:'upcoming'}
-    ]}
+  rangmanch:{vacancies:[
+    {title:'Acting Cast — Stage & Nukkad',desc:'Performers for the annual production and the street play circuit.',seats:12,deadline:'17 Jul',
+     tracks:['Stage Acting','Street (Nukkad)','Both'],slots:['18 Jul · 11 AM','18 Jul · 2 PM','19 Jul · 11 AM','19 Jul · 2 PM'],
+     rounds:[
+       {name:'Registration',desc:'Pick your track & audition slot.',date:'Till 17 Jul',mode:'Online · on Dyng',status:'live'},
+       {name:'Round 1 · Open Audition',desc:'2-minute piece — monologue, improv, anything.',date:'18–19 Jul',mode:'Ramjas Seminar Hall',status:'upcoming'},
+       {name:'Round 2 · Callback Workshop',desc:'2-hour group devising session with seniors.',date:'22 Jul',mode:'On campus',status:'upcoming'},
+       {name:'Round 3 · Interview',desc:'Chat with the core — commitment & fit.',date:'23–24 Jul',mode:'On campus',status:'upcoming'},
+       {name:'Results',desc:'Final cast list in the app + WhatsApp.',date:'25 Jul',mode:'On Dyng',status:'upcoming'}]},
+    {title:'Production & Backstage Crew',desc:'Sets, lights, sound, costume & stage management for two productions a year.',seats:8,deadline:'19 Jul',
+     tracks:['Sets & Props','Lights & Sound','Costume','Stage Management'],slots:['20 Jul · 3 PM','21 Jul · 3 PM'],
+     rounds:[
+       {name:'Registration',desc:'Pick your crew track.',date:'Till 19 Jul',mode:'Online · on Dyng',status:'live'},
+       {name:'Round 1 · Task Day',desc:'Hands-on task with the current crew — build, rig or plan a scene.',date:'20–21 Jul',mode:'Ramjas Auditorium',status:'upcoming'},
+       {name:'Round 2 · Interview',desc:'Availability, rehearsal-week commitment & team fit.',date:'23 Jul',mode:'On campus',status:'upcoming'},
+       {name:'Results',desc:'Crew list announced.',date:'25 Jul',mode:'On Dyng',status:'upcoming'}]},
+    {title:"Writers' Room",desc:'Scriptwriters for nukkads and the annual stage play. Hindi, English or Hinglish.',seats:4,deadline:'21 Jul',
+     tracks:['Nukkad Writing','Stage Play Writing'],slots:['22 Jul · 4 PM'],
+     rounds:[
+       {name:'Registration',desc:'Submit one writing sample (any format, max 2 pages) with the form.',date:'Till 21 Jul',mode:'Online · on Dyng',status:'live'},
+       {name:'Round 1 · Writing Sprint',desc:'90-minute on-the-spot scene from a prompt.',date:'22 Jul',mode:'On campus',status:'upcoming'},
+       {name:'Round 2 · Table Read',desc:'Your sprint scene gets read by the cast — you take notes & revise live.',date:'24 Jul',mode:'On campus',status:'upcoming'},
+       {name:'Results',desc:'Writers announced.',date:'25 Jul',mode:'On Dyng',status:'upcoming'}]}
+  ]},
+  aria:{vacancies:[
+    {title:'Western Ensemble — Vocals & Instruments',desc:'Acapella vocalists, guitarists and keys for the western ensemble.',seats:9,deadline:'19 Jul',
+     tracks:['Vocals (Western)','Guitar','Keys'],slots:['20 Jul · 12 PM','20 Jul · 3 PM','21 Jul · 12 PM'],
+     rounds:[
+       {name:'Registration',desc:'Choose your track and audition slot.',date:'Till 19 Jul',mode:'Online · on Dyng',status:'live'},
+       {name:'Round 1 · Audition',desc:'One prepared piece + sight-singing for vocalists.',date:'20–21 Jul',mode:'Hansraj Music Room',status:'upcoming'},
+       {name:'Round 2 · Ensemble Jam',desc:'Jam with the current ensemble — we check blend, not just skill.',date:'24 Jul',mode:'On campus',status:'upcoming'},
+       {name:'Results',desc:'Ensemble list in the app + WhatsApp.',date:'26 Jul',mode:'On Dyng',status:'upcoming'}]},
+    {title:'Indian Ensemble — Vocals, Tabla & Strings',desc:'Classical & fusion performers for the Indian ensemble.',seats:7,deadline:'20 Jul',
+     tracks:['Vocals (Indian)','Tabla / Percussion','Sitar / Strings','Flute'],slots:['21 Jul · 3 PM','22 Jul · 12 PM'],
+     rounds:[
+       {name:'Registration',desc:'Choose your instrument and slot.',date:'Till 20 Jul',mode:'Online · on Dyng',status:'live'},
+       {name:'Round 1 · Audition',desc:'One raag-based or fusion piece of your choice.',date:'21–22 Jul',mode:'Hansraj Music Room',status:'upcoming'},
+       {name:'Round 2 · Fusion Jam',desc:'Improvise with the fusion arrangement leads.',date:'25 Jul',mode:'On campus',status:'upcoming'},
+       {name:'Results',desc:'Final list announced.',date:'26 Jul',mode:'On Dyng',status:'upcoming'}]}
+  ]},
+  vaad:{vacancies:[
+    {title:'Novice Debaters — English & Hindi',desc:'Zero experience required. The novice program trains you from scratch.',seats:16,deadline:'25 Jul',
+     tracks:['English Parliamentary','Hindi Parliamentary'],slots:['26 Jul · 10 AM','26 Jul · 1 PM'],
+     rounds:[
+       {name:'Registration',desc:'Pick your language track.',date:'Till 25 Jul',mode:'Online · on Dyng',status:'live'},
+       {name:'Round 1 · Demo + Trials',desc:'Watch a demo AP round, then speak in a trial debate.',date:'26 Jul',mode:'Hindu College · Room 14',status:'upcoming'},
+       {name:'Round 2 · Rebuttal Round',desc:'Rebuttal-only exercise judged by the core.',date:'28 Jul',mode:'On campus',status:'upcoming'},
+       {name:'Results',desc:'Novice pool announced.',date:'30 Jul',mode:'On Dyng',status:'upcoming'}]},
+    {title:'Adjudicator Pool',desc:'Judge debates across the DU circuit — training provided, tab experience a plus.',seats:6,deadline:'27 Jul',
+     tracks:['Adjudication'],slots:['28 Jul · 11 AM'],
+     rounds:[
+       {name:'Registration',desc:'Short form + any judging experience.',date:'Till 27 Jul',mode:'Online · on Dyng',status:'live'},
+       {name:'Round 1 · Mock Adjudication',desc:'Judge a recorded round, deliver your oral adjudication.',date:'28 Jul',mode:'On campus',status:'upcoming'},
+       {name:'Results',desc:'Adjudicator pool announced.',date:'30 Jul',mode:'On Dyng',status:'upcoming'}]}
+  ]},
+  prayaas:{vacancies:[
+    {title:'Teaching Volunteers',desc:'Teach 80+ kids in the daily after-school program. Minimum 2 slots a week.',seats:20,deadline:'Rolling · till 31 Aug',
+     tracks:['Maths & Science','Languages','Arts & Activities'],slots:['3 Aug · 3 PM','5 Aug · 3 PM','8 Aug · 11 AM'],
+     rounds:[
+       {name:'Registration',desc:'Choose your subject and orientation slot.',date:'Rolling',mode:'Online · on Dyng',status:'live'},
+       {name:'Round 1 · Orientation',desc:'Meet program leads, understand the commitment.',date:'Aug, multiple dates',mode:'LSR · Room 208',status:'upcoming'},
+       {name:'Round 2 · Trial Week',desc:'One supervised teaching week.',date:'Within 2 weeks',mode:'On ground',status:'upcoming'},
+       {name:'Confirmation',desc:'Membership confirmed after trial week.',date:'Rolling',mode:'On Dyng',status:'upcoming'}]},
+    {title:'Fundraising & Campaigns Team',desc:'Run donation drives and awareness campaigns across 6 colleges.',seats:10,deadline:'Rolling · till 31 Aug',
+     tracks:['Fundraising','Campaigns & Social Media'],slots:['4 Aug · 4 PM','9 Aug · 11 AM'],
+     rounds:[
+       {name:'Registration',desc:'Pick your team.',date:'Rolling',mode:'Online · on Dyng',status:'live'},
+       {name:'Round 1 · Ideation Task',desc:'Pitch one drive or campaign idea in a group session.',date:'Aug, multiple dates',mode:'LSR',status:'upcoming'},
+       {name:'Confirmation',desc:'Team confirmed after the task.',date:'Rolling',mode:'On Dyng',status:'upcoming'}]}
+  ]}
 };
 
-let teamYear=null, selectedSlot=null;
+let teamYear=null, selectedSlot=null, currentVac=null;
 
 function renderTeam(){
   const s=currentSoc, data=teams[s.id]||{}, years=Object.keys(data), el=document.getElementById('eventList');
@@ -833,24 +1078,26 @@ function renderTeam(){
 function setTeamYear(y){teamYear=y;renderTeam();}
 
 // ============ APPLY FLOW ============
-function openApply(){
+function openApply(vIdx){
   const s=currentSoc, r=recruitment[s.id];
-  if(!r){toast('Recruitment isn\'t open right now — follow to get alerted');return;}
+  if(!r||!r.vacancies.length){toast('Recruitment isn\'t open right now — follow to get alerted');return;}
+  currentVac=r.vacancies[vIdx||0];
   selectedSlot=null;
-  // STEP 0: rounds overview (Unstop-style)
+  const v=currentVac;
+  // STEP 0: rounds overview for THIS vacancy
   document.getElementById('riSocName').textContent=s.name;
-  document.getElementById('riSocDetail').textContent=s.recDetail;
-  document.getElementById('roundsList').innerHTML=r.rounds.map((rd,i)=>`
+  document.getElementById('riSocDetail').textContent=v.title+' · '+v.seats+' seats · Apply by '+v.deadline;
+  document.getElementById('roundsList').innerHTML=v.rounds.map((rd,i)=>`
     <div class="rnd ${rd.status}">
       <div class="rnd-top"><h4>${i+1}. ${rd.name}</h4><span class="rnd-status ${rd.status}">${rd.status==='live'?'● Live now':rd.status==='done'?'Done':'Upcoming'}</span></div>
       <p>${rd.desc}</p>
       <div class="rnd-meta"><span>📅 <b>${rd.date}</b></span><span>📍 ${rd.mode}</span></div>
     </div>`).join('');
-  // prep the form too
-  document.getElementById('apSocName').textContent=s.name;
-  document.getElementById('apSocDetail').textContent=s.recDetail;
-  document.getElementById('ap-role').innerHTML=r.roles.map(x=>`<option>${x}</option>`).join('');
-  document.getElementById('slotGrid').innerHTML=r.slots.map((x,i)=>`<button class="slot" id="slot-${i}" onclick="pickSlot(${i},'${x}')">${x}</button>`).join('');
+  // form prefill for THIS vacancy
+  document.getElementById('apSocName').textContent=s.name+' — '+v.title;
+  document.getElementById('apSocDetail').textContent=v.desc;
+  document.getElementById('ap-role').innerHTML=v.tracks.map(x=>`<option>${x}</option>`).join('');
+  document.getElementById('slotGrid').innerHTML=v.slots.map((x,i)=>`<button class="slot" id="slot-${i}" onclick="pickSlot(${i},'${x}')">${x}</button>`).join('');
   document.getElementById('applyIntro').classList.remove('hidden');
   document.getElementById('applyForm').classList.add('hidden');
   document.getElementById('applyDone').classList.add('hidden');
@@ -875,10 +1122,10 @@ function submitApply(){
   const phone=document.getElementById('ap-phone').value.trim();
   if(!name||!phone){toast('⚠️ Add your name and phone to apply');return;}
   if(!selectedSlot){toast('⚠️ Pick an audition slot');return;}
-  document.getElementById('doneSoc').textContent=currentSoc.name;
+  document.getElementById('doneSoc').textContent=currentSoc.name+' ('+currentVac.title+')';
   document.getElementById('doneSlot').textContent=selectedSlot;
   document.getElementById('doneId').textContent='Application #DY-'+Math.floor(1000+Math.random()*9000);
-  const rds=recruitment[currentSoc.id].rounds;
+  const rds=currentVac.rounds;
   document.getElementById('doneTracker').innerHTML=rds.map((rd,i)=>{
     const st=i===0?'done':(i===1?'next':'');
     const shortName=rd.name.replace(/Round \d+ · /,'').split(' ').slice(0,2).join(' ');
