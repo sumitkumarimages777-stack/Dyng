@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ============ PRIMARY SEO ============ -->
+  <title>Dyng – The Student Super App | PGs, Roomies, Events & Rides for Delhi University</title>
+  <meta name="description" content="Dyng is the super app for Delhi University students. Find verified PGs & roommates, discover college events & society recruitments, and book campus rides — all in one app. Zero brokerage housing, live now.">
+  <link rel="canonical" href="https://www.dyng.in/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- ============ OPEN GRAPH ============ -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Dyng">
+  <meta property="og:title" content="Dyng – The Student Super App for Delhi University">
+  <meta property="og:description" content="Verified PGs & roommates, college events, and campus rides — one app for your entire DU life.">
+  <meta property="og:url" content="https://www.dyng.in/">
+  <meta property="og:image" content="https://www.dyng.in/og-cover.jpg">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- ============ STRUCTURED DATA: ORGANIZATION ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Dyng",
+    "legalName": "Dyng by DU Buddy",
+    "description": "The student super app for Delhi University — housing, roommates, events and rides in one platform.",
+    "url": "https://www.dyng.in",
+    "logo": "https://www.dyng.in/logo.png",
+    "telephone": "+91-9560003500",
+    "sameAs": ["https://www.instagram.com/dyngpg/"],
+    "department": [
+      {
+        "@type": "Organization",
+        "name": "Dyng Housing – Transparent PGs & Roomies",
+        "description": "Verified PG booking and roommate matching for DU students. Zero brokerage.",
+        "url": "https://www.dyng.in/housing"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ============ STRUCTURED DATA: WEBSITE + SITE SEARCH ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Dyng",
+    "url": "https://www.dyng.in",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.dyng.in/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- ============ STRUCTURED DATA: FAQ ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Dyng?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Dyng is a super app built for Delhi University students. It brings together verified PG booking and roommate matching, college events and society recruitments, and campus ride booking — all in one platform."}
+      },
+      {
+        "@type": "Question",
+        "name": "Which Dyng features are live right now?",
+        "acceptedAnswer": {"@type": "Answer", "text": "The Housing module is live. You can browse verified PGs near DU North and South Campus with transparent rent breakdowns and zero brokerage, and use Roomies to find a compatible roommate. Events and Rides are launching soon."}
+      },
+      {
+        "@type": "Question",
+        "name": "How do I find a roommate on Dyng?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Roomies, part of the Housing module, matches you with fellow DU students based on college, budget, food preference and lifestyle, so you can split a PG or flat with someone compatible."}
+      },
+      {
+        "@type": "Question",
+        "name": "Is Dyng free for students?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes. Browsing PGs, matching with roommates and discovering events is free for students, and PG booking has zero brokerage."}
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#1B2E5B; --navy-deep:#12224A; --lime:#A6D437; --lime-deep:#7FAF1B;
+      --ink:#1A2340; --mist:#F2F5FB; --line:#DCE3F0; --white:#FFFFFF;
+      --radius:18px; --shadow:0 6px 24px rgba(18,34,74,.08);
+    }
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+    h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.15}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+    .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .15s ease, box-shadow .15s ease;cursor:pointer;border:none}
+    .btn:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
+    .btn-lime{background:var(--lime);color:var(--navy-deep)}
+    .btn-lime:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(166,212,55,.4)}
+    .btn-navy{background:var(--navy);color:var(--white)}
+    .btn-navy:hover{background:var(--navy-deep)}
+    .btn-outline{background:transparent;border:1.5px solid var(--line);color:var(--navy)}
+    .btn-outline:hover{border-color:var(--lime)}
+
+    /* ============ NAV ============ */
+    header{position:sticky;top:0;z-index:50;background:var(--navy);box-shadow:0 2px 12px rgba(18,34,74,.25)}
+    nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .logo{display:flex;align-items:center;gap:10px;color:var(--white);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px}
+    .logo-mark{width:38px;height:38px;background:var(--lime);border-radius:12px;display:grid;place-items:center;color:var(--navy-deep);font-size:19px;font-weight:800}
+    .logo small{display:block;font-family:'Inter';font-size:10px;font-weight:600;color:var(--lime);letter-spacing:.12em;text-transform:uppercase}
+    .nav-links{display:flex;gap:26px;align-items:center}
+    .nav-links a{color:rgba(255,255,255,.85);font-size:14.5px;font-weight:500}
+    .nav-links a:hover{color:var(--lime)}
+    .pill-live{font-size:10px;background:var(--lime);color:var(--navy-deep);border-radius:999px;padding:2px 7px;font-weight:700;vertical-align:middle;margin-left:5px}
+    .menu-btn{display:none;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer}
+
+    /* ============ HERO ============ */
+    .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:var(--white);padding:80px 0 110px;position:relative;overflow:hidden;text-align:center}
+    .hero::before{content:"";position:absolute;left:-140px;bottom:-140px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(166,212,55,.14),transparent 65%)}
+    .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(166,212,55,.16),transparent 65%)}
+    .hero .wrap{position:relative;z-index:1;max-width:820px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(166,212,55,.14);border:1px solid rgba(166,212,55,.4);color:var(--lime);padding:6px 16px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.04em}
+    .hero h1{font-size:clamp(36px,6vw,64px);font-weight:800;margin:22px 0 18px}
+    .hero h1 em{font-style:normal;color:var(--lime)}
+    .hero p{font-size:18px;color:rgba(255,255,255,.78);max-width:620px;margin:0 auto 34px}
+    .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    /* Signature: the module dock */
+    .dock{display:flex;justify-content:center;gap:12px;margin-top:56px;flex-wrap:wrap}
+    .dock a{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:12px 20px;font-size:14px;font-weight:600;color:var(--white);transition:all .18s ease}
+    .dock a:hover{background:rgba(166,212,55,.16);border-color:var(--lime);transform:translateY(-3px)}
+    .dock .d-icon{font-size:20px}
+    .dock .soon{font-size:10px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:1px 8px;font-weight:600}
+    .dock .live{font-size:10px;background:var(--lime);color:var(--navy-deep);border-radius:999px;padding:1px 8px;font-weight:700}
+
+    /* ============ MODULES ============ */
+    section{padding:76px 0}
+    .sec-head{max-width:660px;margin-bottom:44px}
+    .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+    .kicker{color:var(--lime-deep);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+    .sec-head h2{font-size:clamp(26px,3.6vw,40px);font-weight:800;margin:10px 0 12px;color:var(--navy)}
+    .sec-head p{color:#5A6482;font-size:16px}
+
+    .module{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:56px 0;border-bottom:1.5px solid var(--line)}
+    .module:last-of-type{border-bottom:none}
+    .module.flip .m-visual{order:2}
+    .m-tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+    .m-tag.live{color:var(--lime-deep)}
+    .m-tag.soon{color:#8A93B0}
+    .m-tag .dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+    .m-tag.live .dot{animation:pulse 1.8s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+    .module h3{font-size:clamp(24px,3vw,32px);color:var(--navy);margin-bottom:12px}
+    .module h3 span{color:var(--lime-deep)}
+    .module p{color:#5A6482;font-size:15.5px;margin-bottom:20px}
+    .m-features{list-style:none;margin-bottom:26px}
+    .m-features li{padding:7px 0 7px 30px;position:relative;font-size:14.5px;color:var(--ink)}
+    .m-features li::before{content:"✓";position:absolute;left:0;top:7px;width:20px;height:20px;background:var(--mist);color:var(--lime-deep);border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:800}
+    .m-visual{border-radius:24px;min-height:320px;display:grid;place-items:center;position:relative;overflow:hidden}
+    .m-visual.housing{background:linear-gradient(150deg,var(--navy),#2A4580)}
+    .m-visual.events{background:linear-gradient(150deg,#EEF3E0,#DDEBBC)}
+    .m-visual.rides{background:linear-gradient(150deg,var(--mist),#DCE6F5)}
+    .mini-card{background:var(--white);border-radius:16px;padding:20px 22px;box-shadow:0 20px 50px rgba(18,34,74,.28);max-width:290px;transform:rotate(-1.5deg)}
+    .mini-card h4{font-family:'Bricolage Grotesque';font-size:15.5px;color:var(--navy);margin-bottom:2px}
+    .mini-card .sub{font-size:12.5px;color:#6B7590;margin-bottom:12px}
+    .mini-row{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px dashed var(--line)}
+    .mini-row:last-child{border:none;font-weight:700}
+    .mini-row:last-child span:last-child{color:var(--lime-deep)}
+    .ghost-card{background:rgba(255,255,255,.75);backdrop-filter:blur(4px);border:1.5px dashed #9FB06A;color:var(--navy);border-radius:16px;padding:22px 26px;max-width:280px;text-align:center;font-weight:600;font-size:14.5px}
+    .ghost-card .big{font-size:34px;display:block;margin-bottom:8px}
+
+    /* ============ WAITLIST ============ */
+    .waitlist{background:var(--navy);border-radius:24px;color:var(--white);padding:52px;text-align:center}
+    .waitlist h2{font-size:clamp(24px,3vw,34px);margin-bottom:10px}
+    .waitlist h2 em{font-style:normal;color:var(--lime)}
+    .waitlist p{color:rgba(255,255,255,.7);max-width:480px;margin:0 auto 26px}
+    .wl-form{display:flex;gap:8px;max-width:460px;margin:0 auto;background:var(--white);border-radius:999px;padding:7px}
+    .wl-form input{flex:1;border:none;background:transparent;padding:10px 18px;font-size:14.5px;font-family:inherit;color:var(--ink);min-width:0}
+    .wl-form input:focus{outline:none}
+
+    /* ============ FAQ / FOOTER ============ */
+    .faq details{border:1.5px solid var(--line);border-radius:14px;margin-bottom:12px;background:var(--white)}
+    .faq summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:15.5px;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center}
+    .faq summary::after{content:"+";font-size:22px;color:var(--lime-deep)}
+    .faq details[open] summary::after{content:"–"}
+    .faq details p{padding:0 22px 18px;font-size:14.5px;color:#5A6482}
+    footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:56px 0 32px;font-size:14px}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+    footer h4{color:var(--white);font-size:14px;margin-bottom:14px;letter-spacing:.04em}
+    footer a{display:block;margin-bottom:9px}
+    footer a:hover{color:var(--lime)}
+    .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.45)}
+
+    @media (max-width:880px){
+      .module{grid-template-columns:1fr;gap:28px;padding:44px 0}
+      .module.flip .m-visual{order:0}
+      .nav-links{display:none}
+      .menu-btn{display:block}
+      .foot-grid{grid-template-columns:1fr 1fr}
+      .waitlist{padding:36px 24px}
+      section{padding:56px 0}
+      .hero{padding:60px 0 80px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{transition:none!important;animation:none!important}
+      html{scroll-behavior:auto}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="Dyng home">
+        <span class="logo-mark" aria-hidden="true">D</span>
+        <span>Dyng<small>The Student Super App</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="housing/index.html">Housing <span class="pill-live">LIVE</span></a>
+        <a href="events/index.html">Events <span class="pill-live">LIVE</span></a>
+        <a href="#rides">Rides</a>
+        <a href="#faq">FAQs</a>
+        <a href="housing/index.html" class="btn btn-lime" style="padding:10px 22px">Find a PG →</a>
+      </div>
+      <button class="menu-btn" aria-label="Open menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- ============ HERO ============ -->
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow">✦ Built by DU students, for DU students</span>
+      <h1>Your entire DU life. <em>One app.</em></h1>
+      <p>Verified PGs and roommates. College events and society recruitments. Rides from campus to your door. Dyng brings it all together.</p>
+      <div class="hero-cta">
+        <a href="housing/index.html" class="btn btn-lime">Find a PG — Live now</a>
+        <a href="#waitlist" class="btn" style="background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.35)">Join the waitlist</a>
+      </div>
+      <!-- Signature: the module dock -->
+      <div class="dock" aria-label="Dyng modules">
+        <a href="housing/index.html"><span class="d-icon">🏠</span> Housing & Roomies <span class="live">LIVE</span></a>
+        <a href="events/index.html"><span class="d-icon">🎪</span> Events & Societies <span class="live">LIVE</span></a>
+        <a href="#rides"><span class="d-icon">🛵</span> Campus Rides <span class="soon">SOON</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MODULES ============ -->
+  <section id="modules" aria-labelledby="modules-title">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker">The modules</span>
+        <h2 id="modules-title">Everything a DU student juggles, in one place</h2>
+        <p>We're launching module by module — starting with the hardest problem first: housing.</p>
+      </div>
+
+      <!-- MODULE 1: HOUSING (LIVE) -->
+      <article class="module" id="housing" aria-labelledby="housing-title">
+        <div>
+          <span class="m-tag live"><span class="dot"></span> Live now</span>
+          <h3 id="housing-title">Housing — <span>Transparent PGs & Roomies</span></h3>
+          <p>Verified PGs near North & South Campus with the full rent breakdown shown upfront — rent, food, electricity, deposit. Zero brokerage, ever. And with <strong>Roomies</strong>, find a compatible DU student to split it with.</p>
+          <ul class="m-features">
+            <li>120+ physically verified PGs in Kamla Nagar, Hudson Lane, GTB Nagar, Vijay Nagar & Satya Niketan</li>
+            <li>Complete rent breakdowns — no hidden charges, no surprises</li>
+            <li>Roomies: match by college, budget, food preference & lifestyle</li>
+          </ul>
+          <a href="housing/index.html" class="btn btn-navy">Browse verified PGs →</a>
+        </div>
+        <div class="m-visual housing" aria-hidden="true">
+          <div class="mini-card">
+            <h4>Sunrise Girls PG</h4>
+            <div class="sub">Kamla Nagar · Double sharing</div>
+            <div class="mini-row"><span>Rent + food</span><span>₹11,000</span></div>
+            <div class="mini-row"><span>Brokerage</span><span>₹0</span></div>
+            <div class="mini-row"><span>You pay monthly</span><span>₹11,000</span></div>
+          </div>
+        </div>
+      </article>
+
+      <!-- MODULE 2: EVENTS (SOON) -->
+      <article class="module flip" id="events" aria-labelledby="events-title">
+        <div>
+          <span class="m-tag live"><span class="dot"></span> Live now</span>
+          <h3 id="events-title">Events & <span>Societies</span></h3>
+          <p>Every fest, audition, competition and society recruitment across DU — in one feed. Never find out about Crossroads passes or a dramsoc audition after it's over.</p>
+          <ul class="m-features">
+            <li>One calendar for fests, seminars & inter-college competitions</li>
+            <li>Society recruitment alerts for your college</li>
+            <li>RSVP and passes inside the app</li>
+          </ul>
+          <a href="events/index.html" class="btn btn-navy">Explore societies →</a>
+        </div>
+        <div class="m-visual events" aria-hidden="true">
+          <div class="ghost-card" style="border-style:solid;border-color:var(--lime)"><span class="big">🎪</span>6 societies live.<br>Auditions open now.</div>
+        </div>
+      </article>
+
+      <!-- MODULE 3: RIDES (SOON) -->
+      <article class="module" id="rides" aria-labelledby="rides-title">
+        <div>
+          <span class="m-tag soon"><span class="dot"></span> Coming soon</span>
+          <h3 id="rides-title">Campus <span>Rides</span></h3>
+          <p>Quick, affordable bike rides between campus, metro stations and your PG — priced for a student wallet, with student-verified riders.</p>
+          <ul class="m-features">
+            <li>PG ↔ campus ↔ metro in minutes</li>
+            <li>Student-friendly flat fares</li>
+            <li>Verified riders from the DU community</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-outline">Get notified →</a>
+        </div>
+        <div class="m-visual rides" aria-hidden="true">
+          <div class="ghost-card"><span class="big">🛵</span>Campus to door.<br>Launching soon.</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ WAITLIST ============ -->
+  <section id="waitlist" aria-label="Join the waitlist">
+    <div class="wrap">
+      <div class="waitlist">
+        <h2>Be first when the next module <em>drops</em></h2>
+        <p>Join the waitlist and we'll ping you the moment Events and Rides go live. Housing is already open — no waiting there.</p>
+        <form class="wl-form" onsubmit="return false" aria-label="Waitlist signup">
+          <input type="email" placeholder="your@email.com" aria-label="Email address">
+          <button type="submit" class="btn btn-lime" style="padding:10px 24px">Join waitlist</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="faq" aria-labelledby="faq-title" style="background:var(--mist)">
+    <div class="wrap" style="max-width:800px">
+      <div class="sec-head">
+        <span class="kicker">FAQs</span>
+        <h2 id="faq-title">Questions about Dyng</h2>
+      </div>
+      <details>
+        <summary>What is Dyng?</summary>
+        <p>Dyng is a super app built for Delhi University students. It brings together verified PG booking and roommate matching, college events and society recruitments, and campus ride booking — all in one platform.</p>
+      </details>
+      <details>
+        <summary>Which features are live right now?</summary>
+        <p>The Housing module is live. You can browse verified PGs near DU North and South Campus with transparent rent breakdowns and zero brokerage, and use Roomies to find a compatible roommate. Events and Rides are launching soon.</p>
+      </details>
+      <details>
+        <summary>How do I find a roommate on Dyng?</summary>
+        <p>Roomies, part of the Housing module, matches you with fellow DU students based on college, budget, food preference and lifestyle — so you can split a PG or flat with someone compatible.</p>
+      </details>
+      <details>
+        <summary>Is Dyng free for students?</summary>
+        <p>Yes. Browsing PGs, matching with roommates and discovering events is free for students, and PG booking has zero brokerage.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px"><span class="logo-mark" aria-hidden="true">D</span><span>Dyng<small>The Student Super App</small></span></div>
+        <p>One app for your entire DU life — housing, roommates, events and rides. A DU Buddy product, built by DU students.</p>
+        <p style="margin-top:12px">📞 PG Queries: <a href="tel:+919560003500" style="display:inline;color:var(--lime)">+91 95600 03500</a></p>
+      </div>
+      <div>
+        <h4>Housing</h4>
+        <a href="housing/index.html">All verified PGs</a>
+        <a href="housing/index.html#listings">PG in Kamla Nagar</a>
+        <a href="housing/index.html#listings">PG in Hudson Lane</a>
+        <a href="housing/index.html#listings">Girls PG near DU</a>
+        <a href="housing/roomies.html">Find a roommate</a>
+      </div>
+      <div>
+        <h4>Coming soon</h4>
+        <a href="events/index.html">Events & Societies</a>
+        <a href="housing/flats.html">Flat Feed</a>
+        <a href="#rides">Campus Rides</a>
+        <a href="#waitlist">Join the waitlist</a>
+      </div>
+      <div>
+        <h4>Dyng</h4>
+        <a href="#">About us</a>
+        <a href="#">List your PG</a>
+        <a href="https://www.instagram.com/dyngpg/" rel="noopener">Instagram</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Dyng by DU Buddy</span>
+      <span>Made for DU students, by DU students</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
