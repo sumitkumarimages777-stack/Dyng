@@ -3,6 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#1B2E5B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="../icon-192.png">
+
 
   <!-- ============ PRIMARY SEO TAGS ============ -->
   <title>PG in Delhi for Students – Verified PGs Near DU North & South Campus | Dyng</title>
@@ -258,6 +264,14 @@
       *,*::before,*::after{transition:none!important;animation:none!important}
       html{scroll-behavior:auto}
     }
+  
+    /* ============ SUPER APP BOTTOM NAV (mobile) ============ */
+    .appbar{position:fixed;bottom:0;left:0;right:0;background:var(--navy-deep);display:none;justify-content:space-around;padding:7px 4px calc(7px + env(safe-area-inset-bottom));z-index:95;box-shadow:0 -6px 24px rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.08)}
+    .appbar a{display:flex;flex-direction:column;align-items:center;gap:2px;color:rgba(255,255,255,.55);font-size:9.5px;font-weight:700;min-width:54px;letter-spacing:.02em}
+    .appbar a .ai{font-size:21px;line-height:1}
+    .appbar a.on{color:var(--lime)}
+    .appbar a.on .ai{transform:translateY(-1px)}
+    @media (max-width:820px){.appbar{display:flex}body{padding-bottom:74px}}
   </style>
 </head>
 <body>
@@ -276,6 +290,7 @@
         <a href="#why">Why Dyng</a>
         <a href="flats.html">Flat Feed</a>
         <a href="roomies.html">Roomies</a>
+        <a href="../rides/index.html">Rides</a>
         <a href="#faq">FAQs</a>
         <a href="tel:+919560003500" class="btn btn-lime" style="padding:10px 22px">📞 PG Queries</a>
       </div>
@@ -506,5 +521,13 @@
   </div>
 </footer>
 
+
+<!-- ============ SUPER APP NAV ============ -->
+<nav class="appbar" aria-label="App navigation"><a href="../index.html" class=""><span class="ai">🏠</span>Home</a><a href="../housing/index.html" class="on"><span class="ai">🏘️</span>Housing</a><a href="../housing/flats.html" class=""><span class="ai">📋</span>Flat Feed</a><a href="../events/index.html" class=""><span class="ai">🎪</span>Events</a><a href="../rides/index.html" class=""><span class="ai">🛵</span>Rides</a></nav>
+<script>
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
 </body>
 </html>

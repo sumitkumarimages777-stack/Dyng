@@ -3,1250 +3,451 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1B2E5B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="icon-192.png">
 
-  <title>DU Events – Fests, Auditions, Concerts & Hackathons Near You | Dyng</title>
-  <meta name="description" content="Discover every DU event in one feed — fests, society auditions, concerts, hackathons and workshops. Filter by category, RSVP in one tap, get passes. Plus society profiles with full event history. On Dyng.">
-  <link rel="canonical" href="https://www.dyng.in/events">
-  <meta name="robots" content="index, follow">
+
+  <!-- ============ PRIMARY SEO ============ -->
+  <title>Dyng – The Student Super App | PGs, Roomies, Events & Rides for Delhi University</title>
+  <meta name="description" content="Dyng is the super app for Delhi University students. Find verified PGs & roommates, discover college events & society recruitments, and book campus rides — all in one app. Zero brokerage housing, live now.">
+  <link rel="canonical" href="https://www.dyng.in/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+
+  <!-- ============ OPEN GRAPH ============ -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dyng">
-  <meta property="og:title" content="DU Events – Every fest, audition & concert in one feed | Dyng">
-  <meta property="og:description" content="District-style event discovery for DU. RSVP to fests, auditions, hackathons & concerts — never hear about it after it's over.">
-  <meta property="og:url" content="https://www.dyng.in/events">
+  <meta property="og:title" content="Dyng – The Student Super App for Delhi University">
+  <meta property="og:description" content="Verified PGs & roommates, college events, and campus rides — one app for your entire DU life.">
+  <meta property="og:url" content="https://www.dyng.in/">
+  <meta property="og:image" content="https://www.dyng.in/og-cover.jpg">
+  <meta property="og:locale" content="en_IN">
+  <meta name="twitter:card" content="summary_large_image">
 
+  <!-- ============ STRUCTURED DATA: ORGANIZATION ============ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "DU Events & Societies on Dyng",
-    "description": "Event discovery feed for Delhi University — fests, auditions, concerts, hackathons — plus society profiles with past event archives.",
-    "isPartOf": {"@type": "WebSite", "name": "Dyng", "url": "https://www.dyng.in"},
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Dyng", "item": "https://www.dyng.in/"},
-        {"@type": "ListItem", "position": 2, "name": "Events & Societies", "item": "https://www.dyng.in/events"}
-      ]
+    "@type": "Organization",
+    "name": "Dyng",
+    "legalName": "Dyng by DU Buddy",
+    "description": "The student super app for Delhi University — housing, roommates, events and rides in one platform.",
+    "url": "https://www.dyng.in",
+    "logo": "https://www.dyng.in/logo.png",
+    "telephone": "+91-9560003500",
+    "sameAs": ["https://www.instagram.com/dyngpg/"],
+    "department": [
+      {
+        "@type": "Organization",
+        "name": "Dyng Housing – Transparent PGs & Roomies",
+        "description": "Verified PG booking and roommate matching for DU students. Zero brokerage.",
+        "url": "https://www.dyng.in/housing"
+      }
+    ]
+  }
+  </script>
+
+  <!-- ============ STRUCTURED DATA: WEBSITE + SITE SEARCH ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Dyng",
+    "url": "https://www.dyng.in",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.dyng.in/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     }
+  }
+  </script>
+
+  <!-- ============ STRUCTURED DATA: FAQ ============ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Dyng?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Dyng is a super app built for Delhi University students. It brings together verified PG booking and roommate matching, college events and society recruitments, and campus ride booking — all in one platform."}
+      },
+      {
+        "@type": "Question",
+        "name": "Which Dyng features are live?",
+        "acceptedAnswer": {"@type": "Answer", "text": "All three modules are live: Housing (verified PGs with transparent rent breakdowns, zero brokerage, plus Roomies roommate matching and the student Flat Feed), Events & Societies (event discovery, society profiles and multi-round recruitment), and Campus Rides (bike rides with verified student riders from ₹20)."}
+      },
+      {
+        "@type": "Question",
+        "name": "How do I find a roommate on Dyng?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Roomies, part of the Housing module, matches you with fellow DU students based on college, budget, food preference and lifestyle, so you can split a PG or flat with someone compatible."}
+      },
+      {
+        "@type": "Question",
+        "name": "Is Dyng free for students?",
+        "acceptedAnswer": {"@type": "Answer", "text": "Yes. Browsing PGs, matching with roommates and discovering events is free for students, and PG booking has zero brokerage."}
+      }
+    ]
   }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
       --navy:#1B2E5B; --navy-deep:#12224A; --lime:#A6D437; --lime-deep:#7FAF1B;
       --ink:#1A2340; --mist:#F2F5FB; --line:#DCE3F0; --white:#FFFFFF;
-      --radius:16px; --shadow:0 6px 24px rgba(18,34,74,.08);
+      --radius:18px; --shadow:0 6px 24px rgba(18,34,74,.08);
     }
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--mist);line-height:1.55}
-    h1,h2,h3,h4{font-family:'Bricolage Grotesque',sans-serif;line-height:1.15}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.6}
+    h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.15}
     a{color:inherit;text-decoration:none}
-    button{font-family:inherit;cursor:pointer}
-    .wrap{max-width:960px;margin:0 auto;padding:0 16px}
-    .btn{display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;border:none;transition:transform .15s, box-shadow .15s}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+    .btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .15s ease, box-shadow .15s ease;cursor:pointer;border:none}
     .btn:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
     .btn-lime{background:var(--lime);color:var(--navy-deep)}
     .btn-lime:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(166,212,55,.4)}
     .btn-navy{background:var(--navy);color:var(--white)}
-    .btn-outline{background:var(--white);border:1.5px solid var(--line);color:var(--navy)}
+    .btn-navy:hover{background:var(--navy-deep)}
+    .btn-outline{background:transparent;border:1.5px solid var(--line);color:var(--navy)}
     .btn-outline:hover{border-color:var(--lime)}
 
+    /* ============ NAV ============ */
     header{position:sticky;top:0;z-index:50;background:var(--navy);box-shadow:0 2px 12px rgba(18,34,74,.25)}
-    nav{display:flex;align-items:center;justify-content:space-between;height:62px}
-    .logo{display:flex;align-items:center;gap:9px;color:var(--white);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px}
-    .logo-mark{width:34px;height:34px;background:var(--lime);border-radius:11px;display:grid;place-items:center;color:var(--navy-deep);font-size:17px;font-weight:800}
-    .logo small{display:block;font-family:'Inter';font-size:9px;font-weight:600;color:var(--lime);letter-spacing:.12em;text-transform:uppercase}
-    .nav-right{display:flex;gap:14px;align-items:center;font-size:13.5px}
-    .nav-right a{color:rgba(255,255,255,.85)}
-    .nav-right a:hover{color:var(--lime)}
+    nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+    .logo{display:flex;align-items:center;gap:10px;color:var(--white);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px}
+    .logo-mark{width:38px;height:38px;background:var(--lime);border-radius:12px;display:grid;place-items:center;color:var(--navy-deep);font-size:19px;font-weight:800}
+    .logo small{display:block;font-family:'Inter';font-size:10px;font-weight:600;color:var(--lime);letter-spacing:.12em;text-transform:uppercase}
+    .nav-links{display:flex;gap:26px;align-items:center}
+    .nav-links a{color:rgba(255,255,255,.85);font-size:14.5px;font-weight:500}
+    .nav-links a:hover{color:var(--lime)}
+    .pill-live{font-size:10px;background:var(--lime);color:var(--navy-deep);border-radius:999px;padding:2px 7px;font-weight:700;vertical-align:middle;margin-left:5px}
+    .menu-btn{display:none;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer}
 
-    .page-head{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--white);padding:26px 0 78px;text-align:center}
-    .page-head h1{font-size:clamp(24px,4.5vw,34px);font-weight:800}
-    .page-head h1 em{font-style:normal;color:var(--lime)}
-    .page-head p{color:rgba(255,255,255,.72);font-size:14.5px;max-width:520px;margin:8px auto 0}
+    /* ============ HERO ============ */
+    .hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:var(--white);padding:80px 0 110px;position:relative;overflow:hidden;text-align:center}
+    .hero::before{content:"";position:absolute;left:-140px;bottom:-140px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(166,212,55,.14),transparent 65%)}
+    .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(166,212,55,.16),transparent 65%)}
+    .hero .wrap{position:relative;z-index:1;max-width:820px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(166,212,55,.14);border:1px solid rgba(166,212,55,.4);color:var(--lime);padding:6px 16px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.04em}
+    .hero h1{font-size:clamp(36px,6vw,64px);font-weight:800;margin:22px 0 18px}
+    .hero h1 em{font-style:normal;color:var(--lime)}
+    .hero p{font-size:18px;color:rgba(255,255,255,.78);max-width:620px;margin:0 auto 34px}
+    .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+    /* Signature: the module dock */
+    .dock{display:flex;justify-content:center;gap:12px;margin-top:56px;flex-wrap:wrap}
+    .dock a{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:16px;padding:12px 20px;font-size:14px;font-weight:600;color:var(--white);transition:all .18s ease}
+    .dock a:hover{background:rgba(166,212,55,.16);border-color:var(--lime);transform:translateY(-3px)}
+    .dock .d-icon{font-size:20px}
+    .dock .soon{font-size:10px;color:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:1px 8px;font-weight:600}
+    .dock .live{font-size:10px;background:var(--lime);color:var(--navy-deep);border-radius:999px;padding:1px 8px;font-weight:700}
 
-    /* ============ MAIN TOGGLE (Events / Societies) ============ */
-    .main-toggle{display:flex;gap:6px;background:var(--white);border-radius:999px;box-shadow:var(--shadow);padding:6px;margin:-50px auto 0;position:relative;z-index:2;max-width:400px}
-    .main-toggle button{flex:1;border:none;background:transparent;border-radius:999px;padding:12px;font-size:14.5px;font-weight:800;color:#8A93B0;transition:all .15s}
-    .main-toggle button.on{background:var(--navy);color:var(--white)}
+    /* ============ MODULES ============ */
+    section{padding:76px 0}
+    .sec-head{max-width:660px;margin-bottom:44px}
+    .sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+    .kicker{color:var(--lime-deep);font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+    .sec-head h2{font-size:clamp(26px,3.6vw,40px);font-weight:800;margin:10px 0 12px;color:var(--navy)}
+    .sec-head p{color:#5A6482;font-size:16px}
 
-    /* ============ FILTERS ============ */
-    .filter-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:12px 14px;margin-top:14px}
-    .chip-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:2px}
-    .chip-row::-webkit-scrollbar{display:none}
-    .chip-row + .chip-row{margin-top:8px}
-    .chip-label{flex:none;font-size:11px;font-weight:700;color:#8A93B0;text-transform:uppercase;letter-spacing:.06em;align-self:center;min-width:44px}
-    .chip{flex:none;border:1.5px solid var(--line);background:var(--white);border-radius:999px;padding:7px 15px;font-size:13px;font-weight:600;transition:all .15s}
-    .chip:hover{border-color:var(--lime)}
-    .chip.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
-    .feed-meta{display:flex;justify-content:space-between;align-items:center;margin:16px 0 12px;font-size:13px;color:#5A6482}
-    .feed-meta strong{color:var(--navy)}
+    .module{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:56px 0;border-bottom:1.5px solid var(--line)}
+    .module:last-of-type{border-bottom:none}
+    .module.flip .m-visual{order:2}
+    .m-tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px}
+    .m-tag.live{color:var(--lime-deep)}
+    .m-tag.soon{color:#8A93B0}
+    .m-tag .dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+    .m-tag.live .dot{animation:pulse 1.8s infinite}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+    .module h3{font-size:clamp(24px,3vw,32px);color:var(--navy);margin-bottom:12px}
+    .module h3 span{color:var(--lime-deep)}
+    .module p{color:#5A6482;font-size:15.5px;margin-bottom:20px}
+    .m-features{list-style:none;margin-bottom:26px}
+    .m-features li{padding:7px 0 7px 30px;position:relative;font-size:14.5px;color:var(--ink)}
+    .m-features li::before{content:"✓";position:absolute;left:0;top:7px;width:20px;height:20px;background:var(--mist);color:var(--lime-deep);border-radius:50%;display:grid;place-items:center;font-size:11px;font-weight:800}
+    .m-visual{border-radius:24px;min-height:320px;display:grid;place-items:center;position:relative;overflow:hidden}
+    .m-visual.housing{background:linear-gradient(150deg,var(--navy),#2A4580)}
+    .m-visual.events{background:linear-gradient(150deg,#EEF3E0,#DDEBBC)}
+    .m-visual.rides{background:linear-gradient(150deg,var(--mist),#DCE6F5)}
+    .mini-card{background:var(--white);border-radius:16px;padding:20px 22px;box-shadow:0 20px 50px rgba(18,34,74,.28);max-width:290px;transform:rotate(-1.5deg)}
+    .mini-card h4{font-family:'Bricolage Grotesque';font-size:15.5px;color:var(--navy);margin-bottom:2px}
+    .mini-card .sub{font-size:12.5px;color:#6B7590;margin-bottom:12px}
+    .mini-row{display:flex;justify-content:space-between;font-size:13px;padding:6px 0;border-bottom:1px dashed var(--line)}
+    .mini-row:last-child{border:none;font-weight:700}
+    .mini-row:last-child span:last-child{color:var(--lime-deep)}
+    .ghost-card{background:rgba(255,255,255,.75);backdrop-filter:blur(4px);border:1.5px dashed #9FB06A;color:var(--navy);border-radius:16px;padding:22px 26px;max-width:280px;text-align:center;font-weight:600;font-size:14.5px}
+    .ghost-card .big{font-size:34px;display:block;margin-bottom:8px}
 
-    /* ============ EVENT DISCOVERY CARDS (District-style) ============ */
-    .ev-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:34px}
-    .evc{background:var(--white);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .15s;animation:pop .25s ease}
-    @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-    .evc:hover{transform:translateY(-4px)}
-    .evc-banner{height:140px;position:relative;display:grid;place-items:center;font-size:52px}
-    .evc-banner::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%, rgba(255,255,255,.25), transparent 55%)}
-    .date-chip{position:absolute;top:12px;left:12px;background:var(--white);border-radius:12px;padding:6px 11px;text-align:center;box-shadow:0 4px 14px rgba(0,0,0,.2);z-index:1}
-    .date-chip .d{font-family:'Bricolage Grotesque';font-weight:800;font-size:17px;color:var(--navy);line-height:1}
-    .date-chip .m{font-size:9.5px;font-weight:800;color:var(--lime-deep);text-transform:uppercase;letter-spacing:.06em}
-    .price-chip{position:absolute;top:12px;right:12px;border-radius:999px;padding:5px 12px;font-size:11px;font-weight:800;z-index:1;box-shadow:0 4px 14px rgba(0,0,0,.15)}
-    .price-chip.free{background:var(--lime);color:var(--navy-deep)}
-    .price-chip.paid{background:var(--white);color:var(--navy)}
-    .evc-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1}
-    .evc-cat{font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--lime-deep);margin-bottom:5px}
-    .evc-body h3{font-size:16.5px;color:var(--navy);margin-bottom:5px}
-    .evc-body .by{font-size:12.5px;color:#8A93B0;margin-bottom:4px}
-    .evc-body .by b{color:var(--navy);font-weight:700}
-    .evc-body .venue{font-size:12.5px;color:#5A6482;margin-bottom:12px}
-    .evc-foot{margin-top:auto;display:flex;align-items:center;gap:8px;border-top:1.5px dashed var(--line);padding-top:12px}
-    .rsvp{background:var(--lime);color:var(--navy-deep);border:none;border-radius:999px;padding:9px 16px;font-size:12.5px;font-weight:800;flex:1}
-    .rsvp.done{background:var(--mist);color:var(--lime-deep)}
-    .share-b{border:1.5px solid var(--line);background:var(--white);border-radius:999px;width:38px;height:38px;display:grid;place-items:center;font-size:15px;flex:none}
-    .share-b:hover{border-color:#25D366}
-    .going-pill{font-size:11.5px;color:#8A93B0;font-weight:600;white-space:nowrap}
-    .empty{background:var(--white);border:1.5px dashed var(--line);border-radius:var(--radius);padding:38px 20px;text-align:center;color:#5A6482;font-size:14px;grid-column:1/-1}
+    /* ============ WAITLIST ============ */
+    .waitlist{background:var(--navy);border-radius:24px;color:var(--white);padding:52px;text-align:center}
+    .waitlist h2{font-size:clamp(24px,3vw,34px);margin-bottom:10px}
+    .waitlist h2 em{font-style:normal;color:var(--lime)}
+    .waitlist p{color:rgba(255,255,255,.7);max-width:480px;margin:0 auto 26px}
+    .wl-form{display:flex;gap:8px;max-width:460px;margin:0 auto;background:var(--white);border-radius:999px;padding:7px}
+    .wl-form input{flex:1;border:none;background:transparent;padding:10px 18px;font-size:14.5px;font-family:inherit;color:var(--ink);min-width:0}
+    .wl-form input:focus{outline:none}
 
-    /* ============ SOCIETIES ============ */
-    .hidden{display:none}
-    .soc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin-bottom:30px}
-    .soc-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;text-align:left;border:none;transition:transform .15s;position:relative;display:block;width:100%}
-    .soc-card:hover{transform:translateY(-3px)}
-    .soc-logo{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;font-size:24px;color:var(--white);margin-bottom:12px}
-    .soc-card h3{font-size:16.5px;color:var(--navy)}
-    .soc-card .col{font-size:12.5px;color:#8A93B0;margin:2px 0 10px}
-    .soc-card .cat{display:inline-block;font-size:11px;font-weight:700;background:var(--mist);color:var(--navy);border-radius:999px;padding:3px 10px;text-transform:uppercase;letter-spacing:.04em}
-    .soc-stats{display:flex;gap:14px;margin-top:12px;font-size:12px;color:#5A6482;border-top:1.5px dashed var(--line);padding-top:11px}
-    .soc-stats strong{color:var(--navy);font-family:'Bricolage Grotesque';font-size:14px}
-    .rec-badge{position:absolute;top:14px;right:14px;font-size:10px;font-weight:800;background:var(--lime);color:var(--navy-deep);border-radius:999px;padding:3px 9px;animation:pulse 1.8s infinite}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.55}}
+    /* ============ FAQ / FOOTER ============ */
+    .faq details{border:1.5px solid var(--line);border-radius:14px;margin-bottom:12px;background:var(--white)}
+    .faq summary{cursor:pointer;padding:18px 22px;font-weight:600;font-size:15.5px;color:var(--navy);list-style:none;display:flex;justify-content:space-between;align-items:center}
+    .faq summary::after{content:"+";font-size:22px;color:var(--lime-deep)}
+    .faq details[open] summary::after{content:"–"}
+    .faq details p{padding:0 22px 18px;font-size:14.5px;color:#5A6482}
+    footer{background:var(--navy-deep);color:rgba(255,255,255,.7);padding:56px 0 32px;font-size:14px}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:36px;margin-bottom:40px}
+    footer h4{color:var(--white);font-size:14px;margin-bottom:14px;letter-spacing:.04em}
+    footer a{display:block;margin-bottom:9px}
+    footer a:hover{color:var(--lime)}
+    .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:rgba(255,255,255,.45)}
 
-    .back{display:inline-flex;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--navy);margin:16px 0 12px;background:var(--white);border:1.5px solid var(--line);border-radius:999px;padding:8px 16px}
-    .back:hover{border-color:var(--lime)}
-    .profile-hero{background:var(--white);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:16px}
-    .banner{height:110px}
-    .p-head{padding:0 22px 22px;display:flex;gap:16px;align-items:flex-end;flex-wrap:wrap;margin-top:-32px}
-    .p-logo{width:76px;height:76px;border-radius:20px;display:grid;place-items:center;font-size:32px;color:var(--white);border:4px solid var(--white);box-shadow:var(--shadow)}
-    .p-id{flex:1;min-width:200px;padding-top:36px}
-    .p-id h2{font-size:22px;color:var(--navy)}
-    .p-id .sub{font-size:13px;color:#8A93B0}
-    .p-actions{display:flex;gap:8px;padding-top:36px}
-    .p-stats{display:flex;border-top:1.5px solid var(--line);padding:14px 22px;flex-wrap:wrap}
-    .p-stats div{flex:1;min-width:90px;text-align:center}
-    .p-stats strong{display:block;font-family:'Bricolage Grotesque';font-size:20px;color:var(--navy)}
-    .p-stats span{font-size:11.5px;color:#8A93B0;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
-    .p-bio{padding:0 22px 18px;font-size:14px;color:#5A6482}
-    .rec-banner{margin:0 22px 20px;background:linear-gradient(120deg,#EAF5D3,#DDEBBC);border:1.5px solid var(--lime);border-radius:13px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-    .rec-banner .t{font-size:13.5px;font-weight:700;color:#4C6E0B}
-    .rec-banner .d{font-size:12px;color:#6E8532}
-    .tabs{display:flex;gap:8px;margin-bottom:14px}
-    .tab{flex:1;background:var(--white);border:1.5px solid var(--line);border-radius:999px;padding:10px;font-size:13.5px;font-weight:700;color:#5A6482}
-    .tab.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
-    .ev{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:12px;display:flex;gap:16px}
-    .ev-date{flex:none;width:58px;text-align:center;background:var(--mist);border-radius:13px;padding:10px 4px;align-self:flex-start}
-    .ev-date .d{font-family:'Bricolage Grotesque';font-weight:800;font-size:21px;color:var(--navy);line-height:1}
-    .ev-date .m{font-size:10.5px;font-weight:800;color:var(--lime-deep);text-transform:uppercase;letter-spacing:.06em}
-    .ev-date .y{font-size:10px;color:#8A93B0}
-    .ev-body{flex:1;min-width:0}
-    .ev-body h4{font-size:15.5px;color:var(--navy);margin-bottom:3px}
-    .ev-body .meta{font-size:12.5px;color:#8A93B0;margin-bottom:8px}
-    .ev-body p{font-size:13px;color:#5A6482;margin-bottom:10px}
-    .ev-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-    .ev-tags span{font-size:11.5px;background:var(--mist);color:var(--navy);border-radius:999px;padding:3px 10px;font-weight:600}
-    .ev-tags .hl{background:var(--navy);color:var(--lime)}
-    .ev-foot{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .going{font-size:12px;color:#8A93B0}
-    .past-strip{display:flex;gap:6px;margin-top:4px}
-    .past-strip i{flex:1;height:52px;border-radius:9px;display:grid;place-items:center;font-size:18px;font-style:normal}
-
-
-    /* ============ TEAM (position holders) ============ */
-    .year-chips{display:flex;gap:8px;margin-bottom:14px;overflow-x:auto}
-    .year-chips::-webkit-scrollbar{display:none}
-    .team-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-bottom:30px}
-    .tm-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 18px;text-align:center;position:relative}
-    .tm-photo{width:76px;height:76px;border-radius:50%;margin:0 auto 12px;display:grid;place-items:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:26px;color:var(--white);border:3px solid var(--white);box-shadow:0 6px 18px rgba(18,34,74,.18)}
-    .tm-card h4{font-size:15.5px;color:var(--navy);margin-bottom:2px}
-    .tm-role{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:4px 12px;margin:6px 0 8px;background:var(--mist);color:var(--navy)}
-    .tm-role.lead{background:var(--lime);color:var(--navy-deep)}
-    .tm-sub{font-size:12px;color:#8A93B0}
-    .tm-note{background:var(--white);border:1.5px dashed var(--line);border-radius:var(--radius);padding:16px;text-align:center;font-size:12.5px;color:#8A93B0;margin-bottom:30px}
-
-
-    /* ============ INSTAGRAM-STYLE PROFILE ============ */
-    .highlights{display:flex;gap:16px;padding:4px 22px 20px;overflow-x:auto}
-    .highlights::-webkit-scrollbar{display:none}
-    .hl-item{flex:none;text-align:center;border:none;background:none}
-    .hl-ring{width:64px;height:64px;border-radius:50%;padding:3px;background:linear-gradient(135deg,var(--lime),var(--navy));display:grid;place-items:center;margin:0 auto 6px}
-    .hl-circle{width:100%;height:100%;border-radius:50%;background:var(--white);display:grid;place-items:center;font-size:24px;border:2.5px solid var(--white)}
-    .hl-item span{font-size:11px;font-weight:600;color:var(--navy);display:block;max-width:68px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-    .insta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:30px}
-    .ig-tile{aspect-ratio:1;border:none;border-radius:6px;position:relative;display:grid;place-items:center;font-size:42px;cursor:pointer;overflow:hidden;transition:transform .12s}
-    .ig-tile:hover{transform:scale(.97)}
-    .ig-tile::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 25%, rgba(255,255,255,.28), transparent 55%)}
-    .ig-likes{position:absolute;bottom:8px;left:8px;background:rgba(0,0,0,.45);color:#fff;font-size:11px;font-weight:700;border-radius:999px;padding:3px 9px;z-index:1}
-    .ig-pin{position:absolute;top:8px;right:8px;background:var(--lime);color:var(--navy-deep);font-size:9.5px;font-weight:800;border-radius:999px;padding:2px 8px;z-index:1}
-    /* Post modal */
-    .post-modal .sheet{padding:0;overflow:hidden;max-width:460px}
-    .pm-media{aspect-ratio:1;display:grid;place-items:center;font-size:110px;position:relative}
-    .pm-media::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 25%, rgba(255,255,255,.28), transparent 55%)}
-    .pm-body{padding:16px 20px 20px}
-    .pm-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-    .pm-avatar{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:16px;color:var(--white)}
-    .pm-head b{font-size:14px;color:var(--navy)}
-    .pm-head .dt{font-size:11.5px;color:#8A93B0;display:block}
-    .pm-caption{font-size:13.5px;color:var(--ink);margin-bottom:12px}
-    .pm-caption .tag{color:var(--lime-deep);font-weight:600}
-    .pm-actions{display:flex;align-items:center;gap:14px;border-top:1.5px dashed var(--line);padding-top:12px}
-    .like-btn{border:none;background:none;font-size:14px;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:6px}
-    .like-btn .hrt{font-size:19px;transition:transform .15s}
-    .like-btn.liked .hrt{transform:scale(1.2)}
-    .pm-actions .cmt{font-size:12.5px;color:#8A93B0}
-    .pm-close{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.4);color:#fff;border:none;font-size:16px;z-index:2}
-
-
-    /* ============ EVENT DETAIL PAGE ============ */
-    .ed-hero{border-radius:22px;height:230px;position:relative;display:grid;place-items:center;font-size:88px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:-34px}
-    .ed-hero::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 70% 20%, rgba(255,255,255,.28), transparent 55%)}
-    .ed-hero .date-chip{top:16px;left:16px;padding:8px 14px}
-    .ed-hero .date-chip .d{font-size:21px}
-    .ed-hero .price-chip{top:16px;right:16px;font-size:12.5px;padding:7px 15px}
-    .ed-card{background:var(--white);border-radius:22px;box-shadow:var(--shadow);padding:26px 24px;position:relative;margin:0 12px 16px}
-    .ed-card .evc-cat{font-size:11px}
-    .ed-card h2{font-size:clamp(21px,3vw,27px);color:var(--navy);margin-bottom:6px}
-    .ed-by{font-size:13.5px;color:#8A93B0;margin-bottom:16px}
-    .ed-by button{border:none;background:none;color:var(--lime-deep);font-weight:700;font-size:13.5px;padding:0}
-    .ed-by button:hover{text-decoration:underline}
-    .ed-meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:18px}
-    .ed-meta div{background:var(--mist);border-radius:13px;padding:12px 14px}
-    .ed-meta .lbl{font-size:10.5px;font-weight:800;color:#8A93B0;text-transform:uppercase;letter-spacing:.05em;margin-bottom:3px}
-    .ed-meta .val{font-size:13.5px;font-weight:700;color:var(--navy)}
-    .ed-cta{display:flex;gap:10px;margin-bottom:22px;align-items:center}
-    .ed-cta .rsvp{flex:1;padding:14px;font-size:14.5px}
-    .ed-sec{margin-bottom:20px}
-    .ed-sec h3{font-size:15px;color:var(--navy);margin-bottom:8px}
-    .ed-sec p{font-size:14px;color:#5A6482}
-    .ed-sec ul{list-style:none}
-    .ed-sec li{padding:6px 0 6px 28px;position:relative;font-size:13.5px;color:var(--ink)}
-    .ed-sec li::before{content:"✓";position:absolute;left:0;top:6px;width:19px;height:19px;background:var(--mist);color:var(--lime-deep);border-radius:50%;display:grid;place-items:center;font-size:10px;font-weight:800}
-    .ed-org{display:flex;align-items:center;gap:14px;border:1.5px solid var(--line);border-radius:16px;padding:14px 16px}
-    .ed-org .pm-avatar{width:46px;height:46px;font-size:20px}
-    .ed-org .o-info{flex:1;min-width:0}
-    .ed-org b{font-size:14.5px;color:var(--navy);display:block}
-    .ed-org span{font-size:12px;color:#8A93B0}
-
-    /* ============ MULTIPLE VACANCIES ============ */
-    .vac-section{margin:0 22px 20px}
-    .vac-head{font-size:13.5px;font-weight:800;color:#4C6E0B;margin-bottom:10px;display:flex;align-items:center;gap:7px}
-    .vac-head .dot{width:9px;height:9px;border-radius:50%;background:var(--lime);animation:pulse 1.6s infinite}
-    .vac-card{background:linear-gradient(120deg,#F6FBE8,#EDF6D8);border:1.5px solid var(--lime);border-radius:14px;padding:14px 16px;margin-bottom:10px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-    .vac-info{flex:1;min-width:200px}
-    .vac-info h4{font-size:14.5px;color:var(--navy);margin-bottom:3px}
-    .vac-info p{font-size:12px;color:#5A6482;margin:0 0 7px}
-    .vac-facts{display:flex;gap:6px;flex-wrap:wrap}
-    .vac-facts span{font-size:11px;font-weight:700;background:var(--white);color:var(--navy);border-radius:999px;padding:3px 10px}
-    .vac-facts .seats{background:var(--navy);color:var(--lime)}
-    .vac-facts .closing{background:#FFE9C7;color:#8A5B00}
-
-    .vac-more{width:100%;border:1.5px dashed var(--lime);background:var(--white);border-radius:13px;padding:11px;font-size:13px;font-weight:800;color:var(--lime-deep);transition:all .15s}
-    .vac-more:hover{background:#F6FBE8}
-    .rec-tab-head{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px 18px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
-    .rec-tab-head h3{font-size:15.5px;color:var(--navy)}
-    .rec-tab-head span{font-size:12.5px;color:#5A6482}
-    .vac-rounds-mini{font-size:11.5px;color:#5A6482;margin-top:8px;line-height:1.7}
-    .vac-rounds-mini b{color:var(--navy)}
-    /* ============ RECRUITMENT ROUNDS (Unstop-style) ============ */
-    .rounds{position:relative;margin:6px 0 18px;padding-left:30px}
-    .rounds::before{content:"";position:absolute;left:11px;top:10px;bottom:10px;width:2px;background:var(--line)}
-    .rnd{position:relative;background:var(--mist);border:1.5px solid var(--line);border-radius:13px;padding:13px 15px;margin-bottom:10px}
-    .rnd::before{content:"";position:absolute;left:-25px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--white);border:3px solid #B9C3DA;z-index:1}
-    .rnd.done::before{background:var(--lime);border-color:var(--lime)}
-    .rnd.live::before{background:var(--lime);border-color:var(--lime);animation:pulse 1.6s infinite}
-    .rnd.live{border-color:var(--lime);background:#F6FBE8}
-    .rnd-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:3px}
-    .rnd-top h4{font-size:14px;color:var(--navy)}
-    .rnd-status{font-size:9.5px;font-weight:800;letter-spacing:.05em;border-radius:999px;padding:3px 9px;text-transform:uppercase;white-space:nowrap}
-    .rnd-status.done{background:var(--navy);color:var(--lime)}
-    .rnd-status.live{background:var(--lime);color:var(--navy-deep)}
-    .rnd-status.upcoming{background:#E4E9F4;color:#5A6482}
-    .rnd p{font-size:12px;color:#5A6482;margin:0}
-    .rnd .rnd-meta{font-size:11.5px;color:#8A93B0;margin-top:5px;display:flex;gap:12px;flex-wrap:wrap}
-    .rnd .rnd-meta b{color:var(--navy)}
-    /* Progress tracker in success screen */
-    .tracker{display:flex;align-items:center;justify-content:center;gap:0;margin:16px 0 6px;flex-wrap:wrap}
-    .trk{display:flex;flex-direction:column;align-items:center;min-width:74px}
-    .trk .dot{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:800;background:#E4E9F4;color:#8A93B0;margin-bottom:5px}
-    .trk.done .dot{background:var(--lime);color:var(--navy-deep)}
-    .trk.next .dot{background:var(--navy);color:var(--lime)}
-    .trk span{font-size:10px;font-weight:700;color:#8A93B0;text-align:center;max-width:80px}
-    .trk.done span,.trk.next span{color:var(--navy)}
-    .trk-line{width:26px;height:2.5px;background:#E4E9F4;margin-bottom:18px}
-    .trk-line.done{background:var(--lime)}
-    /* ============ APPLICATION MODAL ============ */
-    .overlay{position:fixed;inset:0;background:rgba(18,34,74,.55);display:none;align-items:flex-end;justify-content:center;z-index:100;padding:16px}
-    .overlay.open{display:flex}
-    .sheet{background:var(--white);border-radius:20px;max-width:520px;width:100%;max-height:88vh;overflow-y:auto;padding:24px;animation:up .25s ease}
-    @keyframes up{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
-    .sheet h2{font-size:19px;color:var(--navy);margin-bottom:2px}
-    .sheet .note{font-size:12.5px;color:#8A93B0;margin-bottom:18px}
-    .field{margin-bottom:14px}
-    .field label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
-    .field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;font-size:14px;font-family:inherit;color:var(--ink);background:var(--white)}
-    .field textarea{resize:vertical;min-height:70px}
-    .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--lime)}
-    .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-    .slot-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-    .slot{border:1.5px solid var(--line);background:var(--white);border-radius:11px;padding:10px 8px;font-size:12.5px;font-weight:600;text-align:center}
-    .slot.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
-    .verify-note{display:flex;gap:10px;background:var(--mist);border-radius:11px;padding:12px;font-size:12.5px;color:#5A6482;margin:16px 0}
-    .sheet-actions{display:flex;gap:10px}
-    .sheet-actions .btn{flex:1;justify-content:center}
-    .btn-ghost{background:var(--mist);color:var(--navy)}
-    .apply-success{text-align:center;padding:18px 6px}
-    .apply-success .big{font-size:44px;margin-bottom:10px}
-    .apply-success h3{font-size:19px;color:var(--navy);margin-bottom:8px}
-    .apply-success p{font-size:13.5px;color:#5A6482;margin-bottom:6px}
-    .app-id{display:inline-block;background:var(--mist);border-radius:999px;padding:7px 16px;font-weight:800;font-size:13px;color:var(--navy);margin:10px 0 16px;letter-spacing:.04em}
-    .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:var(--white);border-radius:999px;padding:12px 22px;font-size:13.5px;font-weight:600;box-shadow:0 12px 32px rgba(0,0,0,.3);z-index:200;transition:transform .3s ease;max-width:92vw;text-align:center}
-    .toast.show{transform:translateX(-50%) translateY(0)}
-    .toast .lime{color:var(--lime)}
-    footer{text-align:center;padding:30px 16px 40px;font-size:13px;color:#8A93B0}
-    footer a{color:var(--lime-deep);font-weight:600}
-    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-    @media (max-width:560px){.p-actions{padding-top:8px}.ev{padding:14px}.ev-date{width:50px}}
+    @media (max-width:880px){
+      .module{grid-template-columns:1fr;gap:28px;padding:44px 0}
+      .module.flip .m-visual{order:0}
+      .nav-links{display:none}
+      .menu-btn{display:block}
+      .foot-grid{grid-template-columns:1fr 1fr}
+      .waitlist{padding:36px 24px}
+      section{padding:56px 0}
+      .hero{padding:60px 0 80px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      *,*::before,*::after{transition:none!important;animation:none!important}
+      html{scroll-behavior:auto}
+    }
+  
+    /* ============ SUPER APP BOTTOM NAV (mobile) ============ */
+    .appbar{position:fixed;bottom:0;left:0;right:0;background:var(--navy-deep);display:none;justify-content:space-around;padding:7px 4px calc(7px + env(safe-area-inset-bottom));z-index:95;box-shadow:0 -6px 24px rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.08)}
+    .appbar a{display:flex;flex-direction:column;align-items:center;gap:2px;color:rgba(255,255,255,.55);font-size:9.5px;font-weight:700;min-width:54px;letter-spacing:.02em}
+    .appbar a .ai{font-size:21px;line-height:1}
+    .appbar a.on{color:var(--lime)}
+    .appbar a.on .ai{transform:translateY(-1px)}
+    @media (max-width:820px){.appbar{display:flex}body{padding-bottom:74px}}
+      .hidden{display:none}
   </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <nav>
-      <a href="../index.html" class="logo"><span class="logo-mark">D</span><span>Dyng<small>Events & Societies</small></span></a>
-      <div class="nav-right">
-        <a href="../housing/index.html">Housing</a>
-        <a href="../housing/flats.html">Flat Feed</a>
-        <a href="../housing/roomies.html">Roomies</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="Dyng home">
+        <span class="logo-mark" aria-hidden="true">D</span>
+        <span>Dyng<small>The Student Super App</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="housing/index.html">Housing <span class="pill-live">LIVE</span></a>
+        <a href="events/index.html">Events <span class="pill-live">LIVE</span></a>
+        <a href="rides/index.html">Rides <span class="pill-live">LIVE</span></a>
+        <a href="#faq">FAQs</a>
+        <a href="housing/index.html" class="btn btn-lime" style="padding:10px 22px">Find a PG →</a>
       </div>
+      <button class="menu-btn" aria-label="Open menu">☰</button>
     </nav>
   </div>
 </header>
 
-<div class="page-head">
-  <div class="wrap">
-    <h1>What's happening at DU <em>this month.</em></h1>
-    <p>Fests, auditions, concerts, hackathons — discover everything, RSVP in one tap. Plus every society's profile & event history.</p>
-  </div>
-</div>
-
-<main class="wrap">
-
-  <!-- MAIN TOGGLE -->
-  <div class="main-toggle" role="tablist" aria-label="Switch between events and societies">
-    <button class="on" id="mtEvents" onclick="setView('events')" role="tab">🎟️ Events</button>
-    <button id="mtSocs" onclick="setView('socs')" role="tab">🏛️ Societies</button>
-  </div>
-
-  <!-- ============ EVENTS DISCOVERY VIEW ============ -->
-  <div id="eventsView">
-    <div class="filter-card" role="group" aria-label="Filter events">
-      <div class="chip-row" id="evCatChips">
-        <span class="chip-label">Type</span>
-        <button class="chip on" data-v="all">All events</button>
-        <button class="chip" data-v="Fest">🎪 Fests</button>
-        <button class="chip" data-v="Audition">🎭 Auditions</button>
-        <button class="chip" data-v="Concert">🎶 Concerts</button>
-        <button class="chip" data-v="Hackathon">💻 Hackathons</button>
-        <button class="chip" data-v="Workshop">🛠️ Workshops</button>
-        <button class="chip" data-v="Comedy">😂 Comedy</button>
+<main>
+  <!-- ============ HERO ============ -->
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow">✦ Built by DU students, for DU students</span>
+      <h1>Your entire DU life. <em>One app.</em></h1>
+      <p>Verified PGs and roommates. College events and society recruitments. Rides from campus to your door. Dyng brings it all together.</p>
+      <div class="hero-cta">
+        <a href="housing/index.html" class="btn btn-lime">Find a PG — Live now</a>
+        <a href="#waitlist" class="btn" style="background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.35)">Join the waitlist</a>
+        <button id="installBtn" class="btn btn-lime hidden" onclick="installApp()" style="background:var(--white);color:var(--navy)">📲 Install the app</button>
       </div>
-      <div class="chip-row" id="evPriceChips">
-        <span class="chip-label">Entry</span>
-        <button class="chip on" data-v="all">Any</button>
-        <button class="chip" data-v="free">Free entry</button>
-        <button class="chip" data-v="paid">Ticketed</button>
+      <!-- Signature: the module dock -->
+      <div class="dock" aria-label="Dyng modules">
+        <a href="housing/index.html"><span class="d-icon">🏠</span> Housing & Roomies <span class="live">LIVE</span></a>
+        <a href="events/index.html"><span class="d-icon">🎪</span> Events & Societies <span class="live">LIVE</span></a>
+        <a href="rides/index.html"><span class="d-icon">🛵</span> Campus Rides <span class="live">LIVE</span></a>
       </div>
     </div>
-    <div class="feed-meta">
-      <span><strong id="evCount">0</strong> upcoming events across DU</span>
-      <button class="btn btn-outline" style="padding:9px 16px;font-size:12.5px" onclick="toast('🎪 Society admins can post events after claiming their profile')">+ Post an event</button>
-    </div>
-    <div class="ev-grid" id="evGrid"></div>
   </div>
 
+  <!-- ============ MODULES ============ -->
+  <section id="modules" aria-labelledby="modules-title">
+    <div class="wrap">
+      <div class="sec-head center">
+        <span class="kicker">The modules</span>
+        <h2 id="modules-title">Everything a DU student juggles, in one place</h2>
+        <p>We're launching module by module — starting with the hardest problem first: housing.</p>
+      </div>
 
-  <!-- ============ EVENT DETAIL VIEW ============ -->
-  <div id="eventDetail" class="hidden">
-    <button class="back" onclick="closeEventDetail()">← All events</button>
-    <div class="ed-hero" id="edHero">
-      <div class="date-chip"><div class="m" id="edM"></div><div class="d" id="edD"></div></div>
-      <span class="price-chip" id="edPrice"></span>
-      <span style="position:relative;z-index:0" id="edArt"></span>
-    </div>
-    <div class="ed-card">
-      <div class="evc-cat" id="edCat"></div>
-      <h2 id="edTitle"></h2>
-      <div class="ed-by">by <button id="edBy" onclick="openOrganizer()"></button> · <span id="edCollege"></span></div>
-      <div class="ed-meta">
-        <div><div class="lbl">📅 Date</div><div class="val" id="edDate"></div></div>
-        <div><div class="lbl">📍 Venue & time</div><div class="val" id="edVenue"></div></div>
-        <div><div class="lbl">🎫 Entry</div><div class="val" id="edEntry"></div></div>
-        <div><div class="lbl">👥 Going</div><div class="val" id="edGoing"></div></div>
-      </div>
-      <div class="ed-cta">
-        <button class="rsvp" id="edRsvp" onclick="rsvpDetail()"></button>
-        <button class="share-b" onclick="shareDetail()" aria-label="Share on WhatsApp" style="width:48px;height:48px;font-size:18px">↗</button>
-      </div>
-      <div class="ed-sec"><h3>About this event</h3><p id="edAbout"></p></div>
-      <div class="ed-sec" id="edExpectWrap"><h3>What to expect</h3><ul id="edExpect"></ul></div>
-      <div class="ed-sec"><h3>Organizer</h3>
-        <div class="ed-org">
-          <div class="pm-avatar" id="edOrgAvatar"></div>
-          <div class="o-info"><b id="edOrgName"></b><span id="edOrgSub"></span></div>
-          <button class="btn btn-outline" id="edOrgBtn" style="padding:9px 16px;font-size:12.5px" onclick="openOrganizer()">View profile</button>
+      <!-- MODULE 1: HOUSING (LIVE) -->
+      <article class="module" id="housing" aria-labelledby="housing-title">
+        <div>
+          <span class="m-tag live"><span class="dot"></span> Live now</span>
+          <h3 id="housing-title">Housing — <span>Transparent PGs & Roomies</span></h3>
+          <p>Verified PGs near North & South Campus with the full rent breakdown shown upfront — rent, food, electricity, deposit. Zero brokerage, ever. And with <strong>Roomies</strong>, find a compatible DU student to split it with.</p>
+          <ul class="m-features">
+            <li>120+ physically verified PGs in Kamla Nagar, Hudson Lane, GTB Nagar, Vijay Nagar & Satya Niketan</li>
+            <li>Complete rent breakdowns — no hidden charges, no surprises</li>
+            <li>Roomies: match by college, budget, food preference & lifestyle</li>
+          </ul>
+          <a href="housing/index.html" class="btn btn-navy">Browse verified PGs →</a>
         </div>
-      </div>
-    </div>
-  </div>
+        <div class="m-visual housing" aria-hidden="true">
+          <div class="mini-card">
+            <h4>Sunrise Girls PG</h4>
+            <div class="sub">Kamla Nagar · Double sharing</div>
+            <div class="mini-row"><span>Rent + food</span><span>₹11,000</span></div>
+            <div class="mini-row"><span>Brokerage</span><span>₹0</span></div>
+            <div class="mini-row"><span>You pay monthly</span><span>₹11,000</span></div>
+          </div>
+        </div>
+      </article>
 
-  <!-- ============ SOCIETIES VIEW ============ -->
-  <div id="socsView" class="hidden">
-    <div class="filter-card" role="group" aria-label="Filter societies">
-      <div class="chip-row" id="catChips">
-        <span class="chip-label">Type</span>
-        <button class="chip on" data-v="all">All societies</button>
-        <button class="chip" data-v="Dramatics">🎭 Dramatics</button>
-        <button class="chip" data-v="Music">🎶 Music</button>
-        <button class="chip" data-v="Dance">💃 Dance</button>
-        <button class="chip" data-v="Debating">🎤 Debating</button>
-        <button class="chip" data-v="Tech">💻 Tech</button>
-        <button class="chip" data-v="Social">🌱 Social Impact</button>
-      </div>
-    </div>
-    <div class="feed-meta">
-      <span><strong id="socCount">0</strong> societies · <strong id="recCount">0</strong> recruiting now</span>
-    </div>
-    <div class="soc-grid" id="socGrid"></div>
-  </div>
+      <!-- MODULE 2: EVENTS (SOON) -->
+      <article class="module flip" id="events" aria-labelledby="events-title">
+        <div>
+          <span class="m-tag live"><span class="dot"></span> Live now</span>
+          <h3 id="events-title">Events & <span>Societies</span></h3>
+          <p>Every fest, audition, competition and society recruitment across DU — in one feed. Never find out about Crossroads passes or a dramsoc audition after it's over.</p>
+          <ul class="m-features">
+            <li>One calendar for fests, seminars & inter-college competitions</li>
+            <li>Society recruitment alerts for your college</li>
+            <li>RSVP and passes inside the app</li>
+          </ul>
+          <a href="events/index.html" class="btn btn-navy">Explore societies →</a>
+        </div>
+        <div class="m-visual events" aria-hidden="true">
+          <div class="ghost-card" style="border-style:solid;border-color:var(--lime)"><span class="big">🎪</span>6 societies live.<br>Auditions open now.</div>
+        </div>
+      </article>
 
-  <!-- ============ SOCIETY PROFILE VIEW ============ -->
-  <div id="profile" class="hidden">
-    <button class="back" onclick="backFromProfile()">← All societies</button>
-    <div class="profile-hero">
-      <div class="banner" id="pBanner"></div>
-      <div class="p-head">
-        <div class="p-logo" id="pLogo"></div>
-        <div class="p-id"><h2 id="pName"></h2><div class="sub" id="pSub"></div></div>
-        <div class="p-actions"><button class="btn btn-lime" id="followBtn" onclick="toggleFollow()">+ Follow</button></div>
-      </div>
-      <div class="p-stats">
-        <div><strong id="stFollowers"></strong><span>Followers</span></div>
-        <div><strong id="stEvents"></strong><span>Events hosted</span></div>
-        <div><strong id="stFounded"></strong><span>Founded</span></div>
-        <div><strong id="stMembers"></strong><span>Members</span></div>
-      </div>
-      <p class="p-bio" id="pBio"></p>
-      <div class="vac-section hidden" id="vacSection">
-        <div class="vac-head"><span class="dot"></span><span id="vacHead"></span></div>
-        <div id="vacList"></div>
-      </div>
-      <div class="highlights" id="hlRow" aria-label="Highlights"></div>
+      <!-- MODULE 3: RIDES (SOON) -->
+      <article class="module" id="rides" aria-labelledby="rides-title">
+        <div>
+          <span class="m-tag live"><span class="dot"></span> Live now</span>
+          <h3 id="rides-title">Campus <span>Rides</span></h3>
+          <p>Quick, affordable bike rides between campus, metro stations and your PG — priced for a student wallet, with student-verified riders.</p>
+          <ul class="m-features">
+            <li>PG ↔ campus ↔ metro in minutes</li>
+            <li>Student-friendly flat fares</li>
+            <li>Verified riders from the DU community</li>
+          </ul>
+          <a href="rides/index.html" class="btn btn-navy">Book a ride →</a>
+        </div>
+        <div class="m-visual rides" aria-hidden="true">
+          <div class="ghost-card" style="border-style:solid;border-color:var(--lime)"><span class="big">🛵</span>Campus to door.<br>₹15 base · 2-min pickups.</div>
+        </div>
+      </article>
     </div>
-    <div class="tabs" role="tablist">
-      <button class="tab on" id="tabPosts" onclick="setTab('posts')" role="tab">Posts</button>
-      <button class="tab" id="tabUp" onclick="setTab('up')" role="tab">Upcoming</button>
-      <button class="tab" id="tabPast" onclick="setTab('past')" role="tab">Past events</button>
-      <button class="tab" id="tabTeam" onclick="setTab('team')" role="tab">Team</button>
-      <button class="tab" id="tabRec" onclick="setTab('rec')" role="tab">Recruitment</button>
+  </section>
+
+  <!-- ============ WAITLIST ============ -->
+  <section id="waitlist" aria-label="Join the waitlist">
+    <div class="wrap">
+      <div class="waitlist">
+        <h2>Be first when the <em>app drops</em></h2>
+        <p>All three modules are live on the web — join the waitlist to be first on the Dyng app when it drops.</p>
+        <form class="wl-form" onsubmit="return false" aria-label="Waitlist signup">
+          <input type="email" placeholder="your@email.com" aria-label="Email address">
+          <button type="submit" class="btn btn-lime" style="padding:10px 24px">Join waitlist</button>
+        </form>
+      </div>
     </div>
-    <div id="eventList"></div>
-  </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section id="faq" class="faq" aria-labelledby="faq-title" style="background:var(--mist)">
+    <div class="wrap" style="max-width:800px">
+      <div class="sec-head">
+        <span class="kicker">FAQs</span>
+        <h2 id="faq-title">Questions about Dyng</h2>
+      </div>
+      <details>
+        <summary>What is Dyng?</summary>
+        <p>Dyng is a super app built for Delhi University students. It brings together verified PG booking and roommate matching, college events and society recruitments, and campus ride booking — all in one platform.</p>
+      </details>
+      <details>
+        <summary>Which features are live right now?</summary>
+        <p>All three modules are live: Housing (verified PGs with transparent rent breakdowns, zero brokerage, plus Roomies roommate matching and the student Flat Feed), Events & Societies (event discovery, society profiles and multi-round recruitment), and Campus Rides (bike rides with verified student riders from ₹20).</p>
+      </details>
+      <details>
+        <summary>How do I find a roommate on Dyng?</summary>
+        <p>Roomies, part of the Housing module, matches you with fellow DU students based on college, budget, food preference and lifestyle — so you can split a PG or flat with someone compatible.</p>
+      </details>
+      <details>
+        <summary>Is Dyng free for students?</summary>
+        <p>Yes. Browsing PGs, matching with roommates and discovering events is free for students, and PG booking has zero brokerage.</p>
+      </details>
+    </div>
+  </section>
 </main>
 
-
-
-<!-- ============ INSTAGRAM-STYLE POST MODAL ============ -->
-<div class="overlay post-modal" id="postOverlay" role="dialog" aria-modal="true">
-  <div class="sheet" style="position:relative">
-    <button class="pm-close" onclick="closePost()" aria-label="Close post">✕</button>
-    <div class="pm-media" id="pmMedia"></div>
-    <div class="pm-body">
-      <div class="pm-head">
-        <div class="pm-avatar" id="pmAvatar"></div>
-        <div><b id="pmSoc"></b><span class="dt" id="pmDate"></span></div>
-      </div>
-      <p class="pm-caption" id="pmCaption"></p>
-      <div class="pm-actions">
-        <button class="like-btn" id="pmLike" onclick="likePost()"><span class="hrt">🤍</span><span id="pmLikeCount"></span></button>
-        <span class="cmt" id="pmComments"></span>
-        <button class="share-b" style="margin-left:auto" onclick="sharePost()" aria-label="Share on WhatsApp">↗</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ============ RECRUITMENT APPLICATION MODAL ============ -->
-<div class="overlay" id="applyOverlay" role="dialog" aria-modal="true" aria-labelledby="apply-title">
-  <div class="sheet">
-    <!-- STEP 0: Process overview (Unstop-style rounds & timeline) -->
-    <div id="applyIntro">
-      <h2>Recruitment process — <span id="riSocName"></span></h2>
-      <p class="note" id="riSocDetail"></p>
-      <div class="rounds" id="roundsList"></div>
-      <div class="verify-note">🎓 <span>Register once — Dyng tracks you through <strong>every round</strong>. Slot confirmations, shortlists and results all arrive in the app & on WhatsApp. No more checking 4 different notice boards.</span></div>
-      <div class="sheet-actions">
-        <button class="btn btn-ghost" onclick="closeApply()">Close</button>
-        <button class="btn btn-lime" onclick="startApplication()">Register →</button>
-      </div>
-    </div>
-    <!-- STEP 1: Application form -->
-    <div id="applyForm" class="hidden">
-      <h2 id="apply-title">Apply to <span id="apSocName"></span></h2>
-      <p class="note" id="apSocDetail"></p>
-      <div class="field">
-        <label for="ap-role">Applying for</label>
-        <select id="ap-role"></select>
-      </div>
-      <div class="field-row">
-        <div class="field"><label for="ap-name">Full name</label><input id="ap-name" placeholder="Your name"></div>
-        <div class="field"><label for="ap-phone">Phone / WhatsApp</label><input id="ap-phone" type="tel" placeholder="98xxxxxxxx"></div>
-      </div>
-      <div class="field-row">
-        <div class="field"><label for="ap-college">College</label><input id="ap-college" placeholder="e.g. Ramjas College"></div>
-        <div class="field"><label for="ap-year">Year</label><select id="ap-year"><option>1st year</option><option>2nd year</option><option>3rd year</option><option>PG</option></select></div>
-      </div>
-      <div class="field">
-        <label for="ap-why">Why do you want to join? <span style="font-weight:400;color:#8A93B0;text-transform:none">(+ experience, if any)</span></label>
-        <textarea id="ap-why" placeholder="A few lines — honest beats impressive."></textarea>
-      </div>
-      <div class="field">
-        <label>Pick your audition slot</label>
-        <div class="slot-grid" id="slotGrid"></div>
-      </div>
-      <div class="verify-note">🎓 <span>Your application carries your <strong>verified student badge</strong>, and the society sees all applications in one dashboard — no lost DMs, no Google Form chaos.</span></div>
-      <div class="sheet-actions">
-        <button class="btn btn-ghost" onclick="backToIntro()">← Rounds</button>
-        <button class="btn btn-lime" onclick="submitApply()">Submit application →</button>
-      </div>
-    </div>
-    <div id="applyDone" class="apply-success hidden">
-      <div class="big">🎉</div>
-      <h3>Application submitted!</h3>
-      <p><strong id="doneSoc"></strong> has received your application.</p>
-      <p>Your audition slot: <strong id="doneSlot"></strong></p>
-      <span class="app-id" id="doneId"></span>
-      <div class="tracker" id="doneTracker"></div>
-      <p style="font-size:12.5px">You'll get a WhatsApp reminder before each round, and shortlist results right here in the app.</p>
-      <div class="sheet-actions" style="margin-top:14px">
-        <button class="btn btn-navy" onclick="closeApply()" style="flex:1">Done</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="toast" id="toast"></div>
-
 <footer>
-  Events & Societies is a Dyng module · Run a society? <a href="#" onclick="toast('🎪 Society onboarding opens soon — claim your profile');return false">Claim your society profile</a><br>© 2026 Dyng by DU Buddy
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="logo" style="margin-bottom:14px"><span class="logo-mark" aria-hidden="true">D</span><span>Dyng<small>The Student Super App</small></span></div>
+        <p>One app for your entire DU life — housing, roommates, events and rides. A DU Buddy product, built by DU students.</p>
+        <p style="margin-top:12px">📞 PG Queries: <a href="tel:+919560003500" style="display:inline;color:var(--lime)">+91 95600 03500</a></p>
+      </div>
+      <div>
+        <h4>Housing</h4>
+        <a href="housing/index.html">All verified PGs</a>
+        <a href="housing/index.html#listings">PG in Kamla Nagar</a>
+        <a href="housing/index.html#listings">PG in Hudson Lane</a>
+        <a href="housing/index.html#listings">Girls PG near DU</a>
+        <a href="housing/roomies.html">Find a roommate</a>
+      </div>
+      <div>
+        <h4>Modules</h4>
+        <a href="events/index.html">Events & Societies</a>
+        <a href="housing/flats.html">Flat Feed</a>
+        <a href="rides/index.html">Campus Rides</a>
+        <a href="#waitlist">Join the waitlist</a>
+      </div>
+      <div>
+        <h4>Dyng</h4>
+        <a href="#">About us</a>
+        <a href="#">List your PG</a>
+        <a href="https://www.instagram.com/dyngpg/" rel="noopener">Instagram</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Dyng by DU Buddy</span>
+      <span>Made for DU students, by DU students</span>
+    </div>
+  </div>
 </footer>
 
+
+<!-- ============ SUPER APP NAV ============ -->
+<nav class="appbar" aria-label="App navigation"><a href="index.html" class="on"><span class="ai">🏠</span>Home</a><a href="housing/index.html" class=""><span class="ai">🏘️</span>Housing</a><a href="housing/flats.html" class=""><span class="ai">📋</span>Flat Feed</a><a href="events/index.html" class=""><span class="ai">🎪</span>Events</a><a href="rides/index.html" class=""><span class="ai">🛵</span>Rides</a></nav>
 <script>
-// ============ SOCIETY DATA (fictional demo; swap for API) ============
-const societies = [
-  {id:'rangmanch',name:'Rangmanch',college:'Ramjas College',cat:'Dramatics',color:'#7C3AED',emoji:'🎭',followers:2140,members:48,founded:1998,recruiting:true,
-   recDetail:'Stage & street theatre · Auditions till 24 Jul · Freshers welcome',
-   bio:'The dramatics society known for hard-hitting street plays on campus issues and an annual stage production that fills the auditorium twice over.',
-   upcoming:[
-     {d:18,m:'Jul',y:2026,title:'Fresher Auditions — Round 1',meta:'Ramjas Seminar Hall · 11 AM',desc:'Bring a 2-minute piece — monologue, improv, anything.',tags:['Audition','Open to all'],going:126,ecat:'Audition',price:0,art:'🎭'},
-     {d:9,m:'Aug',y:2026,title:'Nukkad: "Kiraya" — street play premiere',meta:'Arts Faculty Lawns · 1 PM',desc:'New street play on the student housing crisis. Live dhol.',tags:['Street play','Free'],going:342,ecat:'Fest',price:0,art:'🥁'}
-   ],
-   past:[
-     {d:22,m:'Mar',y:2026,title:'Annual Production: "Andhera Quarter"',meta:'Sri Ram Centre · Sold out',desc:'Two-act stage play, 2 shows, 600+ audience.',tags:['Stage play','600+ attended'],photos:['🎭','🎪','👏']},
-     {d:8,m:'Feb',y:2026,title:'Crossroads Nukkad Sweep',meta:'SRCC',desc:'First place in street play — 14th circuit win of the season.',tags:['1st place'],photos:['🏆','🥁','🔥']},
-     {d:12,m:'Nov',y:2025,title:'Theatre Workshop with NSD alum',meta:'Ramjas Auditorium',desc:'Voice, movement and devising workshop for 60 members.',tags:['Workshop'],photos:['🎬','🗣️','✨']}
-   ]},
-  {id:'aria',name:'Aria',college:'Hansraj College',cat:'Music',color:'#DB2777',emoji:'🎶',followers:1730,members:35,founded:2004,recruiting:true,
-   recDetail:'Vocalists, guitarists, tabla & keys · Auditions 20–22 Jul',
-   bio:'Hansraj\'s music society — two ensembles (Indian classical fusion and western acapella) with a competition streak across the DU circuit.',
-   upcoming:[
-     {d:20,m:'Jul',y:2026,title:'Auditions: Vocals & Instruments',meta:'Hansraj Music Room · 12 PM',desc:'One piece of your choice. Sight-singing round for acapella.',tags:['Audition'],going:98,ecat:'Audition',price:0,art:'🎤'},
-     {d:30,m:'Aug',y:2026,title:'Monsoon Unplugged',meta:'Hansraj Lawns · 5 PM',desc:'Open-air evening set — fusion ensemble debuts new arrangements.',tags:['Concert','Free'],going:210,ecat:'Concert',price:0,art:'🎸'}
-   ],
-   past:[
-     {d:15,m:'Feb',y:2026,title:'1st place — Tempest (Venky)',meta:'Sri Venkateswara College',desc:'Acapella ensemble took first with a 9-voice arrangement.',tags:['1st place'],photos:['🏆','🎤','🎼']},
-     {d:19,m:'Oct',y:2025,title:'Antaragni Circuit Performance',meta:'IIT Kanpur',desc:'Invited fusion set — first outstation performance in 3 years.',tags:['Outstation'],photos:['🚌','🎻','🌟']}
-   ]},
-  {id:'taal',name:'Taal',college:'Miranda House',cat:'Dance',color:'#EA580C',emoji:'💃',followers:2860,members:42,founded:1995,recruiting:false,
-   bio:'Miranda House\'s choreography society — contemporary and folk fusion, reigning champions of the North Campus circuit two years running.',
-   upcoming:[
-     {d:14,m:'Sep',y:2026,title:'Annual Showcase: "Dhara"',meta:'Miranda House Auditorium · 6 PM',desc:'45-minute production piece on rivers and migration.',tags:['Showcase','Pass required'],going:415,ecat:'Concert',price:99,art:'💃'}
-   ],
-   past:[
-     {d:2,m:'Mar',y:2026,title:'1st place — Nexus (Venky)',meta:'South Campus',desc:'Won the choreo finals with "Reza" — 3rd consecutive title.',tags:['1st place'],photos:['🏆','💫','🔥']},
-     {d:25,m:'Jan',y:2026,title:'Republic Day Folk Ensemble',meta:'College grounds',desc:'Folk fusion set — 26 dancers, live percussion.',tags:['Folk'],photos:['🥁','🇮🇳','💃']},
-     {d:30,m:'Sep',y:2025,title:'Fresher Production: "Pehli Baarish"',meta:'Amphitheatre',desc:'Debut piece choreographed entirely by first-years.',tags:['Freshers'],photos:['🌧️','🌸','👯']}
-   ]},
-  {id:'vaad',name:'Vaad-Vivaad',college:'Hindu College',cat:'Debating',color:'#0891B2',emoji:'🎤',followers:1420,members:28,founded:1989,recruiting:true,
-   recDetail:'English & Hindi parliamentary debating · Trials 26 Jul · Novice track',
-   bio:'Parliamentary debating society with one of the oldest novice programs in DU — breaks at nationals every year.',
-   upcoming:[
-     {d:26,m:'Jul',y:2026,title:'Novice Debating Trials',meta:'Hindu College · Room 14 · 10 AM',desc:'Asian Parliamentary demo round, then trials. Zero experience needed.',tags:['Trials','Novice friendly'],going:74,ecat:'Audition',price:0,art:'🎙️'}
-   ],
-   past:[
-     {d:11,m:'Jan',y:2026,title:'Breaking at Nationals — NLS Bangalore',meta:'NLSIU',desc:'Two teams broke; one novice in the top-10 speaker tab.',tags:['Nationals'],photos:['🏅','✈️','📣']},
-     {d:5,m:'Oct',y:2025,title:'Hosted: Hindu IV 2025',meta:'Hindu College · 3 days',desc:'Hosted 64 teams from 20+ colleges — largest edition yet.',tags:['Host','64 teams'],photos:['🏛️','🗓️','🤝']}
-   ]},
-  {id:'bitwise',name:'Bitwise',college:'Kirori Mal College',cat:'Tech',color:'#16A34A',emoji:'💻',followers:980,members:56,founded:2015,recruiting:false,
-   bio:'KMC\'s tech society — hackathons, open-source sprints and a mentorship pipeline into internships.',
-   upcoming:[
-     {d:23,m:'Aug',y:2026,title:'HackKMC 3.0',meta:'KMC Campus · 24 hours',desc:'Annual 24-hour hackathon. Theme: campus problems. Teams of 4.',tags:['Hackathon','₹50k prizes'],going:388,ecat:'Hackathon',price:0,art:'⚡'}
-   ],
-   past:[
-     {d:16,m:'Feb',y:2026,title:'Open Source Week',meta:'Online + KMC labs',desc:'120 first-PRs merged across 5 mentored projects.',tags:['Open source'],photos:['🐙','⌨️','🚀']},
-     {d:24,m:'Aug',y:2025,title:'HackKMC 2.0',meta:'KMC Campus',desc:'300+ hackers, 61 teams. Winning build used by 10k students.',tags:['Hackathon'],photos:['🧑‍💻','🏆','⚡']}
-   ]},
-  {id:'prayaas',name:'Prayaas',college:'Lady Shri Ram College',cat:'Social',color:'#CA8A04',emoji:'🌱',followers:1210,members:64,founded:2008,recruiting:true,
-   recDetail:'Teaching, fundraising & campaign teams · Rolling applications',
-   bio:'LSR\'s social impact collective — daily teaching program for 80+ kids and campus-wide donation drives.',
-   upcoming:[
-     {d:3,m:'Aug',y:2026,title:'Volunteer Orientation',meta:'LSR · Room 208 · 3 PM',desc:'Onboarding for the new teaching cohort — pick your slot.',tags:['Volunteering'],going:57,ecat:'Workshop',price:0,art:'🌱'}
-   ],
-   past:[
-     {d:14,m:'Dec',y:2025,title:'Winter Drive 2025',meta:'North & South Campus',desc:'2,300+ garments and 400 blankets across 6 collection points.',tags:['Donation drive'],photos:['🧥','📦','❤️']}
-   ]}
-];
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/sw.js').catch(()=>{});
+}
+</script>
 
-// ============ STANDALONE EVENTS (fests & big-ticket) ============
-const standaloneEvents = [
-  {d:16,m:'Aug',y:2026,title:'NorthFest \'26 — Day 1: Battle of Bands',by:'North Campus Fest Collective',college:'Multiple colleges',meta:'DU Sports Complex · 4 PM onwards',going:1240,ecat:'Fest',price:199,art:'🎪',grad:['#7C3AED','#DB2777'],
-   about:'The biggest inter-college band showdown of the season. 12 bands from across DU battle it out live — rock, indie, fusion — judged by working musicians, with the crowd\'s vote counting for 20%. Food stalls, merch, and the loudest lawns in North Campus.',
-   expect:['12 bands · 3 genres · one winner takes ₹75k','Food & merch stalls from 3 PM','Crowd vote counts for 20% of the score','Entry pass covers both stages']},
-  {d:17,m:'Aug',y:2026,title:'NorthFest \'26 — Day 2: EDM Night',by:'North Campus Fest Collective',college:'Multiple colleges',meta:'DU Sports Complex · 6 PM onwards',going:2180,ecat:'Fest',price:299,art:'🎧',grad:['#0891B2','#7C3AED'],
-   about:'Headline EDM night to close NorthFest — a national touring DJ headlines with two DU student openers. Light rig, 20k-watt sound, and the biggest dance floor DU sees all year.',
-   expect:['Headline DJ set + 2 student openers','Gates open 6 PM, headliner at 8:30','Water stations & help desk on ground','College ID mandatory at entry']},
-  {d:2,m:'Aug',y:2026,title:'Open Mic: Comedy Night',by:'Hudson Social',college:'Hudson Lane',meta:'Hudson Lane · 7 PM · Ticketed',going:164,ecat:'Comedy',price:149,art:'😂',grad:['#EA580C','#CA8A04'],
-   about:'Ten comics, five minutes each, zero mercy — DU\'s funniest open mic returns to Hudson Lane. Two slots reserved for first-timers; sign up at the venue by 6:30 PM if you dare.',
-   expect:['10 comics · 5 minutes each','2 walk-in slots for first-timers','Ticket includes one beverage','Doors 6:30 PM · show 7 PM sharp']},
-  {d:28,m:'Jul',y:2026,title:'Resume + LinkedIn Workshop',by:'Placement Cell',college:'SRCC',meta:'SRCC Auditorium · 2 PM',going:203,ecat:'Workshop',price:0,art:'💼',grad:['#16A34A','#0891B2'],
-   about:'A hands-on 2-hour session on building a resume that survives the 6-second recruiter scan, plus a live LinkedIn profile teardown of volunteers from the audience. Open to all colleges and years.',
-   expect:['Live resume teardowns','LinkedIn profile checklist to take home','Q&A with placement coordinators','Open to all DU colleges, all years']}
-];
-
-const mOrd={Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12};
-
-function allEvents(){
-  const evs=[];
-  societies.forEach(s=>s.upcoming.forEach(e=>evs.push({...e,by:s.name,college:s.college,grad:[s.color,'#1B2E5B'],socId:s.id})));
-  standaloneEvents.forEach(e=>evs.push({...e}));
-  return evs.sort((a,b)=>(a.y-b.y)||(mOrd[a.m]-mOrd[b.m])||(a.d-b.d));
-}
-
-const evFilters={cat:'all',price:'all'};
-const filters={cat:'all'};
-let currentSoc=null,currentTab='up',followed=new Set();
-
-// ============ EVENTS DISCOVERY RENDER ============
-function renderEvents(){
-  const list=allEvents().filter(e=>{
-    if(evFilters.cat!=='all'&&e.ecat!==evFilters.cat)return false;
-    if(evFilters.price==='free'&&e.price!==0)return false;
-    if(evFilters.price==='paid'&&e.price===0)return false;
-    return true;
-  });
-  document.getElementById('evCount').textContent=list.length;
-  const g=document.getElementById('evGrid');
-  if(!list.length){g.innerHTML='<div class="empty"><strong style="display:block;font-family:\'Bricolage Grotesque\';color:var(--navy);margin-bottom:4px">Nothing matches</strong>Try a different category or entry filter.</div>';return;}
-  g.innerHTML=list.map((e,i)=>`
-    <article class="evc" onclick="openEventDetail(${i})" style="cursor:pointer">
-      <div class="evc-banner" style="background:linear-gradient(135deg,${e.grad[0]},${e.grad[1]})">
-        <div class="date-chip"><div class="m">${e.m}</div><div class="d">${e.d}</div></div>
-        <span class="price-chip ${e.price===0?'free':'paid'}">${e.price===0?'FREE':'₹'+e.price}</span>
-        <span style="position:relative;z-index:0">${e.art}</span>
-      </div>
-      <div class="evc-body">
-        <div class="evc-cat">${e.ecat}</div>
-        <h3>${e.title}</h3>
-        <div class="by">by <b>${e.by}</b> · ${e.college}</div>
-        <div class="venue">📍 ${e.meta}</div>
-        <div class="evc-foot">
-          <button class="rsvp ${e.rsvped?'done':''}" onclick="event.stopPropagation();rsvpFeed(${i})" id="frsvp-${i}">${e.rsvped?'✓ You\'re going':(e.price===0?'RSVP free':'Get pass')}</button>
-          <button class="share-b" onclick="event.stopPropagation();shareEvent(${i})" aria-label="Share on WhatsApp">↗</button>
-          <span class="going-pill" id="fgoing-${i}">${e.going} going</span>
-        </div>
-      </div>
-    </article>`).join('');
-  window._feedList=list;
-}
-function rsvpFeed(i){
-  const e=window._feedList[i];
-  if(e.rsvped){toast('You\'re already on the list ✓');return;}
-  e.rsvped=true;e.going++;
-  const src=e.socId?societies.find(s=>s.id===e.socId).upcoming.find(u=>u.title===e.title):standaloneEvents.find(u=>u.title===e.title);
-  if(src){src.rsvped=true;src.going=e.going;}
-  document.getElementById('frsvp-'+i).textContent='✓ You\'re going';
-  document.getElementById('frsvp-'+i).classList.add('done');
-  document.getElementById('fgoing-'+i).textContent=e.going+' going';
-  toast(e.price===0?`🎟️ RSVP'd to <span class=lime>${e.title}</span> — reminder set`:`🎟️ Pass reserved for <span class=lime>${e.title}</span> — pay at checkout in the app`);
-}
-function shareEvent(i){
-  const e=window._feedList[i];
-  const msg=`🎟️ *${e.title}*\n\n📅 ${e.d} ${e.m} ${e.y}\n📍 ${e.meta}\n🎫 ${e.price===0?'FREE entry':'₹'+e.price}\n👥 ${e.going} already going\nby ${e.by} (${e.college})\n\n✅ RSVP on Dyng — every DU event, one feed\n👉 https://www.dyng.in/events`;
-  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
-  toast('Share card ready — <span class=lime>drop it in your group</span>');
-}
-
-
-// ============ EVENT DETAIL PAGE ============
-let currentEvent=null, currentEventIdx=null;
-function openEventDetail(i){
-  const e=window._feedList[i];currentEvent=e;currentEventIdx=i;
-  document.getElementById('eventsView').classList.add('hidden');
-  document.getElementById('eventDetail').classList.remove('hidden');
-  document.getElementById('edHero').style.background=`linear-gradient(135deg,${e.grad[0]},${e.grad[1]})`;
-  document.getElementById('edArt').textContent=e.art;
-  document.getElementById('edM').textContent=e.m;document.getElementById('edD').textContent=e.d;
-  const pc=document.getElementById('edPrice');
-  pc.textContent=e.price===0?'FREE':'₹'+e.price;
-  pc.className='price-chip '+(e.price===0?'free':'paid');
-  document.getElementById('edCat').textContent=e.ecat;
-  document.getElementById('edTitle').textContent=e.title;
-  document.getElementById('edBy').textContent=e.by;
-  document.getElementById('edCollege').textContent=e.college;
-  document.getElementById('edDate').textContent=`${e.d} ${e.m} ${e.y}`;
-  document.getElementById('edVenue').textContent=e.meta;
-  document.getElementById('edEntry').textContent=e.price===0?'Free entry':'₹'+e.price+' per pass';
-  document.getElementById('edGoing').textContent=e.going.toLocaleString('en-IN')+' going';
-  updateDetailRsvp();
-  document.getElementById('edAbout').textContent=e.about||e.desc||'';
-  const exWrap=document.getElementById('edExpectWrap');
-  if(e.expect&&e.expect.length){exWrap.classList.remove('hidden');document.getElementById('edExpect').innerHTML=e.expect.map(x=>`<li>${x}</li>`).join('');}
-  else if(e.tags&&e.tags.length){exWrap.classList.remove('hidden');document.getElementById('edExpect').innerHTML=e.tags.map(x=>`<li>${x}</li>`).join('');}
-  else exWrap.classList.add('hidden');
-  // Organizer card
-  const soc=e.socId?societies.find(s=>s.id===e.socId):null;
-  const av=document.getElementById('edOrgAvatar');
-  if(soc){av.style.background=soc.color;av.textContent=soc.emoji;
-    document.getElementById('edOrgName').textContent=soc.name;
-    document.getElementById('edOrgSub').textContent=`${soc.cat} Society · ${soc.college} · ${soc.followers.toLocaleString('en-IN')} followers`;
-    document.getElementById('edOrgBtn').classList.remove('hidden');
-  }else{av.style.background='var(--navy)';av.textContent='🎪';
-    document.getElementById('edOrgName').textContent=e.by;
-    document.getElementById('edOrgSub').textContent=e.college;
-    document.getElementById('edOrgBtn').classList.add('hidden');
-  }
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-function closeEventDetail(){
-  document.getElementById('eventDetail').classList.add('hidden');
-  document.getElementById('eventsView').classList.remove('hidden');
-  renderEvents();
-}
-function updateDetailRsvp(){
-  const e=currentEvent,b=document.getElementById('edRsvp');
-  b.textContent=e.rsvped?'✓ You\'re going':(e.price===0?'RSVP free — I\'m going':'Get pass · ₹'+e.price);
-  b.classList.toggle('done',!!e.rsvped);
-}
-function rsvpDetail(){
-  const e=currentEvent;
-  if(e.rsvped){toast('You\'re already on the list ✓');return;}
-  e.rsvped=true;e.going++;
-  const src=e.socId?societies.find(s=>s.id===e.socId).upcoming.find(u=>u.title===e.title):standaloneEvents.find(u=>u.title===e.title);
-  if(src){src.rsvped=true;src.going=e.going;}
-  document.getElementById('edGoing').textContent=e.going.toLocaleString('en-IN')+' going';
-  updateDetailRsvp();
-  toast(e.price===0?`🎟️ RSVP'd — reminder set for ${e.d} ${e.m}`:`🎟️ Pass reserved — pay at checkout in the app`);
-}
-function shareDetail(){
-  const e=currentEvent;
-  const msg=`🎟️ *${e.title}*\n\n📅 ${e.d} ${e.m} ${e.y}\n📍 ${e.meta}\n🎫 ${e.price===0?'FREE entry':'₹'+e.price}\n👥 ${e.going} already going\nby ${e.by} (${e.college})\n\n✅ RSVP on Dyng — every DU event, one feed\n👉 https://www.dyng.in/events`;
-  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
-  toast('Share card ready — <span class=lime>drop it in your group</span>');
-}
-function openOrganizer(){
-  if(!currentEvent.socId)return;
-  document.getElementById('eventDetail').classList.add('hidden');
-  document.getElementById('mtEvents').classList.remove('on');
-  document.getElementById('mtSocs').classList.add('on');
-  showProfile(currentEvent.socId);
-}
-
-
-// ============ VACANCY CARD (shared by hero + Recruitment tab) ============
-function vacCardHTML(v,i,detailed){
-  return `<div class="vac-card">
-    <div class="vac-info">
-      <h4>${v.title}</h4>
-      <p>${v.desc}</p>
-      <div class="vac-facts">
-        <span class="seats">${v.seats} seats</span>
-        <span>${v.rounds.length} rounds</span>
-        <span class="closing">⏳ Apply by ${v.deadline}</span>
-      </div>
-      ${detailed?`<div class="vac-rounds-mini"><b>Process:</b> ${v.rounds.map(r=>r.name.replace(/Round \d+ · /,'')).join(' → ')}</div>`:''}
-    </div>
-    <button class="btn btn-navy" style="padding:9px 18px;font-size:13px" onclick="openApply(${i})">Apply →</button>
-  </div>`;
-}
-// ============ RECRUITMENT TAB ============
-function renderRecTab(){
-  const s=currentSoc, r=recruitment[s.id], el=document.getElementById('eventList');
-  if(!s.recruiting||!r||!r.vacancies.length){
-    el.innerHTML='<div class="tm-note">No open roles right now. <b>Follow '+s.name+'</b> to get an alert the moment recruitment opens.</div>';
-    return;
-  }
-  const totalSeats=r.vacancies.reduce((a,v)=>a+v.seats,0);
-  el.innerHTML=`
-    <div class="rec-tab-head">
-      <h3>🟢 ${r.vacancies.length} open vacancies · ${totalSeats} total seats</h3>
-      <span>Apply to as many as you like — each has its own rounds & tracker.</span>
-    </div>
-    ${r.vacancies.map((v,i)=>vacCardHTML(v,i,true)).join('')}
-    <div class="tm-note">📊 Applications go straight to the society's dashboard — you'll be tracked through every round with WhatsApp alerts at each stage.</div>`;
-}
-
-// ============ VIEW TOGGLE ============
-function setView(v){
-  document.getElementById('mtEvents').classList.toggle('on',v==='events');
-  document.getElementById('mtSocs').classList.toggle('on',v==='socs');
-  document.getElementById('eventsView').classList.toggle('hidden',v!=='events');
-  document.getElementById('socsView').classList.toggle('hidden',v!=='socs');
-  document.getElementById('profile').classList.add('hidden');
-  document.getElementById('eventDetail').classList.add('hidden');
-  if(v==='socs')renderDirectory();
-}
-function backFromProfile(){
-  document.getElementById('profile').classList.add('hidden');
-  document.getElementById('socsView').classList.remove('hidden');
-}
-
-// ============ SOCIETIES DIRECTORY ============
-function renderDirectory(){
-  const list=societies.filter(s=>filters.cat==='all'||s.cat===filters.cat);
-  document.getElementById('socCount').textContent=list.length;
-  document.getElementById('recCount').textContent=list.filter(s=>s.recruiting).length;
-  document.getElementById('socGrid').innerHTML=list.map(s=>`
-    <button class="soc-card" onclick="showProfile('${s.id}')" aria-label="Open ${s.name} profile">
-      ${s.recruiting&&recruitment[s.id]?`<span class="rec-badge">${recruitment[s.id].vacancies.length} OPENING${recruitment[s.id].vacancies.length>1?'S':''}</span>`:''}
-      <div class="soc-logo" style="background:${s.color}">${s.emoji}</div>
-      <h3>${s.name}</h3><div class="col">${s.college}</div>
-      <span class="cat">${s.cat}</span>
-      <div class="soc-stats">
-        <span><strong>${s.followers.toLocaleString('en-IN')}</strong> followers</span>
-        <span><strong>${s.past.length+s.upcoming.length}</strong> events</span>
-      </div>
-    </button>`).join('');
-}
-document.querySelectorAll('#catChips .chip').forEach(c=>{
-  c.onclick=()=>{document.querySelectorAll('#catChips .chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');filters.cat=c.dataset.v;renderDirectory();};
+<script>
+// Install prompt (Add to Home Screen)
+let deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();deferredPrompt=e;
+  const b=document.getElementById('installBtn');
+  if(b)b.classList.remove('hidden');
 });
-document.querySelectorAll('#evCatChips .chip').forEach(c=>{
-  c.onclick=()=>{document.querySelectorAll('#evCatChips .chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');evFilters.cat=c.dataset.v;renderEvents();};
-});
-document.querySelectorAll('#evPriceChips .chip').forEach(c=>{
-  c.onclick=()=>{document.querySelectorAll('#evPriceChips .chip').forEach(x=>x.classList.remove('on'));c.classList.add('on');evFilters.price=c.dataset.v;renderEvents();};
-});
-
-// ============ SOCIETY PROFILE ============
-function showProfile(id){
-  currentSoc=societies.find(s=>s.id===id);currentTab='up';
-  document.getElementById('socsView').classList.add('hidden');
-  document.getElementById('profile').classList.remove('hidden');
-  const s=currentSoc;
-  document.getElementById('pBanner').style.background=`linear-gradient(120deg, ${s.color}, var(--navy))`;
-  const lg=document.getElementById('pLogo');lg.style.background=s.color;lg.textContent=s.emoji;
-  document.getElementById('pName').textContent=s.name;
-  document.getElementById('pSub').textContent=`${s.cat} Society · ${s.college}`;
-  document.getElementById('stFollowers').textContent=s.followers.toLocaleString('en-IN');
-  document.getElementById('stEvents').textContent=s.past.length+s.upcoming.length;
-  document.getElementById('stFounded').textContent=s.founded;
-  document.getElementById('stMembers').textContent=s.members;
-  document.getElementById('pBio').textContent=s.bio;
-  const vs=document.getElementById('vacSection'), r=recruitment[s.id];
-  if(s.recruiting&&r&&r.vacancies.length){
-    vs.classList.remove('hidden');
-    document.getElementById('vacHead').textContent=r.vacancies.length+' open vacanc'+(r.vacancies.length>1?'ies':'y')+' — recruitment live';
-    const shown=r.vacancies.slice(0,2);
-    document.getElementById('vacList').innerHTML=shown.map((v,i)=>vacCardHTML(v,i)).join('')
-      +(r.vacancies.length>2?`<button class="vac-more" onclick="setTab('rec')">View all ${r.vacancies.length} openings →</button>`:'');
-  } else vs.classList.add('hidden');
-  updateFollowBtn();renderHighlights();setTab('posts');
-  window.scrollTo({top:0,behavior:'smooth'});
+async function installApp(){
+  if(!deferredPrompt)return;
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt=null;
+  document.getElementById('installBtn').classList.add('hidden');
 }
-function updateFollowBtn(){
-  const b=document.getElementById('followBtn');
-  if(followed.has(currentSoc.id)){b.textContent='✓ Following';b.className='btn btn-outline';}
-  else{b.textContent='+ Follow';b.className='btn btn-lime';}
-}
-function toggleFollow(){
-  if(followed.has(currentSoc.id)){followed.delete(currentSoc.id);toast('Unfollowed '+currentSoc.name);}
-  else{followed.add(currentSoc.id);toast(`🔔 Following <span class=lime>${currentSoc.name}</span> — event & recruitment alerts on`);}
-  updateFollowBtn();
-}
-function setTab(t){
-  currentTab=t;
-  document.getElementById('tabPosts').classList.toggle('on',t==='posts');
-  document.getElementById('tabUp').classList.toggle('on',t==='up');
-  document.getElementById('tabPast').classList.toggle('on',t==='past');
-  document.getElementById('tabTeam').classList.toggle('on',t==='team');
-  document.getElementById('tabRec').classList.toggle('on',t==='rec');
-  if(t==='posts'){renderPosts();return;}
-  if(t==='team'){teamYear=null;renderTeam();return;}
-  if(t==='rec'){renderRecTab();return;}
-  const s=currentSoc,list=t==='up'?s.upcoming:s.past,el=document.getElementById('eventList');
-  if(!list.length){el.innerHTML='<div style="background:var(--white);border-radius:16px;padding:30px;text-align:center;color:#8A93B0;font-size:14px">Nothing here yet.</div>';return;}
-  el.innerHTML=list.map((e,i)=>`
-    <article class="ev">
-      <div class="ev-date"><div class="m">${e.m}</div><div class="d">${e.d}</div><div class="y">${e.y}</div></div>
-      <div class="ev-body">
-        <h4>${e.title}</h4><div class="meta">📍 ${e.meta}</div><p>${e.desc}</p>
-        <div class="ev-tags">${e.tags.map((t,j)=>`<span class="${j===0?'hl':''}">${t}</span>`).join('')}</div>
-        ${t==='up'
-          ?`<div class="ev-foot"><button class="rsvp ${e.rsvped?'done':''}" id="rsvp-${i}" onclick="rsvpProfile(${i})" style="flex:0 1 auto">${e.rsvped?'✓ You\'re going':'RSVP — I\'m going'}</button><span class="going" id="going-${i}">${e.going} going</span></div>`
-          :`<div class="past-strip" aria-label="Event photos">${e.photos.map(p=>`<i style="background:${s.color}22">${p}</i>`).join('')}</div>`}
-      </div>
-    </article>`).join('');
-}
-function rsvpProfile(i){
-  const e=currentSoc.upcoming[i];
-  if(e.rsvped){toast('You\'re already on the list ✓');return;}
-  e.rsvped=true;e.going++;
-  const b=document.getElementById('rsvp-'+i);b.textContent='✓ You\'re going';b.classList.add('done');
-  document.getElementById('going-'+i).textContent=e.going+' going';
-  toast(`🎟️ RSVP'd to <span class=lime>${e.title}</span> — reminder set`);
-}
-
-
-// ============ TEAM DATA: year-wise position holders (photo = initials placeholder; real app uses uploaded photos) ============
-const teams = {
-  rangmanch: {
-    '2026–27': [
-      {name:'Ishita Malhotra',role:'President',sub:'BA English · 3rd year',clr:'#7C3AED'},
-      {name:'Arjun Dhawan',role:'Vice President',sub:'BA Pol Science · 3rd year',clr:'#9333EA'},
-      {name:'Zoya Ansari',role:'Nukkad Head',sub:'BA History · 2nd year',clr:'#A855F7'},
-      {name:'Dev Sharma',role:'Production Head',sub:'BCom · 2nd year',clr:'#C084FC'},
-      {name:'Mira Chandra',role:'Treasurer',sub:'BA Economics · 2nd year',clr:'#8B5CF6'}
-    ],
-    '2025–26': [
-      {name:'Kabir Anand',role:'President',sub:'BA English · Alumnus',clr:'#6D28D9'},
-      {name:'Tara Vaidya',role:'Vice President',sub:'BA Philosophy · Alumna',clr:'#7C3AED'},
-      {name:'Ishita Malhotra',role:'Nukkad Head',sub:'BA English · then 2nd year',clr:'#A855F7'}
-    ]
-  },
-  aria: {
-    '2026–27': [
-      {name:'Advait Rao',role:'President',sub:'BSc Physics · 3rd year',clr:'#DB2777'},
-      {name:'Naina Kapoor',role:'Western Head',sub:'BA Music · 3rd year',clr:'#EC4899'},
-      {name:'Ritvik Joshi',role:'Indian Ensemble Head',sub:'BCom Hons · 2nd year',clr:'#F472B6'},
-      {name:'Sana Merchant',role:'Treasurer',sub:'BA Economics · 2nd year',clr:'#E11D48'}
-    ],
-    '2025–26': [
-      {name:'Meher Bhatia',role:'President',sub:'BA Music · Alumna',clr:'#BE185D'},
-      {name:'Advait Rao',role:'Western Head',sub:'BSc Physics · then 2nd year',clr:'#DB2777'}
-    ]
-  },
-  taal: {
-    '2026–27': [
-      {name:'Aisha Rahman',role:'President',sub:'BA Sociology · 3rd year',clr:'#EA580C'},
-      {name:'Diya Menon',role:'Choreo Head',sub:'BA Psychology · 3rd year',clr:'#F97316'},
-      {name:'Kavya Nair',role:'Production Head',sub:'BSc Maths · 2nd year',clr:'#FB923C'},
-      {name:'Riya Bose',role:'Treasurer',sub:'BA English · 2nd year',clr:'#C2410C'}
-    ]
-  },
-  vaad: {
-    '2026–27': [
-      {name:'Aryan Khanna',role:'President',sub:'BA Pol Science · 3rd year',clr:'#0891B2'},
-      {name:'Fatima Siddiqui',role:'Convenor (Hindi)',sub:'BA Hindi · 3rd year',clr:'#06B6D4'},
-      {name:'Vivaan Mehta',role:'Convenor (English)',sub:'BA Economics · 2nd year',clr:'#22D3EE'},
-      {name:'Ananya Iyer',role:'Novice Director',sub:'BA Philosophy · 2nd year',clr:'#0E7490'}
-    ]
-  },
-  bitwise: {
-    '2026–27': [
-      {name:'Shaurya Gupta',role:'President',sub:'BSc CS · 3rd year',clr:'#16A34A'},
-      {name:'Prisha Agarwal',role:'Tech Lead',sub:'BSc CS · 2nd year',clr:'#22C55E'},
-      {name:'Neel Desai',role:'Hackathon Lead',sub:'BSc Electronics · 2nd year',clr:'#4ADE80'}
-    ]
-  },
-  prayaas: {
-    '2026–27': [
-      {name:'Saanvi Reddy',role:'President',sub:'BA Sociology · 3rd year',clr:'#CA8A04'},
-      {name:'Aditi Kulkarni',role:'Teaching Head',sub:'BEl Ed · 3rd year',clr:'#EAB308'},
-      {name:'Manav Chopra',role:'Fundraising Head',sub:'BCom · 2nd year',clr:'#FACC15'},
-      {name:'Ira Shah',role:'Campaigns Head',sub:'BA Psychology · 2nd year',clr:'#A16207'}
-    ]
-  }
-};
-
-// ============ RECRUITMENT: roles + audition slots per society ============
-const recruitment = {
-  rangmanch:{vacancies:[
-    {title:'Acting Cast — Stage & Nukkad',desc:'Performers for the annual production and the street play circuit.',seats:12,deadline:'17 Jul',
-     tracks:['Stage Acting','Street (Nukkad)','Both'],slots:['18 Jul · 11 AM','18 Jul · 2 PM','19 Jul · 11 AM','19 Jul · 2 PM'],
-     rounds:[
-       {name:'Registration',desc:'Pick your track & audition slot.',date:'Till 17 Jul',mode:'Online · on Dyng',status:'live'},
-       {name:'Round 1 · Open Audition',desc:'2-minute piece — monologue, improv, anything.',date:'18–19 Jul',mode:'Ramjas Seminar Hall',status:'upcoming'},
-       {name:'Round 2 · Callback Workshop',desc:'2-hour group devising session with seniors.',date:'22 Jul',mode:'On campus',status:'upcoming'},
-       {name:'Round 3 · Interview',desc:'Chat with the core — commitment & fit.',date:'23–24 Jul',mode:'On campus',status:'upcoming'},
-       {name:'Results',desc:'Final cast list in the app + WhatsApp.',date:'25 Jul',mode:'On Dyng',status:'upcoming'}]},
-    {title:'Production & Backstage Crew',desc:'Sets, lights, sound, costume & stage management for two productions a year.',seats:8,deadline:'19 Jul',
-     tracks:['Sets & Props','Lights & Sound','Costume','Stage Management'],slots:['20 Jul · 3 PM','21 Jul · 3 PM'],
-     rounds:[
-       {name:'Registration',desc:'Pick your crew track.',date:'Till 19 Jul',mode:'Online · on Dyng',status:'live'},
-       {name:'Round 1 · Task Day',desc:'Hands-on task with the current crew — build, rig or plan a scene.',date:'20–21 Jul',mode:'Ramjas Auditorium',status:'upcoming'},
-       {name:'Round 2 · Interview',desc:'Availability, rehearsal-week commitment & team fit.',date:'23 Jul',mode:'On campus',status:'upcoming'},
-       {name:'Results',desc:'Crew list announced.',date:'25 Jul',mode:'On Dyng',status:'upcoming'}]},
-    {title:"Writers' Room",desc:'Scriptwriters for nukkads and the annual stage play. Hindi, English or Hinglish.',seats:4,deadline:'21 Jul',
-     tracks:['Nukkad Writing','Stage Play Writing'],slots:['22 Jul · 4 PM'],
-     rounds:[
-       {name:'Registration',desc:'Submit one writing sample (any format, max 2 pages) with the form.',date:'Till 21 Jul',mode:'Online · on Dyng',status:'live'},
-       {name:'Round 1 · Writing Sprint',desc:'90-minute on-the-spot scene from a prompt.',date:'22 Jul',mode:'On campus',status:'upcoming'},
-       {name:'Round 2 · Table Read',desc:'Your sprint scene gets read by the cast — you take notes & revise live.',date:'24 Jul',mode:'On campus',status:'upcoming'},
-       {name:'Results',desc:'Writers announced.',date:'25 Jul',mode:'On Dyng',status:'upcoming'}]}
-  ]},
-  aria:{vacancies:[
-    {title:'Western Ensemble — Vocals & Instruments',desc:'Acapella vocalists, guitarists and keys for the western ensemble.',seats:9,deadline:'19 Jul',
-     tracks:['Vocals (Western)','Guitar','Keys'],slots:['20 Jul · 12 PM','20 Jul · 3 PM','21 Jul · 12 PM'],
-     rounds:[
-       {name:'Registration',desc:'Choose your track and audition slot.',date:'Till 19 Jul',mode:'Online · on Dyng',status:'live'},
-       {name:'Round 1 · Audition',desc:'One prepared piece + sight-singing for vocalists.',date:'20–21 Jul',mode:'Hansraj Music Room',status:'upcoming'},
-       {name:'Round 2 · Ensemble Jam',desc:'Jam with the current ensemble — we check blend, not just skill.',date:'24 Jul',mode:'On campus',status:'upcoming'},
-       {name:'Results',desc:'Ensemble list in the app + WhatsApp.',date:'26 Jul',mode:'On Dyng',status:'upcoming'}]},
-    {title:'Indian Ensemble — Vocals, Tabla & Strings',desc:'Classical & fusion performers for the Indian ensemble.',seats:7,deadline:'20 Jul',
-     tracks:['Vocals (Indian)','Tabla / Percussion','Sitar / Strings','Flute'],slots:['21 Jul · 3 PM','22 Jul · 12 PM'],
-     rounds:[
-       {name:'Registration',desc:'Choose your instrument and slot.',date:'Till 20 Jul',mode:'Online · on Dyng',status:'live'},
-       {name:'Round 1 · Audition',desc:'One raag-based or fusion piece of your choice.',date:'21–22 Jul',mode:'Hansraj Music Room',status:'upcoming'},
-       {name:'Round 2 · Fusion Jam',desc:'Improvise with the fusion arrangement leads.',date:'25 Jul',mode:'On campus',status:'upcoming'},
-       {name:'Results',desc:'Final list announced.',date:'26 Jul',mode:'On Dyng',status:'upcoming'}]}
-  ]},
-  vaad:{vacancies:[
-    {title:'Novice Debaters — English & Hindi',desc:'Zero experience required. The novice program trains you from scratch.',seats:16,deadline:'25 Jul',
-     tracks:['English Parliamentary','Hindi Parliamentary'],slots:['26 Jul · 10 AM','26 Jul · 1 PM'],
-     rounds:[
-       {name:'Registration',desc:'Pick your language track.',date:'Till 25 Jul',mode:'Online · on Dyng',status:'live'},
-       {name:'Round 1 · Demo + Trials',desc:'Watch a demo AP round, then speak in a trial debate.',date:'26 Jul',mode:'Hindu College · Room 14',status:'upcoming'},
-       {name:'Round 2 · Rebuttal Round',desc:'Rebuttal-only exercise judged by the core.',date:'28 Jul',mode:'On campus',status:'upcoming'},
-       {name:'Results',desc:'Novice pool announced.',date:'30 Jul',mode:'On Dyng',status:'upcoming'}]},
-    {title:'Adjudicator Pool',desc:'Judge debates across the DU circuit — training provided, tab experience a plus.',seats:6,deadline:'27 Jul',
-     tracks:['Adjudication'],slots:['28 Jul · 11 AM'],
-     rounds:[
-       {name:'Registration',desc:'Short form + any judging experience.',date:'Till 27 Jul',mode:'Online · on Dyng',status:'live'},
-       {name:'Round 1 · Mock Adjudication',desc:'Judge a recorded round, deliver your oral adjudication.',date:'28 Jul',mode:'On campus',status:'upcoming'},
-       {name:'Results',desc:'Adjudicator pool announced.',date:'30 Jul',mode:'On Dyng',status:'upcoming'}]}
-  ]},
-  prayaas:{vacancies:[
-    {title:'Teaching Volunteers',desc:'Teach 80+ kids in the daily after-school program. Minimum 2 slots a week.',seats:20,deadline:'Rolling · till 31 Aug',
-     tracks:['Maths & Science','Languages','Arts & Activities'],slots:['3 Aug · 3 PM','5 Aug · 3 PM','8 Aug · 11 AM'],
-     rounds:[
-       {name:'Registration',desc:'Choose your subject and orientation slot.',date:'Rolling',mode:'Online · on Dyng',status:'live'},
-       {name:'Round 1 · Orientation',desc:'Meet program leads, understand the commitment.',date:'Aug, multiple dates',mode:'LSR · Room 208',status:'upcoming'},
-       {name:'Round 2 · Trial Week',desc:'One supervised teaching week.',date:'Within 2 weeks',mode:'On ground',status:'upcoming'},
-       {name:'Confirmation',desc:'Membership confirmed after trial week.',date:'Rolling',mode:'On Dyng',status:'upcoming'}]},
-    {title:'Fundraising & Campaigns Team',desc:'Run donation drives and awareness campaigns across 6 colleges.',seats:10,deadline:'Rolling · till 31 Aug',
-     tracks:['Fundraising','Campaigns & Social Media'],slots:['4 Aug · 4 PM','9 Aug · 11 AM'],
-     rounds:[
-       {name:'Registration',desc:'Pick your team.',date:'Rolling',mode:'Online · on Dyng',status:'live'},
-       {name:'Round 1 · Ideation Task',desc:'Pitch one drive or campaign idea in a group session.',date:'Aug, multiple dates',mode:'LSR',status:'upcoming'},
-       {name:'Confirmation',desc:'Team confirmed after the task.',date:'Rolling',mode:'On Dyng',status:'upcoming'}]}
-  ]}
-};
-
-let teamYear=null, selectedSlot=null, currentVac=null;
-
-function renderTeam(){
-  const s=currentSoc, data=teams[s.id]||{}, years=Object.keys(data), el=document.getElementById('eventList');
-  if(!years.length){el.innerHTML='<div class="tm-note">Team roster coming soon — the society adds position holders when it claims its profile.</div>';return;}
-  if(!teamYear||!data[teamYear])teamYear=years[0];
-  el.innerHTML=`
-    <div class="year-chips">${years.map(y=>`<button class="chip ${y===teamYear?'on':''}" onclick="setTeamYear('${y}')">${y}</button>`).join('')}</div>
-    <div class="team-grid">${data[teamYear].map(m=>{
-      const init=m.name.split(' ').map(w=>w[0]).join('').slice(0,2);
-      const lead=/President|Convenor/i.test(m.role);
-      return `<div class="tm-card">
-        <div class="tm-photo" style="background:linear-gradient(135deg,${m.clr},var(--navy))">${init}</div>
-        <h4>${m.name}</h4>
-        <span class="tm-role ${lead?'lead':''}">${m.role}</span>
-        <div class="tm-sub">${m.sub}</div>
-      </div>`;}).join('')}</div>
-    <div class="tm-note">📸 In the app, position holders upload real photos & link Instagram/LinkedIn — this roster becomes the society's official record, year after year.</div>`;
-}
-function setTeamYear(y){teamYear=y;renderTeam();}
-
-// ============ APPLY FLOW ============
-function openApply(vIdx){
-  const s=currentSoc, r=recruitment[s.id];
-  if(!r||!r.vacancies.length){toast('Recruitment isn\'t open right now — follow to get alerted');return;}
-  currentVac=r.vacancies[vIdx||0];
-  selectedSlot=null;
-  const v=currentVac;
-  // STEP 0: rounds overview for THIS vacancy
-  document.getElementById('riSocName').textContent=s.name;
-  document.getElementById('riSocDetail').textContent=v.title+' · '+v.seats+' seats · Apply by '+v.deadline;
-  document.getElementById('roundsList').innerHTML=v.rounds.map((rd,i)=>`
-    <div class="rnd ${rd.status}">
-      <div class="rnd-top"><h4>${i+1}. ${rd.name}</h4><span class="rnd-status ${rd.status}">${rd.status==='live'?'● Live now':rd.status==='done'?'Done':'Upcoming'}</span></div>
-      <p>${rd.desc}</p>
-      <div class="rnd-meta"><span>📅 <b>${rd.date}</b></span><span>📍 ${rd.mode}</span></div>
-    </div>`).join('');
-  // form prefill for THIS vacancy
-  document.getElementById('apSocName').textContent=s.name+' — '+v.title;
-  document.getElementById('apSocDetail').textContent=v.desc;
-  document.getElementById('ap-role').innerHTML=v.tracks.map(x=>`<option>${x}</option>`).join('');
-  document.getElementById('slotGrid').innerHTML=v.slots.map((x,i)=>`<button class="slot" id="slot-${i}" onclick="pickSlot(${i},'${x}')">${x}</button>`).join('');
-  document.getElementById('applyIntro').classList.remove('hidden');
-  document.getElementById('applyForm').classList.add('hidden');
-  document.getElementById('applyDone').classList.add('hidden');
-  document.getElementById('applyOverlay').classList.add('open');
-}
-function startApplication(){
-  document.getElementById('applyIntro').classList.add('hidden');
-  document.getElementById('applyForm').classList.remove('hidden');
-}
-function backToIntro(){
-  document.getElementById('applyForm').classList.add('hidden');
-  document.getElementById('applyIntro').classList.remove('hidden');
-}
-function pickSlot(i,label){
-  selectedSlot=label;
-  document.querySelectorAll('.slot').forEach(x=>x.classList.remove('on'));
-  document.getElementById('slot-'+i).classList.add('on');
-}
-function closeApply(){document.getElementById('applyOverlay').classList.remove('open');}
-function submitApply(){
-  const name=document.getElementById('ap-name').value.trim();
-  const phone=document.getElementById('ap-phone').value.trim();
-  if(!name||!phone){toast('⚠️ Add your name and phone to apply');return;}
-  if(!selectedSlot){toast('⚠️ Pick an audition slot');return;}
-  document.getElementById('doneSoc').textContent=currentSoc.name+' ('+currentVac.title+')';
-  document.getElementById('doneSlot').textContent=selectedSlot;
-  document.getElementById('doneId').textContent='Application #DY-'+Math.floor(1000+Math.random()*9000);
-  const rds=currentVac.rounds;
-  document.getElementById('doneTracker').innerHTML=rds.map((rd,i)=>{
-    const st=i===0?'done':(i===1?'next':'');
-    const shortName=rd.name.replace(/Round \d+ · /,'').split(' ').slice(0,2).join(' ');
-    return `${i>0?`<div class="trk-line ${i===1?'done':''}"></div>`:''}<div class="trk ${st}"><div class="dot">${i===0?'✓':i+1}</div><span>${shortName}</span></div>`;
-  }).join('');
-  document.getElementById('applyForm').classList.add('hidden');
-  document.getElementById('applyDone').classList.remove('hidden');
-}
-document.getElementById('applyOverlay').addEventListener('click',e=>{if(e.target.id==='applyOverlay')closeApply();});
-
-
-// ============ INSTAGRAM-STYLE POSTS & HIGHLIGHTS (societies maintain these like their Insta) ============
-const socHighlights = {
-  rangmanch:[{e:'🎭',t:'Auditions'},{e:'🏆',t:'Wins'},{e:'🥁',t:'Nukkad'},{e:'🎬',t:'BTS'},{e:'👥',t:'Team'}],
-  aria:[{e:'🎤',t:'Auditions'},{e:'🏆',t:'Wins'},{e:'🎸',t:'Gigs'},{e:'🎼',t:'Practice'}],
-  taal:[{e:'💃',t:'Showcase'},{e:'🏆',t:'Wins'},{e:'🩰',t:'Practice'},{e:'👯',t:'Team'}],
-  vaad:[{e:'🎙️',t:'Trials'},{e:'🏅',t:'Nationals'},{e:'🏛️',t:'Hindu IV'}],
-  bitwise:[{e:'⚡',t:'HackKMC'},{e:'🐙',t:'Open Source'},{e:'🧑‍💻',t:'Workshops'}],
-  prayaas:[{e:'📚',t:'Teaching'},{e:'🧥',t:'Drives'},{e:'❤️',t:'Impact'}]
-};
-const socPosts = {
-  rangmanch:[
-    {art:'🏆',g:['#7C3AED','#DB2777'],cap:'14 circuit wins and counting — "Hisaab" takes first at Crossroads! Proud of every single one of you. #nukkad #crossroads',likes:482,cmts:37,date:'8 Feb 2026',pinned:true},
-    {art:'🎭',g:['#7C3AED','#1B2E5B'],cap:'ANDHERA QUARTER — both shows SOLD OUT. Sri Ram Centre, we\'ll never forget this. #stageplay',likes:634,cmts:52,date:'22 Mar 2026'},
-    {art:'🥁',g:['#9333EA','#EA580C'],cap:'New nukkad dropping 9 Aug. Topic: the rent crisis every DU student knows too well. Arts Fac lawns, 1 PM. #kiraya',likes:291,cmts:18,date:'2 Jul 2026'},
-    {art:'📣',g:['#A855F7','#1B2E5B'],cap:'FRESHERS — auditions 18-19 Jul. No experience needed. Bring 2 minutes of anything. See you there 🖤',likes:356,cmts:64,date:'5 Jul 2026'},
-    {art:'🎬',g:['#6D28D9','#0891B2'],cap:'BTS from rehearsal week. 6 hours a day and nobody wants to go home. #rangmanchfamily',likes:203,cmts:11,date:'15 Mar 2026'},
-    {art:'👏',g:['#C084FC','#1B2E5B'],cap:'Farewell to our 2025-26 batch. You built this. #legacy',likes:518,cmts:73,date:'28 Apr 2026'}
-  ],
-  aria:[
-    {art:'🏆',g:['#DB2777','#7C3AED'],cap:'FIRST PLACE AT TEMPEST! 9 voices, 1 arrangement, months of practice. Venky, thank you for the love 💗 #acapella',likes:445,cmts:41,date:'15 Feb 2026',pinned:true},
-    {art:'🎤',g:['#EC4899','#1B2E5B'],cap:'Auditions 20-22 Jul — vocals, guitar, keys, tabla. One piece, any language. Music room, 12 PM. #ariaauditions',likes:312,cmts:56,date:'6 Jul 2026'},
-    {art:'🚌',g:['#F472B6','#0891B2'],cap:'Antaragni, IIT Kanpur. First outstation gig in 3 years and it POURED during soundcheck. Worth every second. ✨',likes:389,cmts:27,date:'19 Oct 2025'},
-    {art:'🎸',g:['#E11D48','#1B2E5B'],cap:'Monsoon Unplugged is back — 30 Aug, Hansraj lawns, 5 PM. Free entry, bring everyone. 🌧️🎶',likes:276,cmts:19,date:'8 Jul 2026'},
-    {art:'🎼',g:['#BE185D','#7C3AED'],cap:'3 new fusion arrangements in the works. Sneak peek at practice... #indianfusion',likes:198,cmts:9,date:'1 Jul 2026'}
-  ],
-  taal:[
-    {art:'🏆',g:['#EA580C','#DB2777'],cap:'NEXUS CHAMPIONS! "Reza" wins the choreo finals — 3rd title in a row. Dynasty behaviour 🔥 #choreo',likes:721,cmts:88,date:'2 Mar 2026',pinned:true},
-    {art:'💃',g:['#F97316','#1B2E5B'],cap:'DHARA — our annual showcase — 14 Sep, Miranda Auditorium. 45 minutes on rivers & migration. Passes on Dyng.',likes:534,cmts:46,date:'9 Jul 2026'},
-    {art:'🌧️',g:['#FB923C','#0891B2'],cap:'Pehli Baarish — the freshers\' debut, choreographed entirely by first-years. We cried, so will you.',likes:412,cmts:35,date:'30 Sep 2025'},
-    {art:'🥁',g:['#C2410C','#CA8A04'],cap:'R-Day folk ensemble — 26 dancers, live percussion, one very cold morning 🇮🇳',likes:367,cmts:22,date:'25 Jan 2026'}
-  ],
-  vaad:[
-    {art:'🏅',g:['#0891B2','#7C3AED'],cap:'BREAKING AT NATIONALS — two teams through to elims at NLS Bangalore, one novice in the top-10 speaker tab. #parliamentarydebate',likes:298,cmts:24,date:'11 Jan 2026',pinned:true},
-    {art:'🏛️',g:['#06B6D4','#1B2E5B'],cap:'Hindu IV 2025 — 64 teams, 20+ colleges, 3 days of chaos and brilliance. Largest edition ever. Thank you all.',likes:341,cmts:31,date:'5 Oct 2025'},
-    {art:'🎙️',g:['#22D3EE','#0E7490'],cap:'Novice trials 26 Jul. Never debated? Perfect. Demo round first, then trials. Room 14, 10 AM.',likes:187,cmts:29,date:'7 Jul 2026'}
-  ],
-  bitwise:[
-    {art:'⚡',g:['#16A34A','#0891B2'],cap:'HackKMC 3.0 — 23 Aug, 24 hours, ₹50k prize pool. Theme: campus problems. Registrations open on Dyng. #hackathon',likes:264,cmts:42,date:'4 Jul 2026',pinned:true},
-    {art:'🏆',g:['#22C55E','#1B2E5B'],cap:'HackKMC 2.0 wrap: 300+ hackers, 61 teams. Winning build — a DU cutoff predictor — now used by 10k students. 🤯',likes:389,cmts:33,date:'24 Aug 2025'},
-    {art:'🐙',g:['#4ADE80','#0E7490'],cap:'Open Source Week: 120 first-PRs merged across 5 mentored projects. Proudest week of the year.',likes:176,cmts:14,date:'16 Feb 2026'}
-  ],
-  prayaas:[
-    {art:'🧥',g:['#CA8A04','#EA580C'],cap:'Winter Drive 2025: 2,300+ garments, 400 blankets, 6 collection points. Delhi winters just got a little warmer. ❤️',likes:456,cmts:38,date:'14 Dec 2025',pinned:true},
-    {art:'📚',g:['#EAB308','#16A34A'],cap:'80 kids, every single day. Our teaching program turns 3 this month. Volunteer orientation 3 Aug — join us.',likes:321,cmts:26,date:'6 Jul 2026'},
-    {art:'❤️',g:['#FACC15','#DB2777'],cap:'Impact report FY25-26 is out — every rupee, every hour, accounted for. Link in bio. #transparency',likes:243,cmts:17,date:'30 Jun 2026'}
-  ]
-};
-let currentPost=null;
-
-function renderHighlights(){
-  const hls=socHighlights[currentSoc.id]||[];
-  document.getElementById('hlRow').innerHTML=hls.map(h=>`
-    <button class="hl-item" onclick="toast('📖 Highlights open as story reels in the Dyng app')">
-      <span class="hl-ring"><span class="hl-circle">${h.e}</span></span>
-      <span>${h.t}</span>
-    </button>`).join('');
-}
-function renderPosts(){
-  const posts=socPosts[currentSoc.id]||[], el=document.getElementById('eventList');
-  if(!posts.length){el.innerHTML='<div class="tm-note">No posts yet — the society posts here after claiming its profile, just like on Instagram.</div>';return;}
-  el.innerHTML=`<div class="insta-grid">${posts.map((p,i)=>`
-    <button class="ig-tile" style="background:linear-gradient(135deg,${p.g[0]},${p.g[1]})" onclick="openPost(${i})" aria-label="Open post">
-      ${p.pinned?'<span class="ig-pin">📌 PINNED</span>':''}
-      <span style="position:relative;z-index:0">${p.art}</span>
-      <span class="ig-likes">❤️ ${p.likes}</span>
-    </button>`).join('')}</div>
-    <div class="tm-note">📱 Societies post photos, reels & updates here exactly like Instagram — but every post can carry an RSVP, pass link or application button.</div>`;
-}
-function openPost(i){
-  const p=socPosts[currentSoc.id][i];currentPost=p;
-  document.getElementById('pmMedia').style.background=`linear-gradient(135deg,${p.g[0]},${p.g[1]})`;
-  document.getElementById('pmMedia').textContent=p.art;
-  const av=document.getElementById('pmAvatar');av.style.background=currentSoc.color;av.textContent=currentSoc.emoji;
-  document.getElementById('pmSoc').textContent=currentSoc.name;
-  document.getElementById('pmDate').textContent=p.date+' · '+currentSoc.college;
-  document.getElementById('pmCaption').innerHTML=p.cap.replace(/#(\w+)/g,'<span class="tag">#$1</span>');
-  document.getElementById('pmLikeCount').textContent=p.likes.toLocaleString('en-IN');
-  document.getElementById('pmComments').textContent='💬 '+p.cmts+' comments';
-  const lb=document.getElementById('pmLike');
-  lb.classList.toggle('liked',!!p.liked);
-  lb.querySelector('.hrt').textContent=p.liked?'❤️':'🤍';
-  document.getElementById('postOverlay').classList.add('open');
-}
-function closePost(){document.getElementById('postOverlay').classList.remove('open');}
-function likePost(){
-  const p=currentPost;
-  p.liked=!p.liked;p.likes+=p.liked?1:-1;
-  const lb=document.getElementById('pmLike');
-  lb.classList.toggle('liked',p.liked);
-  lb.querySelector('.hrt').textContent=p.liked?'❤️':'🤍';
-  document.getElementById('pmLikeCount').textContent=p.likes.toLocaleString('en-IN');
-  if(currentTab==='posts')renderPosts();
-}
-function sharePost(){
-  const p=currentPost,s=currentSoc;
-  const msg=`${p.art} *${s.name}* (${s.college})\n\n${p.cap}\n\n❤️ ${p.likes} likes · ${p.date}\n\n✅ Follow ${s.name} on Dyng — events, auditions & recruitment\n👉 https://www.dyng.in/events`;
-  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
-  toast('Share card ready — <span class=lime>drop it in your group</span>');
-}
-document.getElementById('postOverlay').addEventListener('click',e=>{if(e.target.id==='postOverlay')closePost();});
-
-// ============ TOAST ============
-let toastTimer;
-function toast(html){
-  const t=document.getElementById('toast');
-  t.innerHTML=html;t.classList.add('show');
-  clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3200);
-}
-
-renderEvents();
 </script>
 </body>
 </html>
