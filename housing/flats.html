@@ -1,23 +1,21 @@
 <!DOCTYPE html>
-<html lang="en-IN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="manifest" href="../manifest.json">
-  <meta name="theme-color" content="#1B2E5B">
+  <meta name="theme-color" content="#008069">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="apple-touch-icon" href="../icon-192.png">
 
-
-  <title>Flat Feed – Flats & Flatmates Near DU, Posted by Verified Students | Dyng</title>
-  <meta name="description" content="The live feed of flats, rooms and flatmate vacancies near Delhi University — posted by verified DU students, not brokers. Filter by area, budget & gender. Posts auto-expire, so nothing is stale. Skip the 15 WhatsApp groups.">
+  <title>Flat Feed – Flats & Flatmates Near Your Campus, Worldwide | Dyng</title>
+  <meta name="description" content="The flats & flatmates group for students, young professionals & everyone in between — looks like your WhatsApp group, works like magic. Every post labelled (verified student or broker), filterable by area & budget, auto-expires. Pick your campus and go.">
   <link rel="canonical" href="https://www.dyng.in/housing/flats">
   <meta name="robots" content="index, follow">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Dyng">
-  <meta property="og:title" content="Flat Feed – One verified feed instead of 15 WhatsApp groups | Dyng">
-  <meta property="og:description" content="Flats & flatmates near DU, posted by verified students. Filterable, always fresh, zero broker spam.">
+  <meta property="og:title" content="Flat Feed – One verified group for every campus | Dyng">
+  <meta property="og:description" content="Flats & flatmates near your campus in a chat-style feed. Every poster labelled. Never stale. Any campus, anywhere.">
   <meta property="og:url" content="https://www.dyng.in/housing/flats">
 
   <script type="application/ld+json">
@@ -25,409 +23,640 @@
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Flat Feed by Dyng",
-    "description": "A live, filterable feed of flats, rooms and flatmate vacancies near Delhi University, posted by verified students. Posts auto-expire after 14 days so listings are never stale.",
-    "isPartOf": {"@type": "WebSite", "name": "Dyng", "url": "https://www.dyng.in"},
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "Dyng", "item": "https://www.dyng.in/"},
-        {"@type": "ListItem", "position": 2, "name": "Housing", "item": "https://www.dyng.in/housing"},
-        {"@type": "ListItem", "position": 3, "name": "Flat Feed", "item": "https://www.dyng.in/housing/flats"}
-      ]
-    }
+    "description": "A chat-style, filterable feed of flats, rooms and flatmate vacancies across city & campus hubs worldwide, posted by verified residents, owners and labelled brokers. Posts auto-expire after 14 days.",
+    "isPartOf": {"@type": "WebSite", "name": "Dyng", "url": "https://www.dyng.in"}
   }
   </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --navy:#1B2E5B; --navy-deep:#12224A; --lime:#A6D437; --lime-deep:#7FAF1B;
-      --ink:#1A2340; --mist:#F2F5FB; --line:#DCE3F0; --white:#FFFFFF;
-      --radius:16px; --shadow:0 6px 24px rgba(18,34,74,.08);
+      --wa-green:#008069; --wa-green-deep:#006B58;
+      --wa-bg:#EFEAE2; --wa-bubble:#FFFFFF; --wa-mine:#D9FDD3;
+      --wa-ink:#111B21; --wa-gray:#667781; --wa-tick:#53BDEB;
+      --wa-chip:#F0F2F5; --wa-accent:#00A884;
+      --navy:#1B2E5B; --lime:#A6D437;
     }
     *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--mist);line-height:1.55}
-    h1,h2,h3{font-family:'Bricolage Grotesque',sans-serif;line-height:1.15}
-    a{color:inherit;text-decoration:none}
-    button{font-family:inherit;cursor:pointer}
-    .wrap{max-width:760px;margin:0 auto;padding:0 16px}
+    body{font-family:'Inter',system-ui,sans-serif;background:#D1D7DB;color:var(--wa-ink);line-height:1.5;display:flex;justify-content:center;min-height:100vh}
+    button{font-family:inherit;cursor:pointer;border:none}
+    .hidden{display:none!important}
+    .app{width:100%;max-width:760px;min-height:100vh;background:var(--wa-bg);display:flex;flex-direction:column;box-shadow:0 0 40px rgba(0,0,0,.15);position:relative}
 
-    header{position:sticky;top:0;z-index:50;background:var(--navy);box-shadow:0 2px 12px rgba(18,34,74,.25)}
-    nav{display:flex;align-items:center;justify-content:space-between;height:62px}
-    .logo{display:flex;align-items:center;gap:9px;color:var(--white);font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px}
-    .logo-mark{width:34px;height:34px;background:var(--lime);border-radius:11px;display:grid;place-items:center;color:var(--navy-deep);font-size:17px;font-weight:800}
-    .logo small{display:block;font-family:'Inter';font-size:9px;font-weight:600;color:var(--lime);letter-spacing:.12em;text-transform:uppercase}
-    .nav-right{display:flex;gap:14px;align-items:center;font-size:13.5px}
-    .nav-right a{color:rgba(255,255,255,.85)}
-    .nav-right a:hover{color:var(--lime)}
+    .chat{flex:1;overflow-y:auto;padding:10px 12px 16px;position:relative;
+      background-color:var(--wa-bg);
+      background-image:radial-gradient(#D8D0C2 1.1px, transparent 1.1px),radial-gradient(#DED6C8 1.1px, transparent 1.1px);
+      background-size:28px 28px;background-position:0 0,14px 14px}
 
-    /* Page head */
-    .page-head{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--white);padding:30px 0 76px;text-align:center}
-    .page-head h1{font-size:clamp(24px,4.5vw,34px);font-weight:800}
-    .page-head h1 em{font-style:normal;color:var(--lime)}
-    .page-head p{color:rgba(255,255,255,.72);font-size:14.5px;max-width:480px;margin:8px auto 0}
-    .live-dot{display:inline-flex;align-items:center;gap:7px;background:rgba(166,212,55,.14);border:1px solid rgba(166,212,55,.4);color:var(--lime);padding:4px 13px;border-radius:999px;font-size:12px;font-weight:700;margin-bottom:12px}
-    .live-dot i{width:7px;height:7px;border-radius:50%;background:var(--lime);animation:pulse 1.6s infinite}
-    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+    /* ============ GROUP HEADER ============ */
+    .wa-head{background:var(--wa-green);color:#fff;padding:10px 12px;display:flex;align-items:center;gap:11px;position:sticky;top:0;z-index:30}
+    .wa-back{width:34px;height:34px;border-radius:50%;background:transparent;color:#fff;font-size:19px;display:grid;place-items:center;flex:none;text-decoration:none}
+    .wa-back:hover{background:rgba(255,255,255,.12)}
+    .grp-avatar{width:42px;height:42px;border-radius:50%;background:var(--lime);display:grid;place-items:center;font-size:20px;flex:none;border:2px solid rgba(255,255,255,.4)}
+    .grp-info{flex:1;min-width:0;cursor:pointer}
+    .grp-info b{font-size:16px;display:flex;align-items:center;gap:6px}
+    .grp-info b .vf{font-size:12px;background:var(--lime);color:var(--navy);border-radius:999px;padding:1px 7px;font-weight:800}
+    .grp-info span{font-size:12px;color:rgba(255,255,255,.78);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .wa-icons{display:flex;gap:4px}
+    .wa-icons button{width:36px;height:36px;border-radius:50%;background:transparent;color:#fff;font-size:16px}
+    .wa-icons button:hover{background:rgba(255,255,255,.12)}
 
-    /* Filter bar */
-    .filter-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;margin-top:-52px;position:relative;z-index:2}
-    .chip-row{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
-    .chip-row::-webkit-scrollbar{display:none}
-    .chip{flex:none;border:1.5px solid var(--line);background:var(--white);color:var(--ink);border-radius:999px;padding:7px 15px;font-size:13px;font-weight:600;transition:all .15s}
-    .chip:hover{border-color:var(--lime)}
-    .chip.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
-    .chip-row + .chip-row{margin-top:8px}
-    .chip-label{flex:none;font-size:11px;font-weight:700;color:#8A93B0;text-transform:uppercase;letter-spacing:.06em;align-self:center;min-width:52px}
+    /* ============ CAMPUS BAR ============ */
+    .campus-bar{background:var(--wa-green-deep);padding:7px 12px;display:flex;align-items:center;gap:8px;position:sticky;top:62px;z-index:29}
+    .campus-btn{background:rgba(255,255,255,.14);color:#fff;border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:800;display:flex;align-items:center;gap:7px}
+    .campus-btn:hover{background:rgba(255,255,255,.22)}
+    .campus-bar .world{font-size:11px;color:rgba(255,255,255,.65);font-weight:600;flex:none}
+    .area-scroll{display:flex;gap:7px;overflow-x:auto;flex:1;min-width:0}
+    .area-scroll::-webkit-scrollbar{display:none}
+    .achip{flex:none;background:rgba(255,255,255,.14);color:#fff;border-radius:999px;padding:7px 14px;font-size:12.5px;font-weight:700;transition:all .13s;border:1px solid transparent}
+    .achip:hover{background:rgba(255,255,255,.22)}
+    .achip.on{background:#fff;color:var(--wa-green)}
 
-    /* Feed meta row */
-    .feed-meta{display:flex;justify-content:space-between;align-items:center;margin:18px 0 12px;font-size:13px;color:#5A6482}
-    .feed-meta strong{color:var(--navy)}
-    .btn{display:inline-flex;align-items:center;gap:7px;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;border:none;transition:transform .15s, box-shadow .15s}
-    .btn:focus-visible{outline:3px solid var(--lime);outline-offset:2px}
-    .btn-lime{background:var(--lime);color:var(--navy-deep)}
-    .btn-lime:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(166,212,55,.4)}
+    /* ============ FILTER STRIP ============ */
+    .filters{background:#fff;padding:9px 12px;display:flex;gap:7px;overflow-x:auto;border-bottom:1px solid #E5E5E5;position:sticky;top:108px;z-index:25}
+    .filters::-webkit-scrollbar{display:none}
+    .fchip{flex:none;background:var(--wa-chip);color:#54656F;border-radius:999px;padding:7px 14px;font-size:13px;font-weight:600;transition:all .13s}
+    .fchip.on{background:#D9F3EC;color:var(--wa-green);font-weight:700}
+    .subfilters{background:#F7FAF9;padding:8px 12px;display:flex;gap:7px;align-items:center;overflow-x:auto;border-bottom:1px solid #E5E5E5;position:sticky;top:158px;z-index:24}
+    .subfilters::-webkit-scrollbar{display:none}
+    .subfilters .lbl{font-size:10.5px;font-weight:800;color:#8A93A5;text-transform:uppercase;letter-spacing:.05em;flex:none}
+    .schip{flex:none;background:#fff;border:1.5px solid #E1E5E9;color:#54656F;border-radius:999px;padding:6px 13px;font-size:12px;font-weight:700}
+    .schip.on{background:var(--wa-green);color:#fff;border-color:var(--wa-green)}
 
-    /* Post card */
-    .post{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:18px;margin-bottom:14px;animation:pop .25s ease}
-    @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-    .post-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
-    .avatar{flex:none;width:42px;height:42px;border-radius:50%;background:var(--navy);color:var(--lime);display:grid;place-items:center;font-family:'Bricolage Grotesque';font-weight:800;font-size:17px}
-    .who{flex:1;min-width:0}
-    .who .name{font-weight:700;font-size:14.5px;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-    .vbadge{font-size:10px;background:var(--lime);color:var(--navy-deep);border-radius:999px;padding:2px 8px;font-weight:800;letter-spacing:.02em}
-    .who .sub{font-size:12px;color:#8A93B0}
-    .ptype{flex:none;font-size:10.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;border-radius:8px;padding:4px 9px}
+    /* ============ SYSTEM / PINNED ============ */
+    .sys{display:flex;justify-content:center;margin:10px 0}
+    .sys span{background:#FFF6D4;color:#5B5B45;font-size:12px;border-radius:9px;padding:6px 12px;max-width:88%;text-align:center;box-shadow:0 1px 1px rgba(0,0,0,.06)}
+    .datepill{display:flex;justify-content:center;margin:12px 0 8px}
+    .datepill span{background:#FFFFFF;color:#54656F;font-size:12px;font-weight:600;border-radius:9px;padding:5px 13px;box-shadow:0 1px 1px rgba(0,0,0,.08);text-transform:uppercase;letter-spacing:.03em}
+    .pinned{background:#fff;border-left:4px solid var(--wa-accent);margin:8px 0 4px;border-radius:8px;padding:9px 12px;font-size:12.5px;color:#54656F;display:flex;gap:9px;align-items:center;box-shadow:0 1px 1px rgba(0,0,0,.06)}
+    .pinned b{color:var(--wa-ink)}
+
+    /* ============ MESSAGE BUBBLES ============ */
+    .msg{display:flex;margin:5px 0;animation:pop .22s ease}
+    @keyframes pop{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+    .msg.mine{justify-content:flex-end}
+    .bubble{background:var(--wa-bubble);border-radius:10px;padding:8px 10px 7px;max-width:86%;min-width:240px;box-shadow:0 1px 1px rgba(0,0,0,.09);position:relative}
+    .msg:not(.mine) .bubble{border-top-left-radius:2px}
+    .msg.mine .bubble{background:var(--wa-mine);border-top-right-radius:2px}
+    .msg:not(.mine) .bubble::before{content:"";position:absolute;left:-7px;top:0;border:8px solid transparent;border-top-color:var(--wa-bubble);border-right-color:var(--wa-bubble);border-left:0}
+    .msg.mine .bubble::before{content:"";position:absolute;right:-7px;top:0;border:8px solid transparent;border-top-color:var(--wa-mine);border-left-color:var(--wa-mine);border-right:0}
+    .sender{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:2px}
+    .sender .vbadge{font-size:9px;background:var(--lime);color:var(--navy);border-radius:999px;padding:2px 7px;font-weight:800}
+    .sender .bbadge{font-size:9px;background:#FFE3B3;color:#8A5B00;border-radius:999px;padding:2px 7px;font-weight:800}
+    .sender .obadge{font-size:9px;background:#D6E7FF;color:#1B4E8A;border-radius:999px;padding:2px 7px;font-weight:800}
+    .owner-note{font-size:10.5px;color:#0E8345;background:#E7F5EE;border-radius:7px;padding:3px 8px;font-weight:700}
+    .sender .ptype{font-size:9px;border-radius:999px;padding:2px 7px;font-weight:800}
     .ptype.need{background:#FFF1D6;color:#8A5B00}
     .ptype.avail{background:#DCF1FF;color:#0F5C8A}
-    .ptype.pg{background:#EAF5D3;color:#4C6E0B}
-    .post h3{font-size:16px;color:var(--navy);margin-bottom:4px}
-    .post .desc{font-size:13.5px;color:#5A6482;margin-bottom:12px}
-    .facts{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-    .facts span{font-size:12px;background:var(--mist);color:var(--navy);padding:4px 11px;border-radius:999px;font-weight:600}
-    .facts .rent{background:var(--navy);color:var(--lime)}
-    .status-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1.5px dashed var(--line);padding-top:12px;flex-wrap:wrap}
-    .fresh{font-size:12px;color:var(--lime-deep);font-weight:700;display:flex;align-items:center;gap:5px}
-    .fresh.expiring{color:#B36B00}
-    .actions{display:flex;gap:8px}
-    .act{border:1.5px solid var(--line);background:var(--white);border-radius:999px;padding:8px 14px;font-size:12.5px;font-weight:700;color:var(--navy);transition:all .15s}
-    .act:hover{border-color:var(--lime)}
-    .act.wa{background:#25D366;border-color:#25D366;color:#fff}
-    .act.wa:hover{box-shadow:0 6px 16px rgba(37,211,102,.4)}
-    .act.primary{background:var(--navy);border-color:var(--navy);color:var(--white)}
-    .empty{background:var(--white);border:1.5px dashed var(--line);border-radius:var(--radius);padding:38px 20px;text-align:center;color:#5A6482;font-size:14px}
-    .empty strong{display:block;font-family:'Bricolage Grotesque';font-size:17px;color:var(--navy);margin-bottom:4px}
+    .ptype.pg{background:#E7F5EE;color:#0E8345}
+    .ptype.squad{background:#EFE5FF;color:#6B2FBF}
+    .squad-bar{display:flex;align-items:center;gap:9px;background:#F7F2FF;border:1.5px solid #E2D4F8;border-radius:10px;padding:8px 11px;margin-bottom:7px}
+    .squad-heads{display:flex}
+    .squad-heads i{width:26px;height:26px;border-radius:50%;background:#6B2FBF;color:#fff;display:grid;place-items:center;font-size:11px;font-weight:800;font-style:normal;border:2px solid #fff;margin-left:-7px}
+    .squad-heads i:first-child{margin-left:0}
+    .squad-heads i.empty{background:#E9DEFA;color:#9B7DD4;border-style:dashed;border-color:#C9AEF0}
+    .squad-bar b{font-size:12px;color:#4A1F8C}
+    .squad-bar span{font-size:10.5px;color:#8A6BBF;display:block}
+    .join-b{margin-left:auto;background:#6B2FBF;color:#fff;border-radius:999px;padding:7px 14px;font-size:11.5px;font-weight:800;flex:none}
+    .join-b.joined{background:#E7F5EE;color:#0E8345}
+    .meet-chip{font-size:10.5px;color:#6B2FBF;background:#EFE5FF;border-radius:7px;padding:3px 8px;font-weight:700}
+    /* Official Dyng PG bubbles */
+    .bubble.official{border-left:4px solid var(--lime);background:#FDFFF6}
+    .sender .offbadge{font-size:9px;background:var(--navy);color:var(--lime);border-radius:999px;padding:2px 8px;font-weight:800;letter-spacing:.03em}
+    .pg-photos{display:flex;gap:5px;margin-bottom:8px}
+    .pg-photos i{flex:1;height:64px;border-radius:9px;background:linear-gradient(135deg,var(--navy),#2A4580);display:grid;place-items:center;font-size:20px;font-style:normal}
+    .pg-bd{border:1.5px dashed #DCE3D0;border-radius:10px;padding:8px 11px;margin-bottom:8px;font-size:12px;color:#3B4A54}
+    .pg-bd div{display:flex;justify-content:space-between;padding:2.5px 0}
+    .pg-bd b{color:var(--wa-ink)}
+    .pg-bd .total{border-top:1px dashed #DCE3D0;margin-top:3px;padding-top:5px;font-weight:800}
+    .pg-bd .total span:last-child{color:var(--wa-green)}
+    .book-b{background:var(--lime);color:var(--navy);border-radius:999px;padding:8px 16px;font-size:12px;font-weight:800}
+    .pg-teaser{background:linear-gradient(100deg,#F3FAE2,#E9F5CE);border:1.5px solid var(--lime);border-radius:12px;margin:8px 0 4px;padding:11px 14px;display:flex;align-items:center;gap:11px;cursor:pointer;box-shadow:0 1px 1px rgba(0,0,0,.05)}
+    .pg-teaser .ic{width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--lime);display:grid;place-items:center;font-size:16px;flex:none}
+    .pg-teaser b{font-size:13px;color:var(--navy);display:block}
+    .pg-teaser span{font-size:11.5px;color:#5C7030}
+    .pg-teaser .go{margin-left:auto;font-size:12px;font-weight:800;color:var(--navy);flex:none}
+    .mtitle{font-size:14.5px;font-weight:700;color:var(--wa-ink);margin-bottom:2px}
+    .mtext{font-size:13.5px;color:#303B42;margin-bottom:7px}
+    .mchips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:7px}
+    .mchips span{font-size:11px;background:var(--wa-chip);color:#3B4A54;border-radius:7px;padding:3px 8px;font-weight:600}
+    .mchips .rent{background:var(--wa-green);color:#fff;font-weight:800}
+    .broker-note{font-size:10.5px;color:#8A5B00;background:#FFF6E5;border-radius:7px;padding:3px 8px;font-weight:600}
+    .mfoot{display:flex;align-items:center;gap:8px;border-top:1px solid rgba(0,0,0,.06);padding-top:6px;flex-wrap:wrap}
+    .avail-tag{font-size:11px;font-weight:700;color:var(--wa-green)}
+    .avail-tag.exp{color:#B36B00}
+    .mact{margin-left:auto;display:flex;gap:4px}
+    .mact button{background:transparent;color:var(--wa-green);font-size:11.5px;font-weight:800;padding:5px 8px;border-radius:7px}
+    .mact button:hover{background:rgba(0,128,105,.08)}
+    .meta{display:flex;justify-content:flex-end;align-items:center;gap:3px;font-size:10.5px;color:var(--wa-gray);margin-top:2px}
+    .ticks{color:var(--wa-tick);font-size:12px;letter-spacing:-2px}
+    .reactions{position:absolute;bottom:-11px;left:10px;background:#fff;border-radius:999px;padding:2px 7px;font-size:11px;box-shadow:0 1px 3px rgba(0,0,0,.15);display:flex;gap:3px;align-items:center}
+    .msg.has-rx{margin-bottom:16px}
 
-    /* Why band */
-    .why-band{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin:26px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;text-align:center}
-    .why-band div strong{display:block;font-family:'Bricolage Grotesque';font-size:15px;color:var(--navy);margin-top:6px}
-    .why-band div span{font-size:12px;color:#8A93B0}
-    .why-band .ic{font-size:22px}
+    /* ============ COMPOSER ============ */
+    .composer{background:transparent;padding:8px 10px 12px;display:flex;gap:8px;align-items:flex-end;position:sticky;bottom:0;z-index:30}
+    .comp-input{flex:1;background:#fff;border-radius:999px;padding:12px 18px;font-size:14px;color:var(--wa-gray);box-shadow:0 1px 3px rgba(0,0,0,.12);display:flex;align-items:center;gap:10px;cursor:pointer}
+    .send{width:48px;height:48px;border-radius:50%;background:var(--wa-green);color:#fff;font-size:19px;display:grid;place-items:center;flex:none;box-shadow:0 4px 12px rgba(0,128,105,.35)}
 
-    /* Composer modal */
-    .overlay{position:fixed;inset:0;background:rgba(18,34,74,.55);display:none;align-items:flex-end;justify-content:center;z-index:100;padding:16px}
+    /* ============ SHEETS (composer + campus picker) ============ */
+    .overlay{position:fixed;inset:0;background:rgba(17,27,33,.6);display:none;align-items:flex-end;justify-content:center;z-index:100}
     .overlay.open{display:flex}
-    .sheet{background:var(--white);border-radius:20px;max-width:520px;width:100%;max-height:88vh;overflow-y:auto;padding:24px;animation:up .25s ease}
+    .sheet{background:#fff;border-radius:18px 18px 0 0;max-width:560px;width:100%;max-height:88vh;overflow-y:auto;padding:20px;animation:up .25s ease}
     @keyframes up{from{transform:translateY(30px);opacity:0}to{transform:none;opacity:1}}
-    .sheet h2{font-size:19px;color:var(--navy);margin-bottom:2px}
-    .sheet .note{font-size:12.5px;color:#8A93B0;margin-bottom:18px}
-    .field{margin-bottom:14px}
-    .field label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:5px;text-transform:uppercase;letter-spacing:.04em}
-    .field input,.field select,.field textarea{width:100%;border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;font-size:14px;font-family:inherit;color:var(--ink);background:var(--white)}
-    .field textarea{resize:vertical;min-height:70px}
-    .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--lime)}
+    .sheet h2{font-size:17px;color:var(--wa-ink);margin-bottom:2px}
+    .sheet .note{font-size:12px;color:var(--wa-gray);margin-bottom:16px}
+    .field{margin-bottom:12px}
+    .field label{display:block;font-size:11px;font-weight:800;color:var(--wa-green);margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em}
+    .field input,.field select,.field textarea{width:100%;border:1.5px solid #E1E5E9;border-radius:10px;padding:11px 13px;font-size:14px;font-family:inherit;color:var(--wa-ink);background:#fff}
+    .field textarea{resize:vertical;min-height:64px}
+    .field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--wa-accent)}
     .field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
     .seg{display:flex;gap:6px;flex-wrap:wrap}
-    .seg button{flex:1;border:1.5px solid var(--line);background:var(--white);border-radius:11px;padding:9px 6px;font-size:12.5px;font-weight:600;min-width:100px}
-    .seg button.on{background:var(--navy);color:var(--white);border-color:var(--navy)}
-    .verify-note{display:flex;gap:10px;background:var(--mist);border-radius:11px;padding:12px;font-size:12.5px;color:#5A6482;margin:16px 0}
-    .sheet-actions{display:flex;gap:10px}
-    .sheet-actions .btn{flex:1;justify-content:center}
-    .btn-ghost{background:var(--mist);color:var(--navy)}
+    .seg button{flex:1;border:1.5px solid #E1E5E9;background:#fff;border-radius:10px;padding:9px 6px;font-size:12px;font-weight:600;min-width:96px}
+    .seg button.on{background:#D9F3EC;color:var(--wa-green);border-color:var(--wa-accent);font-weight:800}
+    .sheet-actions{display:flex;gap:10px;margin-top:6px}
+    .sheet-actions button{flex:1;border-radius:999px;padding:13px;font-size:14px;font-weight:800}
+    .b-cancel{background:var(--wa-chip);color:#54656F}
+    .b-post{background:var(--wa-green);color:#fff}
+    /* campus picker rows */
+    .camp-row{display:flex;align-items:center;gap:13px;padding:13px 6px;border-bottom:1px solid #F0F2F5;width:100%;background:none;text-align:left}
+    .camp-row:hover{background:#F7FAF9}
+    .camp-flag{width:44px;height:44px;border-radius:50%;background:var(--wa-chip);display:grid;place-items:center;font-size:21px;flex:none}
+    .camp-row b{font-size:14.5px;color:var(--wa-ink);display:block}
+    .camp-row span{font-size:12px;color:var(--wa-gray)}
+    .camp-row .cur{margin-left:auto;font-size:12px;font-weight:800;color:var(--wa-green)}
+    .camp-row.on{background:#D9F3EC;border-radius:12px}
+    .start-campus{margin-top:10px;background:#FFF6D4;border-radius:12px;padding:13px 14px;font-size:12.5px;color:#5B5B45;text-align:center}
+    .start-campus b{color:var(--wa-ink)}
 
-    /* Toast */
-    .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);color:var(--white);border-radius:999px;padding:12px 22px;font-size:13.5px;font-weight:600;box-shadow:0 12px 32px rgba(0,0,0,.3);z-index:200;transition:transform .3s ease;max-width:92vw;text-align:center}
+    .toast{position:fixed;bottom:84px;left:50%;transform:translateX(-50%) translateY(70px);background:var(--wa-ink);color:#fff;border-radius:999px;padding:11px 20px;font-size:12.5px;font-weight:600;box-shadow:0 12px 30px rgba(0,0,0,.35);z-index:200;transition:transform .3s;max-width:92vw;text-align:center}
     .toast.show{transform:translateX(-50%) translateY(0)}
-    .toast .lime{color:var(--lime)}
+    .toast .g{color:#7AE3C3}
 
-    footer{text-align:center;padding:30px 16px 40px;font-size:13px;color:#8A93B0}
-    footer a{color:var(--lime-deep);font-weight:600}
-
-    @media (min-width:640px){.overlay{align-items:center}}
-    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
-  
-    /* ============ SUPER APP BOTTOM NAV (mobile) ============ */
-    .appbar{position:fixed;bottom:0;left:0;right:0;background:var(--navy-deep);display:none;justify-content:space-around;padding:7px 4px calc(7px + env(safe-area-inset-bottom));z-index:95;box-shadow:0 -6px 24px rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.08)}
-    .appbar a{display:flex;flex-direction:column;align-items:center;gap:2px;color:rgba(255,255,255,.55);font-size:9.5px;font-weight:700;min-width:54px;letter-spacing:.02em}
+    .appbar{position:fixed;bottom:0;left:0;right:0;background:#12224A;display:none;justify-content:space-around;padding:7px 4px calc(7px + env(safe-area-inset-bottom));z-index:95;box-shadow:0 -6px 24px rgba(0,0,0,.3)}
+    .appbar a{display:flex;flex-direction:column;align-items:center;gap:2px;color:rgba(255,255,255,.55);font-size:9.5px;font-weight:700;min-width:54px;text-decoration:none}
     .appbar a .ai{font-size:21px;line-height:1}
     .appbar a.on{color:var(--lime)}
-    .appbar a.on .ai{transform:translateY(-1px)}
-    @media (max-width:820px){.appbar{display:flex}body{padding-bottom:74px}}
+    @media (max-width:820px){.appbar{display:flex}.composer{bottom:64px}.app{padding-bottom:64px}}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
   </style>
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <nav>
-      <a href="../index.html" class="logo"><span class="logo-mark">D</span><span>Dyng<small>Flat Feed</small></span></a>
-      <div class="nav-right">
-        <a href="index.html">Verified PGs</a>
-        <a href="roomies.html">Roomies</a>
-        <a href="../rides/index.html">Rides</a>
-      </div>
-    </nav>
-  </div>
-</header>
+<div class="app">
 
-<div class="page-head">
-  <div class="wrap">
-    <span class="live-dot"><i></i> LIVE FEED</span>
-    <h1>One feed. Zero broker spam. <em>Never stale.</em></h1>
-    <p>Flats, rooms & flatmate vacancies near DU — posted by verified students. Everything the WhatsApp groups do, minus everything you hate about them.</p>
+  <!-- ============ GROUP HEADER ============ -->
+  <div class="wa-head">
+    <a href="index.html" class="wa-back" aria-label="Back to Housing">←</a>
+    <div class="grp-avatar">🏠</div>
+    <div class="grp-info" onclick="toastMsg('👥 Group info — rules · admins · labelled posters')">
+      <b>Flats & Flatmates <span class="vf">✓ Dyng</span></b>
+      <span id="grpSub"></span>
+    </div>
+    <div class="wa-icons">
+      <button onclick="toastMsg('🔍 Search posts — try that in a real group chat 😉')" aria-label="Search">🔍</button>
+      <button onclick="toastMsg('⋮ Mute · Group info · Report')" aria-label="Menu">⋮</button>
+    </div>
+  </div>
+
+  <!-- ============ CAMPUS BAR (the global switch) ============ -->
+  <div class="campus-bar">
+    <button class="campus-btn" onclick="openCampus()">📍 <span id="campusName"></span> ▾</button>
+    <div class="area-scroll" id="areaRow" role="group" aria-label="Filter by area"></div>
+  </div>
+
+  <!-- ============ FILTERS ============ -->
+  <div class="filters" id="filterRow" role="group" aria-label="Filter the feed"></div>
+  <div class="subfilters hidden" id="subRow" role="group" aria-label="Sub filters"></div>
+
+  <!-- ============ CHAT ============ -->
+  <div class="chat" id="chat"></div>
+
+  <!-- ============ COMPOSER ============ -->
+  <div class="composer">
+    <div class="comp-input" onclick="openComposer()">📎 &nbsp;Post a vacancy — resident, owner or broker, all labelled…</div>
+    <button class="send" onclick="openComposer()" aria-label="Post a vacancy">➤</button>
   </div>
 </div>
 
-<main class="wrap">
-  <!-- FILTERS: the thing WhatsApp can never do -->
-  <div class="filter-card" role="group" aria-label="Filter the feed">
-    <div class="chip-row">
-      <span class="chip-label">Area</span>
-      <button class="chip on" data-f="area" data-v="all">All areas</button>
-      <button class="chip" data-f="area" data-v="Kamla Nagar">Kamla Nagar</button>
-      <button class="chip" data-f="area" data-v="Hudson Lane">Hudson Lane</button>
-      <button class="chip" data-f="area" data-v="GTB Nagar">GTB Nagar</button>
-      <button class="chip" data-f="area" data-v="Vijay Nagar">Vijay Nagar</button>
-      <button class="chip" data-f="area" data-v="Satya Niketan">Satya Niketan</button>
-    </div>
-    <div class="chip-row">
-      <span class="chip-label">Type</span>
-      <button class="chip on" data-f="type" data-v="all">Everything</button>
-      <button class="chip" data-f="type" data-v="need">Flatmate needed</button>
-      <button class="chip" data-f="type" data-v="avail">Flat available</button>
-      <button class="chip" data-f="type" data-v="pg">PG vacancy</button>
-    </div>
-    <div class="chip-row">
-      <span class="chip-label">Budget</span>
-      <button class="chip on" data-f="budget" data-v="all">Any</button>
-      <button class="chip" data-f="budget" data-v="8000">Under ₹8k</button>
-      <button class="chip" data-f="budget" data-v="12000">Under ₹12k</button>
-      <button class="chip" data-f="budget" data-v="16000">Under ₹16k</button>
-    </div>
+<!-- ============ CAMPUS PICKER ============ -->
+<div class="overlay" id="campusOverlay" role="dialog" aria-modal="true" aria-labelledby="campus-title">
+  <div class="sheet">
+    <h2 id="campus-title">Choose your campus</h2>
+    <p class="note">🌍 Live on <b id="campusCount"></b> campuses — same group, your city. Each campus gets its own feed, areas and currency.</p>
+    <div id="campusList"></div>
+    <div class="start-campus">🌍 <b>Your campus not here yet?</b> Dyng launches campus-by-campus — bring it to yours and become the founding admin. <b style="color:var(--wa-green)">Start my campus →</b></div>
   </div>
+</div>
 
-  <div class="feed-meta">
-    <span><strong id="count">0</strong> live posts · auto-expire in 14 days</span>
-    <button class="btn btn-lime" id="openComposer">+ Post a vacancy</button>
-  </div>
-
-  <div id="feed" aria-live="polite"></div>
-
-  <div class="why-band">
-    <div><span class="ic">🎓</span><strong>Students only</strong><span>Every poster is college-verified</span></div>
-    <div><span class="ic">⏳</span><strong>Auto-expires</strong><span>Posts die in 14 days — nothing stale</span></div>
-    <div><span class="ic">🔍</span><strong>Filterable</strong><span>Area, budget, type — try that in a group chat</span></div>
-    <div><span class="ic">📵</span><strong>No spam</strong><span>No brokers, no forwards, no "good morning"</span></div>
-  </div>
-</main>
-
-<!-- COMPOSER -->
+<!-- ============ COMPOSER MODAL ============ -->
 <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="composer-title">
   <div class="sheet">
-    <h2 id="composer-title">Post a vacancy</h2>
-    <p class="note">Takes 30 seconds. Goes live instantly for every DU student on Dyng.</p>
-
+    <h2 id="composer-title">Post to Flats & Flatmates</h2>
+    <p class="note" id="compNote"></p>
+    <div class="field">
+      <label>Posting as</label>
+      <div class="seg" id="whoSeg">
+        <button data-v="resident" class="on">🧑 Resident — I live / will live there</button>
+        <button data-v="owner">🔑 Owner</button>
+        <button data-v="broker">🏢 Broker</button>
+      </div>
+    </div>
     <div class="field">
       <label>What's the post?</label>
       <div class="seg" id="typeSeg">
-        <button data-v="need" class="on">🙋 Flatmate needed</button>
+        <button data-v="need" class="on">🙋 Roommate needed</button>
         <button data-v="avail">🏠 Flat available</button>
-        <button data-v="pg">🛏️ PG vacancy</button>
+        <button data-v="squad">🤝 Find together</button>
       </div>
     </div>
-    <div class="field">
-      <label for="f-title">Headline</label>
-      <input id="f-title" placeholder="e.g. 1 girl needed for 2BHK, Vijay Nagar">
+    <div class="field hidden" id="squadField">
+      <label>Squad size (including you)</label>
+      <div class="seg" id="squadSeg">
+        <button data-v="2" class="on">2</button><button data-v="3">3</button><button data-v="4">4</button><button data-v="5">5</button>
+      </div>
+    </div>
+    <div class="field" id="subField">
+      <label>Roommate for…</label>
+      <div class="seg" id="subSeg">
+        <button data-v="flat" class="on">🏠 A flat</button>
+        <button data-v="pg">🛏️ A PG</button>
+      </div>
+    </div>
+    <div class="field"><label for="f-title">Headline</label><input id="f-title" placeholder="e.g. 1 flatmate needed for 2-bed near campus"></div>
+    <div class="field-row">
+      <div class="field"><label for="f-area">Area</label><select id="f-area"></select></div>
+      <div class="field"><label for="f-rent">Rent / person / month</label><input id="f-rent" type="number" placeholder="9000" min="1"></div>
     </div>
     <div class="field-row">
-      <div class="field">
-        <label for="f-area">Area</label>
-        <select id="f-area">
-          <option>Kamla Nagar</option><option>Hudson Lane</option><option>GTB Nagar</option>
-          <option>Vijay Nagar</option><option>Satya Niketan</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="f-rent">Rent per person (₹/mo)</label>
-        <input id="f-rent" type="number" placeholder="9000" min="1000">
-      </div>
+      <div class="field"><label for="f-gender">Looking for</label><select id="f-gender"><option>Girls</option><option>Boys</option><option>Any</option></select></div>
+      <div class="field"><label for="f-from">Available from</label><input id="f-from" placeholder="e.g. 1 August"></div>
     </div>
-    <div class="field-row">
-      <div class="field">
-        <label for="f-gender">Looking for</label>
-        <select id="f-gender"><option>Girls</option><option>Boys</option><option>Any</option></select>
-      </div>
-      <div class="field">
-        <label for="f-from">Available from</label>
-        <input id="f-from" placeholder="e.g. 1 August">
-      </div>
-    </div>
-    <div class="field">
-      <label for="f-desc">Details</label>
-      <textarea id="f-desc" placeholder="Sharing type, furnishing, landlord terms, your vibe…"></textarea>
-    </div>
-
-    <div class="verify-note">🎓 <span>Your post shows your <strong>verified college ID badge</strong> — that's why people trust it over a WhatsApp forward. (Demo mode: posting as Sumit, Ramjas College.)</span></div>
-
+    <div class="field"><label for="f-desc">Details</label><textarea id="f-desc" placeholder="Sharing type, furnishing, landlord terms, your vibe…"></textarea></div>
     <div class="sheet-actions">
-      <button class="btn btn-ghost" id="closeComposer">Cancel</button>
-      <button class="btn btn-lime" id="submitPost">Post to feed →</button>
+      <button class="b-cancel" onclick="closeComposer()">Cancel</button>
+      <button class="b-post" onclick="submitPost()">Post to group ➤</button>
     </div>
   </div>
 </div>
 
 <div class="toast" id="toast"></div>
 
-<footer>
-  Flat Feed is part of <a href="index.html">Dyng Housing</a> · Want a fully verified PG instead? <a href="index.html">Browse Dyng-verified PGs</a><br>© 2026 Dyng by DU Buddy
-</footer>
+<nav class="appbar" aria-label="App navigation">
+  <a href="../index.html"><span class="ai">🏠</span>Home</a>
+  <a href="index.html" class="on"><span class="ai">🏘️</span>Housing</a>
+  <a href="flats.html" class="on"><span class="ai">📋</span>Flat Feed</a>
+  <a href="../events/index.html"><span class="ai">🎪</span>Events</a>
+  <a href="../rides/index.html"><span class="ai">🛵</span>Rides</a>
+</nav>
 
 <script>
-// ============ DATA (in-memory demo; swap for API later) ============
-const now = Date.now(), H = 3600e3, D = 24 * H;
-let posts = [
-  {id:1,type:'need',name:'Ananya S.',college:'Hansraj College',area:'Vijay Nagar',rent:8500,gender:'Girls',from:'1 Aug',title:'1 girl needed for 2BHK near GTB metro',desc:'Fully furnished, veg kitchen, chill landlord. We\'re 2 second-years, both early sleepers.',posted:now-2*H,confirmed:now-2*H},
-  {id:2,type:'avail',name:'Kabir M.',college:'Kirori Mal College',area:'Hudson Lane',rent:13000,gender:'Boys',from:'Immediate',title:'Room free in 3BHK above Hudson Lane cafés',desc:'Balcony room, 200 Mbps WiFi, washing machine. Current flatmates: 2 KMC third-years.',posted:now-6*H,confirmed:now-3*H},
-  {id:3,type:'pg',name:'Priya T.',college:'Miranda House',area:'Kamla Nagar',rent:11000,gender:'Girls',from:'15 Jul',title:'My PG has 1 double-sharing bed free',desc:'Leaving for exchange sem — great aunty, 3 meals, 2 min from market. Will refer you directly.',posted:now-26*H,confirmed:now-5*H},
-  {id:4,type:'need',name:'Rohan V.',college:'Ramjas College',area:'GTB Nagar',rent:7500,gender:'Boys',from:'1 Aug',title:'2 guys needed for 3BHK, split ₹7.5k each',desc:'Ground floor, unfurnished (we have basics), 5 min walk to metro. Gym bros preferred 😄',posted:now-2*D,confirmed:now-8*H},
-  {id:5,type:'avail',name:'Sneha K.',college:'Sri Venkateswara College',area:'Satya Niketan',rent:12500,gender:'Girls',from:'20 Jul',title:'Flat available opposite Venky — 2 rooms',desc:'South Campus, direct owner, no brokerage. Semi-furnished, safe lane with guard.',posted:now-11*D,confirmed:now-2*D},
+if('serviceWorker' in navigator){navigator.serviceWorker.register('/sw.js').catch(()=>{});}
+
+// ============ GLOBAL CAMPUS DATA (each campus = its own feed, areas, currency) ============
+const now=Date.now(),H=36e5,D=24*H;
+const senderColors=['#E542A3','#1F7AEC','#06CF9C','#FF8A00','#7F66FF','#DF64C8'];
+
+const campuses=[
+  {id:'du',flag:'🇮🇳',name:'North Campus · Delhi',uni:'Delhi University',cur:'₹',stats:'1,247 members · 38 brokers',
+   areas:['Kamla Nagar','Hudson Lane','GTB Nagar','Vijay Nagar'],
+   posts:[
+    {id:1,type:'need',sub:'flat',name:'Ananya S.',org:'Hansraj College',area:'Vijay Nagar',rent:8500,gender:'Girls',from:'1 Aug',title:'1 girl needed for 2BHK near GTB metro',desc:'Fully furnished, veg kitchen, chill landlord. We\'re 2 second-years, both early sleepers 🌙',posted:now-2*H,confirmed:now-2*H,rx:'👍 4',day:'today'},
+    {id:2,type:'avail',name:'Kabir M.',org:'Kirori Mal College',area:'Hudson Lane',rent:13000,gender:'Boys',from:'Immediate',title:'Room free in 3BHK above the café strip ☕',desc:'Balcony room, 200 Mbps WiFi, washing machine. Flatmates: 2 third-years.',posted:now-6*H,confirmed:now-3*H,rx:'🔥 7 ❤️ 2',day:'today'},
+    {id:3,type:'need',sub:'pg',name:'Priya T.',org:'Miranda House',area:'Kamla Nagar',rent:11000,gender:'Girls',from:'15 Jul',title:'My PG has 1 double-sharing bed free',desc:'Leaving for exchange sem — great aunty, 3 meals, 2 min from market. Will refer you directly 💛',posted:now-26*H,confirmed:now-5*H,rx:'❤️ 9',day:'yesterday'},
+    {id:4,type:'avail',name:'Sharma Properties',broker:true,area:'Kamla Nagar',rent:12000,gender:'Any',from:'Immediate',title:'2BHK fully furnished, Bungalow Road',desc:'Newly painted, geyser + AC both rooms, family building. Site visits 10 AM–7 PM.',posted:now-4*H,confirmed:now-1*H,rx:'👍 2',day:'today'},
+    {id:6,type:'squad',name:'Mehak J.',org:'Daulat Ram',area:'Kamla Nagar',rent:9000,gender:'Girls',from:'By 1 Aug',title:'2 of us need 2 more girls — let\'s find a 4-sharing together',desc:'Both freshers from Jaipur, don\'t know Delhi yet 🙈 Want to meet first (coffee at Hudson Lane?), vibe-check, then hunt PGs/flats as a team.',posted:now-3*H,confirmed:now-3*H,squadSize:4,joined:2,meet:'☕ Meetup: Sat 4 PM, Hudson Lane',rx:'🙌 6',day:'today'},
+    {id:7,type:'squad',name:'Aditya P.',org:'SRCC',area:'GTB Nagar',rent:8000,gender:'Boys',from:'By 5 Aug',title:'Solo fresher looking to form a flat-hunt squad (3-4 guys)',desc:'From Indore, budget-conscious, non-smoker. Plan: meet once, split areas, shortlist together, visit on one weekend. Efficient > endless scrolling.',posted:now-9*H,confirmed:now-4*H,squadSize:4,joined:1,day:'today'},
+    {id:5,type:'avail',name:'Gupta ji',owner:true,area:'Vijay Nagar',rent:9500,gender:'Any',from:'1 Aug',title:'2 rooms in my own house, first floor',desc:'Direct owner — no brokerage. Separate entrance, RO + geyser, family stays on ground floor. Students preferred.',posted:now-7*H,confirmed:now-2*H,rx:'❤️ 5',day:'today'}
+   ]},
+  {id:'mumbai',flag:'🇮🇳',name:'Vile Parle · Mumbai',uni:'Mumbai University & NMIMS',cur:'₹',stats:'860 members · 24 brokers',
+   areas:['Vile Parle East','Santacruz','Andheri East','Powai'],
+   posts:[
+    {id:11,type:'need',sub:'flat',name:'Ishaan D.',org:'NMIMS',area:'Vile Parle East',rent:16000,gender:'Boys',from:'1 Aug',title:'1 flatmate for 2BHK, 8 min walk to NMIMS',desc:'Lift building, fast WiFi, we\'re 2 MBA first-years. Local train station 5 min 🚆',posted:now-3*H,confirmed:now-1*H,rx:'👍 5',day:'today'},
+    {id:12,type:'need',sub:'pg',name:'Sana Q.',org:'Xavier\'s',area:'Santacruz',rent:14000,gender:'Girls',from:'20 Jul',title:'Bed free in my 3-sharing PG, Santacruz W',desc:'Aunty makes amazing food, 2 min from station, curfew 11 PM. Referring directly 💛',posted:now-8*H,confirmed:now-2*H,rx:'❤️ 6',day:'today'},
+    {id:13,type:'avail',name:'Skyline Estates',broker:true,area:'Powai',rent:19000,gender:'Any',from:'Immediate',title:'1RK furnished near Hiranandani, Powai',desc:'Ideal for 2 sharing. Society with gym. One month brokerage.',posted:now-27*H,confirmed:now-6*H,day:'yesterday'},
+    {id:15,type:'squad',name:'Kiara F.',org:'NMIMS',area:'Vile Parle East',rent:15000,gender:'Girls',from:'By 1 Aug',title:'MBA fresher — anyone want to team up & search together?',desc:'New to Mumbai. Let\'s meet near campus, align on budget & vibe, then hunt as a pair/trio.',posted:now-4*H,confirmed:now-2*H,squadSize:3,joined:1,meet:'☕ Meetup: Sun 11 AM, Vile Parle',day:'today'},
+    {id:14,type:'avail',name:'Mrs. D\'Souza',owner:true,area:'Santacruz',rent:15000,gender:'Girls',from:'1 Aug',title:'1BHK in my building, Santacruz West',desc:'Direct owner, no brokerage. 4 min from station, quiet lane, girls only please.',posted:now-5*H,confirmed:now-1*H,rx:'👍 3',day:'today'}
+   ]},
+  {id:'london',flag:'🇬🇧',name:'Camden · London',uni:'UCL & King\'s College London',cur:'£',stats:'540 members · 12 letting agents',
+   areas:['Camden','Islington','Shoreditch','Stratford'],
+   posts:[
+    {id:21,type:'need',sub:'flat',name:'Emma W.',org:'UCL',area:'Camden',rent:780,gender:'Any',from:'1 Sep',title:'1 housemate for 3-bed flat, 10 min to UCL',desc:'Bills included, lovely landlord, we\'re 2 second-years (physics + law). No smokers pls 🙏',posted:now-5*H,confirmed:now-2*H,rx:'❤️ 4',day:'today'},
+    {id:22,type:'avail',name:'Arjun N.',org:'KCL',area:'Stratford',rent:650,gender:'Boys',from:'Immediate',title:'Room free in student house, Stratford',desc:'En-suite, 25 min to Strand campus on the Jubilee. Deposit protected via DPS.',posted:now-9*H,confirmed:now-4*H,rx:'👍 3',day:'today'},
+    {id:23,type:'avail',name:'CityLets Agency',broker:true,area:'Islington',rent:820,gender:'Any',from:'1 Sep',title:'2 rooms in refurbished flat, Islington N1',desc:'Zone 1 border, all bills included, admin fee applies. Video tours available.',posted:now-26*H,confirmed:now-7*H,day:'yesterday'},
+    {id:25,type:'squad',name:'Tomás R.',org:'UCL',area:'Camden',rent:750,gender:'Any',from:'By Sep',title:'Intl student forming a house-hunt group (3-4 people)',desc:'Erasmus, arriving late Aug. Want to meet on campus first, then view houses together — safer & cheaper than solo.',posted:now-7*H,confirmed:now-3*H,squadSize:4,joined:2,day:'today'},
+    {id:24,type:'avail',name:'Mr. Okafor',owner:true,area:'Stratford',rent:700,gender:'Any',from:'1 Sep',title:'Double room in my house, Stratford E15',desc:'Private landlord, no agency fees. Bills included, 10 min to the station, deposit DPS-protected.',posted:now-6*H,confirmed:now-2*H,day:'today'}
+   ]}
 ];
-let nextId = 6;
-const filters = {area:'all', type:'all', budget:'all'};
-const typeMeta = {need:['need','Flatmate needed'], avail:['avail','Flat available'], pg:['pg','PG vacancy']};
+// Dyng-verified PG inventory per campus
+const dyngPGs={
+  du:[
+    {name:'Sunrise Girls PG',area:'Kamla Nagar',gender:'Girls',sharing:'Double sharing',rent:11000,deposit:'₹10,000 refundable',food:'3 meals included',amen:['AC','WiFi','Laundry','CCTV'],art:['🛏️','🚿','🍛'],desc:'2 min from the market. Physically verified by the Dyng team — photos are of the actual rooms.'},
+    {name:'Scholars Boys PG',area:'Hudson Lane',gender:'Boys',sharing:'Single & double',rent:13500,deposit:'₹13,500 refundable',food:'2 meals included',amen:['AC','WiFi 200 Mbps','Housekeeping'],art:['🛏️','💻','☕'],desc:'Above the café strip. Owner identity verified, full breakdown confirmed on visit.'},
+    {name:'Campus View Girls PG',area:'Vijay Nagar',gender:'Girls',sharing:'Triple sharing',rent:8500,deposit:'₹8,000 refundable',food:'3 meals included',amen:['Cooler','WiFi','Warden','CCTV'],art:['🛏️','🌳','🍛'],desc:'Budget pick, 5 min from GTB metro. Verified & visited by Dyng.'}
+  ],
+  mumbai:[
+    {name:'Seaview Girls PG',area:'Santacruz',gender:'Girls',sharing:'Double sharing',rent:16000,deposit:'₹15,000 refundable',food:'2 meals included',amen:['AC','WiFi','Laundry'],art:['🛏️','🌊','🍛'],desc:'4 min from Santacruz station. Verified & visited by the Dyng Mumbai team.'},
+    {name:'Campus Nest Boys PG',area:'Vile Parle East',gender:'Boys',sharing:'Double & triple',rent:14500,deposit:'₹14,000 refundable',food:'2 meals included',amen:['WiFi','Housekeeping','CCTV'],art:['🛏️','🚆','☕'],desc:'8 min walk to NMIMS. Full rent breakdown confirmed on visit.'}
+  ],
+  london:[
+    {name:'Camden Student House',area:'Camden',gender:'Any',sharing:'En-suite rooms',rent:820,deposit:'5 weeks · DPS protected',food:'Self-catered',amen:['Bills included','WiFi','Laundry'],art:['🛏️','🎸','🚇'],desc:'Dyng-partnered residence, 10 min to UCL. Contract & deposit verified.'}
+  ]
+};
+let campus=campuses[0];
+let nextId=100;
+const filters={type:'all',sub:'all',area:'all',who:'all'};
+function whoOf(p){return p.broker?'broker':(p.owner?'owner':'resident');}
+function postLabel(p){
+  if(p.type==='avail')return['avail','FLAT AVAILABLE'];
+  if(p.type==='squad')return['squad','🤝 FINDING TOGETHER'];
+  return p.sub==='pg'?['pg','ROOMMATE · PG']:['need','ROOMMATE · FLAT'];
+}
+
+function ago(t){const m=Math.floor((Date.now()-t)/6e4);if(m<60)return m+'m';const h=Math.floor(m/60);if(h<24)return h+'h';return Math.floor(h/24)+'d';}
+function timeOf(t){const d=new Date(t);return d.getHours().toString().padStart(2,'0')+':'+d.getMinutes().toString().padStart(2,'0');}
+function daysLeft(t){return Math.max(0,14-Math.floor((Date.now()-t)/D));}
+function sColor(name){let h=0;for(const c of name)h+=c.charCodeAt(0);return senderColors[h%senderColors.length];}
+function money(v){return campus.cur+v.toLocaleString('en');}
+
+// ============ CAMPUS ============
+function setCampus(id){
+  campus=campuses.find(c=>c.id===id);
+  filters.type='all';filters.area='all';filters.who='all';
+  document.getElementById('campusName').textContent=campus.name;
+  document.getElementById('campusCount').textContent=campuses.length+'+';
+  // composer areas
+  document.getElementById('f-area').innerHTML=campus.areas.map(a=>`<option>${a}</option>`).join('');
+  document.getElementById('compNote').textContent=`Goes live instantly for everyone on the ${campus.name} feed. Auto-expires in 14 days.`;
+  renderFilters();render();
+  document.getElementById('campusOverlay').classList.remove('open');
+}
+function openCampus(){
+  document.getElementById('campusList').innerHTML=campuses.map(c=>`
+    <button class="camp-row ${c.id===campus.id?'on':''}" onclick="setCampus('${c.id}')">
+      <span class="camp-flag">${c.flag}</span>
+      <span style="flex:1"><b>${c.name}</b><span>${c.uni} · ${c.stats}</span></span>
+      <span class="cur">${c.cur}</span>
+    </button>`).join('');
+  document.getElementById('campusOverlay').classList.add('open');
+}
+document.getElementById('campusOverlay').addEventListener('click',e=>{if(e.target.id==='campusOverlay')e.target.classList.remove('open');});
+
+
+// ============ FILTERS (rebuilt per campus) ============
+function renderFilters(){
+  // Area chips in the green campus bar
+  document.getElementById('areaRow').innerHTML=campus.areas.map(a=>
+    `<button class="achip" data-v="${a}">${a}</button>`).join('');
+  document.querySelectorAll('.achip').forEach(a=>{
+    a.addEventListener('click',()=>{
+      const on=a.classList.toggle('on');
+      document.querySelectorAll('.achip').forEach(x=>{if(x!==a)x.classList.remove('on');});
+      filters.area=on?a.dataset.v:'all';
+      render();
+    });
+  });
+  // Main type filters
+  document.getElementById('filterRow').innerHTML=`
+    <button class="fchip on" data-f="type" data-v="all">All</button>
+    <button class="fchip" data-f="type" data-v="need">🙋 Roommate needed</button>
+    <button class="fchip" data-f="type" data-v="avail">🏠 Flats</button>
+    <button class="fchip" data-f="type" data-v="squad">🤝 Find together</button>
+    <button class="fchip" data-f="type" data-v="dyngpg">✓ Dyng PGs</button>`;
+  document.querySelectorAll('.fchip').forEach(c=>{
+    c.addEventListener('click',()=>{
+      const v=c.dataset.v;
+      document.querySelectorAll('.fchip').forEach(x=>x.classList.remove('on'));
+      c.classList.add('on');
+      filters.type=v;filters.sub='all';filters.who='all';
+      if(v==='all'){filters.area='all';document.querySelectorAll('.achip').forEach(x=>x.classList.remove('on'));}
+      renderSubRow();
+      render();
+    });
+  });
+  renderSubRow();
+}
+
+function renderSubRow(){
+  const row=document.getElementById('subRow');
+  if(filters.type==='need'){
+    row.classList.remove('hidden');
+    row.innerHTML=`<span class="lbl">Where?</span>
+      <button class="schip ${filters.sub==='all'?'on':''}" data-k="sub" data-v="all">All rooms</button>
+      <button class="schip ${filters.sub==='flat'?'on':''}" data-k="sub" data-v="flat">🏠 In a flat</button>
+      <button class="schip ${filters.sub==='pg'?'on':''}" data-k="sub" data-v="pg">🛏️ In a PG</button>`;
+  } else if(filters.type==='avail'){
+    row.classList.remove('hidden');
+    row.innerHTML=`<span class="lbl">Posted by</span>
+      <button class="schip ${filters.who==='all'?'on':''}" data-k="who" data-v="all">Everyone</button>
+      <button class="schip ${filters.who==='resident'?'on':''}" data-k="who" data-v="resident">🧑 Residents</button>
+      <button class="schip ${filters.who==='owner'?'on':''}" data-k="who" data-v="owner">🔑 Owners</button>
+      <button class="schip ${filters.who==='broker'?'on':''}" data-k="who" data-v="broker">🏢 Brokers</button>`;
+  } else {
+    row.classList.add('hidden');row.innerHTML='';return;
+  }
+  row.querySelectorAll('.schip').forEach(s=>{
+    s.addEventListener('click',()=>{
+      row.querySelectorAll('.schip').forEach(x=>x.classList.remove('on'));
+      s.classList.add('on');
+      filters[s.dataset.k]=s.dataset.v;
+      render();
+    });
+  });
+}
 
 // ============ RENDER ============
-const feedEl = document.getElementById('feed');
-function ago(t){const m=Math.floor((Date.now()-t)/6e4);if(m<60)return m+'m ago';const h=Math.floor(m/60);if(h<24)return h+'h ago';return Math.floor(h/24)+'d ago'}
-function daysLeft(t){return Math.max(0, 14 - Math.floor((Date.now()-t)/D))}
-
 function render(){
-  const list = posts.filter(p=>{
-    if(filters.area!=='all' && p.area!==filters.area) return false;
-    if(filters.type!=='all' && p.type!==filters.type) return false;
-    if(filters.budget!=='all' && p.rent>+filters.budget) return false;
+  const list=campus.posts.filter(p=>{
+    if(filters.type!=='all'&&p.type!==filters.type)return false;
+    if(filters.type==='need'&&filters.sub!=='all'&&p.sub!==filters.sub)return false;
+    if(filters.area!=='all'&&p.area!==filters.area)return false;
+    if(filters.who==='student'&&p.broker)return false;
+    if(filters.who==='broker'&&!p.broker)return false;
     return daysLeft(p.posted)>0;
-  }).sort((a,b)=>b.confirmed-a.confirmed);
+  }).sort((a,b)=>a.posted-b.posted);
 
-  document.getElementById('count').textContent = list.length;
-  if(!list.length){
-    feedEl.innerHTML = '<div class="empty"><strong>No posts match these filters</strong>Try widening your budget or area — or be the first to post one.</div>';
+  const pgs=(dyngPGs[campus.id]||[]).filter(g=>filters.area==='all'||g.area===filters.area);
+
+  // ✓ Dyng PGs tab: official verified listings as business-style messages
+  if(filters.type==='dyngpg'){
+    let html=`<div class="sys"><span>✓ These PGs are <b>physically verified by the Dyng team</b> — real photos, full rent breakdown, owner identity checked. Zero brokerage.</span></div>`;
+    if(!pgs.length)html+=`<div class="sys"><span>No verified PGs in this area yet — clear the area filter or check back soon.</span></div>`;
+    pgs.forEach(g=>{
+      html+=`
+      <div class="msg">
+        <div class="bubble official">
+          <div class="sender" style="color:var(--wa-green)">Dyng <span class="offbadge">✓ OFFICIAL · VERIFIED PG</span></div>
+          <div class="mtitle">${g.name} · ${g.area}</div>
+          <div class="pg-photos">${g.art.map(a=>`<i>${a}</i>`).join('')}</div>
+          <div class="mtext">${g.desc}</div>
+          <div class="pg-bd">
+            <div><span>Rent (${g.sharing})</span><b>${money(g.rent)}/mo</b></div>
+            <div><span>Food</span><b>${g.food}</b></div>
+            <div><span>Deposit</span><b>${g.deposit}</b></div>
+            <div class="total"><span>You pay monthly</span><span>${money(g.rent)}</span></div>
+          </div>
+          <div class="mchips">${g.amen.map(a=>`<span>${a}</span>`).join('')}<span>${g.gender==='Any'?'👥 Anyone':(g.gender==='Girls'?'🙋‍♀️ Girls':'🙋‍♂️ Boys')}</span></div>
+          <div class="mfoot">
+            <span class="avail-tag">✓ Verified & visited by Dyng</span>
+            <div class="mact">
+              <button class="book-b" onclick="toastMsg('🏠 Visit request sent — <span class=g>Dyng team will confirm your slot</span>')">Book a visit</button>
+              <button onclick="sharePG('${g.name.replace(/'/g,'')}')">Share ↗</button>
+            </div>
+          </div>
+          <div class="meta">${timeOf(Date.now())}</div>
+        </div>
+      </div>`;
+    });
+    html+=`<div class="sys"><span>Want the full catalogue with photos & filters? <b>Open the Housing module →</b></span></div>`;
+    const chat=document.getElementById('chat');
+    chat.innerHTML=html;chat.scrollTop=0;
+    document.getElementById('grpSub').textContent=`${campus.name} · ${pgs.length} Dyng-verified PG${pgs.length!==1?'s':''} · zero brokerage`;
     return;
   }
-  feedEl.innerHTML = list.map(p=>{
-    const [cls,label] = typeMeta[p.type];
-    const dl = daysLeft(p.posted);
-    return `<article class="post">
-      <div class="post-top">
-        <div class="avatar" aria-hidden="true">${p.name[0]}</div>
-        <div class="who">
-          <div class="name">${p.name} <span class="vbadge">✓ VERIFIED STUDENT</span></div>
-          <div class="sub">${p.college} · posted ${ago(p.posted)}</div>
-        </div>
-        <span class="ptype ${cls}">${label}</span>
-      </div>
-      <h3>${p.title}</h3>
-      <p class="desc">${p.desc}</p>
-      <div class="facts">
-        <span class="rent">₹${p.rent.toLocaleString('en-IN')}/mo per person</span>
-        <span>📍 ${p.area}</span><span>${p.gender==='Any'?'👥 Anyone':(p.gender==='Girls'?'🙋‍♀️ Girls':'🙋‍♂️ Boys')}</span><span>📅 From ${p.from}</span>
-      </div>
-      <div class="status-row">
-        <span class="fresh ${dl<=3?'expiring':''}">${dl<=3?'⏳ Expires in '+dl+'d':'✓ Still available · confirmed '+ago(p.confirmed)}</span>
-        <div class="actions">
-          <button class="act" onclick="confirmAvail(${p.id})">Still available?</button>
-          <button class="act wa" onclick="shareWA(${p.id})">Share ↗</button>
-          <button class="act primary" onclick="toast('💬 Chat opens in the Dyng app — <span class=lime>verified students only</span>')">Message</button>
-        </div>
-      </div>
-    </article>`;
-  }).join('');
-}
 
-// ============ FILTERS ============
-document.querySelectorAll('.chip').forEach(c=>{
-  c.addEventListener('click',()=>{
-    const f=c.dataset.f;
-    document.querySelectorAll(`.chip[data-f="${f}"]`).forEach(x=>x.classList.remove('on'));
-    c.classList.add('on');
-    filters[f]=c.dataset.v;
-    render();
+  let html=`
+    <div class="sys"><span>🔒 Anyone can post — but <b>every post is labelled</b>: 🧑 verified resident · 🔑 owner · 🏢 broker. You always know who you're talking to.</span></div>
+    <div class="pinned">📌 <span><b>Group rules:</b> every poster labelled 🧑/🔑/🏢 · no place yet? post "🤝 Find together" & squad up · posts auto-expire in 14 days</span></div>
+    ${pgs.length?`<div class="pg-teaser" onclick="openDyngPGs()">
+      <span class="ic">✓</span>
+      <span><b>${pgs.length} Dyng-verified PG${pgs.length!==1?'s':''} on this campus</b><span>Physically visited · full rent breakdown · zero brokerage</span></span>
+      <span class="go">View →</span>
+    </div>`:''}`;
+
+  let lastDay=null;
+  if(!list.length){
+    html+=`<div class="sys"><span>No posts match these filters — clear a filter or be the first to post 👇</span></div>`;
+  }
+  list.forEach(p=>{
+    const day=p.day==='yesterday'?'YESTERDAY':'TODAY';
+    if(day!==lastDay){html+=`<div class="datepill"><span>${day}</span></div>`;lastDay=day;}
+    const [cls,label]=postLabel(p);
+    const dl=daysLeft(p.posted);
+    const mine=p.mine;
+    html+=`
+    <div class="msg ${mine?'mine':''} ${p.rx?'has-rx':''}">
+      <div class="bubble">
+        <div class="sender" style="color:${mine?'var(--wa-green)':sColor(p.name)}">
+          ${mine?'You':p.name} ${p.broker?'<span class="bbadge">🏢 BROKER</span>':(p.owner?'<span class="obadge">🔑 OWNER</span>':'<span class="vbadge">✓ '+(p.org||'RESIDENT')+'</span>')} <span class="ptype ${cls}">${label}</span>
+        </div>
+        <div class="mtitle">${p.title}</div>
+        <div class="mtext">${p.desc}</div>
+        ${p.type==='squad'?`
+        <div class="squad-bar">
+          <div class="squad-heads">${Array.from({length:p.squadSize},(_,i)=>`<i class="${i<p.joined?'':'empty'}">${i<p.joined?'✓':'+'}</i>`).join('')}</div>
+          <div><b>${p.joined} of ${p.squadSize} in the squad</b><span>${p.squadSize-p.joined} spot${p.squadSize-p.joined!==1?'s':''} left — meet first, hunt together</span></div>
+          <button class="join-b ${p.you?'joined':''}" onclick="joinSquad(${p.id})">${p.you?'✓ You\'re in':'Join squad'}</button>
+        </div>`:''}
+        <div class="mchips">
+          <span class="rent">${p.type==='squad'?'~':''}${money(p.rent)}/mo ${p.type==='squad'?'target budget':'per person'}</span>
+          <span>📍 ${p.area}</span><span>${p.gender==='Any'?'👥 Anyone':(p.gender==='Girls'?'🙋‍♀️ Girls':'🙋‍♂️ Boys')}</span><span>📅 ${p.from}</span>
+          ${p.broker?'<span class="broker-note">ℹ️ Broker post — confirm fees before visiting</span>':(p.owner?'<span class="owner-note">✓ Direct owner — zero brokerage</span>':'')}
+          ${p.meet?`<span class="meet-chip">${p.meet}</span>`:''}
+        </div>
+        <div class="mfoot">
+          <span class="avail-tag ${dl<=3?'exp':''}">${dl<=3?'⏳ expires in '+dl+'d':'✓ Still available · '+ago(p.confirmed)+' ago'}</span>
+          <div class="mact">
+            <button onclick="confirmAvail(${p.id})">Available?</button>
+            <button onclick="shareWA(${p.id})">Share ↗</button>
+            <button onclick="toastMsg('💬 DM opens in Dyng — <span class=g>labelled & logged</span>')">DM</button>
+          </div>
+        </div>
+        <div class="meta">${timeOf(p.posted)} ${mine?'<span class="ticks">✓✓</span>':''}</div>
+        ${p.rx?`<div class="reactions">${p.rx}</div>`:''}
+      </div>
+    </div>`;
   });
-});
+  const chat=document.getElementById('chat');
+  chat.innerHTML=html;
+  chat.scrollTop=chat.scrollHeight;
+  const n=list.length;
+  document.getElementById('grpSub').textContent=`${campus.name} · ${campus.stats} · ${n} live post${n!==1?'s':''}`;
+}
 
 // ============ ACTIONS ============
-function confirmAvail(id){
-  const p=posts.find(x=>x.id===id);
-  p.confirmed=Date.now();
-  toast('✓ Marked <span class=lime>still available</span> — post bumped to top');
+function openDyngPGs(){
+  filters.type='dyngpg';filters.sub='all';filters.who='all';
+  document.querySelectorAll('.fchip').forEach(x=>x.classList.toggle('on',x.dataset.v==='dyngpg'));
+  renderSubRow();render();
+}
+function sharePG(name){
+  const g=(dyngPGs[campus.id]||[]).find(x=>x.name.replace(/'/g,'')===name);
+  const msg=`🏠 *${g.name}* — ✓ Dyng Verified PG\n\n💰 ${money(g.rent)}/mo (${g.sharing})\n🍛 ${g.food} · Deposit: ${g.deposit}\n📍 ${g.area}, ${campus.name}\n\n${g.desc}\n\n✅ Physically verified · zero brokerage\n👉 https://www.dyng.in/housing`;
+  window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
+  toastMsg('Share card ready — <span class=g>send it to your squad</span>');
+}
+function joinSquad(id){
+  const p=campus.posts.find(x=>x.id===id);
+  if(p.you){toastMsg('You\'re already in this squad ✓ — group chat is open');return;}
+  if(p.joined>=p.squadSize){toastMsg('Squad is full — start your own with "Find together"');return;}
+  p.you=true;p.joined++;
+  toastMsg('🤝 You\'re in! <span class=g>Squad group chat opened</span> — say hi & plan the meetup');
   render();
 }
-// The distribution hook: share INTO WhatsApp groups, link back to Dyng
+function confirmAvail(id){
+  const p=campus.posts.find(x=>x.id===id);
+  p.confirmed=Date.now();
+  toastMsg('✓ Marked <span class=g>still available</span>');
+  render();
+}
 function shareWA(id){
-  const p=posts.find(x=>x.id===id);
-  const msg=`🏠 *${p.title}*\n\n💰 ₹${p.rent.toLocaleString('en-IN')}/mo per person\n📍 ${p.area} · From ${p.from}\n🎓 Posted by verified DU student (${p.college})\n\n${p.desc}\n\n✅ Verified on Dyng — no brokers, no stale posts\n👉 https://www.dyng.in/housing/flats?post=${p.id}`;
+  const p=campus.posts.find(x=>x.id===id);
+  const msg=`🏠 *${p.title}*\n\n💰 ${money(p.rent)}/mo per person\n📍 ${p.area}, ${campus.name} · From ${p.from}\n${p.broker?'🏢 Posted by broker (labelled on Dyng)':(p.owner?'🔑 Posted by direct owner — zero brokerage':'✓ Posted by verified resident ('+(p.org||'member')+')')}\n\n${p.desc}\n\n✅ From the Flat Feed on Dyng — every poster labelled, never stale\n👉 https://www.dyng.in/housing/flats`;
   window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
-  toast('Share card ready — drop it in your group. <span class=lime>They\'ll follow the link back here.</span>');
+  toastMsg('Share card ready — <span class=g>forward it to your groups</span> 😉');
 }
 
 // ============ COMPOSER ============
-const overlay=document.getElementById('overlay');
-let composeType='need';
-document.getElementById('openComposer').onclick=()=>overlay.classList.add('open');
-document.getElementById('closeComposer').onclick=()=>overlay.classList.remove('open');
-overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('open')});
+let composeType='need',composeSub='flat',composeWho='resident',composeSquad=2;
+function openComposer(){document.getElementById('overlay').classList.add('open');}
+function closeComposer(){document.getElementById('overlay').classList.remove('open');}
+document.getElementById('overlay').addEventListener('click',e=>{if(e.target.id==='overlay')closeComposer();});
 document.querySelectorAll('#typeSeg button').forEach(b=>{
-  b.onclick=()=>{document.querySelectorAll('#typeSeg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');composeType=b.dataset.v;};
+  b.onclick=()=>{document.querySelectorAll('#typeSeg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');composeType=b.dataset.v;
+    document.getElementById('subField').classList.toggle('hidden',composeType!=='need');
+    document.getElementById('squadField').classList.toggle('hidden',composeType!=='squad');};
 });
-document.getElementById('submitPost').onclick=()=>{
+document.querySelectorAll('#squadSeg button').forEach(b=>{
+  b.onclick=()=>{document.querySelectorAll('#squadSeg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');composeSquad=+b.dataset.v;};
+});
+document.querySelectorAll('#subSeg button').forEach(b=>{
+  b.onclick=()=>{document.querySelectorAll('#subSeg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');composeSub=b.dataset.v;};
+});
+document.querySelectorAll('#whoSeg button').forEach(b=>{
+  b.onclick=()=>{document.querySelectorAll('#whoSeg button').forEach(x=>x.classList.remove('on'));b.classList.add('on');composeWho=b.dataset.v;};
+});
+function submitPost(){
   const title=document.getElementById('f-title').value.trim();
   const rent=+document.getElementById('f-rent').value;
-  if(!title||!rent){toast('⚠️ Add a headline and rent to post');return;}
-  posts.unshift({
-    id:nextId++,type:composeType,name:'Sumit R.',college:'Ramjas College',
+  if(!title||!rent){toastMsg('⚠️ Add a headline and rent to post');return;}
+  campus.posts.push({
+    id:nextId++,type:composeType,sub:composeType==='need'?composeSub:undefined,
+    squadSize:composeType==='squad'?composeSquad:undefined,joined:composeType==='squad'?1:undefined,you:composeType==='squad'?true:undefined,name:composeWho==='broker'?'You (Agency)':(composeWho==='owner'?'You (Owner)':'You'),org:composeWho==='resident'?'Verified':null,broker:composeWho==='broker',owner:composeWho==='owner',mine:true,
     area:document.getElementById('f-area').value,rent,
     gender:document.getElementById('f-gender').value,
     from:document.getElementById('f-from').value||'Immediate',
     title,desc:document.getElementById('f-desc').value.trim()||'DM for details.',
-    posted:Date.now(),confirmed:Date.now()
+    posted:Date.now(),confirmed:Date.now(),day:'today'
   });
-  overlay.classList.remove('open');
+  closeComposer();
   ['f-title','f-rent','f-from','f-desc'].forEach(i=>document.getElementById(i).value='');
-  toast('🎉 Live! Your post is now visible to <span class=lime>every DU student on Dyng</span>');
+  toastMsg('✓✓ Posted to <span class=g>'+campus.name+'</span> — live for the whole campus');
   render();
-};
+}
 
 // ============ TOAST ============
-let toastTimer;
-function toast(html){
+let tt;
+function toastMsg(html){
   const t=document.getElementById('toast');
   t.innerHTML=html;t.classList.add('show');
-  clearTimeout(toastTimer);
-  toastTimer=setTimeout(()=>t.classList.remove('show'),3200);
+  clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('show'),3000);
 }
 
-render();
-</script>
-
-<!-- ============ SUPER APP NAV ============ -->
-<nav class="appbar" aria-label="App navigation"><a href="../index.html" class=""><span class="ai">🏠</span>Home</a><a href="../housing/index.html" class=""><span class="ai">🏘️</span>Housing</a><a href="../housing/flats.html" class="on"><span class="ai">📋</span>Flat Feed</a><a href="../events/index.html" class=""><span class="ai">🎪</span>Events</a><a href="../rides/index.html" class=""><span class="ai">🛵</span>Rides</a></nav>
-<script>
-if('serviceWorker' in navigator){
-  navigator.serviceWorker.register('/sw.js').catch(()=>{});
-}
+setCampus('du');
 </script>
 </body>
 </html>
