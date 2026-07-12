@@ -139,6 +139,82 @@
     .pg-teaser b{font-size:13px;color:var(--navy);display:block}
     .pg-teaser span{font-size:11.5px;color:#5C7030}
     .pg-teaser .go{margin-left:auto;font-size:12px;font-weight:800;color:var(--navy);flex:none}
+    .bubble.official{cursor:pointer}
+    .matchbadge{font-size:9px;background:var(--lime);color:var(--navy);border-radius:999px;padding:2px 8px;font-weight:800;box-shadow:0 0 0 1.5px var(--navy)}
+    .pref-btn{position:relative}
+    .pref-btn.active::after{content:"";position:absolute;top:5px;right:5px;width:8px;height:8px;background:var(--lime);border-radius:50%}
+    .multi-chips{display:flex;flex-wrap:wrap;gap:6px}
+    .multi-chips button{border:1.5px solid #E1E5E9;background:#fff;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:600}
+    .multi-chips button.on{background:#D9F3EC;color:var(--wa-green);border-color:var(--wa-accent);font-weight:800}
+    .prefs-note{background:#FDFFF6;border:1.5px solid var(--lime);border-radius:10px;padding:10px 12px;font-size:12px;color:#4C6E0B;margin-bottom:14px}
+    /* Budget range slider */
+    .brange-vals{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}
+    .brange-vals .v{background:#F0F2F5;border-radius:11px;padding:10px 16px;font-size:16px;font-weight:800;color:var(--wa-ink);min-width:110px;text-align:center}
+    .brange-vals .to{font-size:13px;color:#8A93A5;font-weight:700}
+    .range-wrap{position:relative;height:34px;margin:4px 8px 6px}
+    .range-track{position:absolute;top:14px;left:0;right:0;height:5px;border-radius:99px;background:#E4E8EE}
+    .range-fill{position:absolute;top:14px;height:5px;border-radius:99px;background:var(--wa-green)}
+    .range-wrap input[type=range]{position:absolute;top:0;left:0;width:100%;height:34px;-webkit-appearance:none;appearance:none;background:none;pointer-events:none;margin:0}
+    .range-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:26px;height:26px;border-radius:50%;background:#fff;border:3px solid var(--wa-green);box-shadow:0 2px 8px rgba(0,0,0,.2);pointer-events:auto;cursor:grab;margin-top:0}
+    .range-wrap input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--wa-green);box-shadow:0 2px 8px rgba(0,0,0,.2);pointer-events:auto;cursor:grab}
+    .range-hint{font-size:11px;color:#8A93A5;text-align:center;margin-bottom:14px}
+    .view-prof{width:100%;background:var(--navy);color:var(--lime);border-radius:9px;padding:9px;font-size:12px;font-weight:800;margin-top:7px}
+    /* PG PROFILE SHEET */
+    .pg-sheet{position:fixed;inset:0;background:#F6F7F9;z-index:150;display:none;flex-direction:column;max-width:760px;margin:0 auto}
+    .pg-sheet.open{display:flex}
+    .pgs-head{background:var(--wa-green);color:#fff;padding:12px 14px;display:flex;align-items:center;gap:11px;flex:none}
+    .pgs-head b{font-size:16px;flex:1}
+    .pgs-x{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.14);color:#fff;font-size:16px;display:grid;place-items:center}
+    .pgs-body{flex:1;overflow-y:auto;padding-bottom:90px}
+    .pgs-hero{display:flex;gap:6px;padding:12px 14px 0}
+    .pgs-hero i{flex:1;height:110px;border-radius:12px;background:linear-gradient(135deg,var(--navy),#2A4580);display:grid;place-items:center;font-size:30px;font-style:normal}
+    .pgs-title{padding:13px 16px 4px}
+    .pgs-title h2{font-size:20px;color:var(--wa-ink);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .pgs-title .sub{font-size:12.5px;color:#667781;margin-top:3px}
+    .pgs-sec{background:#fff;border-radius:14px;margin:10px 14px;padding:14px 16px;box-shadow:0 1px 2px rgba(0,0,0,.05)}
+    .pgs-sec h3{font-size:13px;color:var(--wa-green);text-transform:uppercase;letter-spacing:.05em;margin-bottom:9px}
+    .room-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px dashed #ECEFF3;font-size:13.5px}
+    .room-row:last-child{border:none}
+    .room-row b{color:var(--wa-ink)}
+    .room-row .rr{font-weight:800;color:var(--wa-green)}
+    .amen-grid{display:flex;flex-wrap:wrap;gap:7px}
+    .amen-grid span{background:#F0F2F5;border-radius:9px;padding:6px 11px;font-size:12px;font-weight:600;color:#3B4A54}
+    .rule-li{font-size:13px;color:#3B4A54;padding:4px 0;display:flex;gap:8px}
+    .rev{border-left:3px solid var(--lime);background:#FBFDF4;border-radius:8px;padding:9px 12px;margin-bottom:8px}
+    .rev b{font-size:12.5px;color:var(--wa-ink)}
+    .rev .stars{color:#F5A623;font-size:11px}
+    .rev p{font-size:12.5px;color:#4A5560;margin-top:2px}
+    .rate-sum{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:8px}
+    .rate-sum .big{font-family:inherit;font-weight:800;font-size:22px;color:var(--wa-ink)}
+    .rate-sum .st{color:#F5A623;font-size:15px}
+    .rate-sum .sub2{font-size:11.5px;color:#667781}
+    .streak{background:#E7F5EE;color:#0E8345;border-radius:999px;padding:4px 11px;font-size:10.5px;font-weight:800}
+    .pulse{display:flex;gap:8px;align-items:flex-end;height:86px;padding-top:6px}
+    .pulse .pb{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+    .pulse .bar{width:100%;max-width:38px;border-radius:7px 7px 3px 3px;background:linear-gradient(to top,var(--wa-green),#3DBE9B);position:relative}
+    .pulse .bar.low{background:linear-gradient(to top,#E8A13A,#F2C063)}
+    .pulse .bv{font-size:10px;font-weight:800;color:var(--wa-ink)}
+    .pulse .bm{font-size:9.5px;color:#8A93A5;font-weight:700}
+    .rev .vt{font-size:8.5px;background:var(--lime);color:var(--navy);border-radius:999px;padding:2px 7px;font-weight:800;vertical-align:middle}
+    .rev .rm{font-size:10px;color:#8A93A5;font-weight:700}
+    .owner-reply{margin-top:7px;background:#F0F4FA;border-left:3px solid #1B4E8A;border-radius:7px;padding:7px 10px;font-size:12px;color:#3B4A54}
+    .owner-reply b{color:#1B4E8A;font-size:11px}
+    .rate-box{background:#FDFFF6;border:1.5px solid var(--lime)}
+    .rate-stars{display:flex;gap:6px;font-size:27px;margin:6px 0 10px}
+    .rate-stars span{cursor:pointer;filter:grayscale(1);transition:filter .1s}
+    .rate-stars span.on{filter:none}
+    .rate-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+    .rate-tags button{border:1.5px solid #E1E5E9;background:#fff;border-radius:999px;padding:6px 12px;font-size:11.5px;font-weight:700;color:#54656F}
+    .rate-tags button.on{background:#D9F3EC;color:var(--wa-green);border-color:var(--wa-accent)}
+    .rate-box textarea{width:100%;border:1.5px solid #E1E5E9;border-radius:10px;padding:10px 12px;font-size:13px;font-family:inherit;min-height:52px;resize:vertical}
+    .rate-submit{width:100%;background:var(--wa-green);color:#fff;border-radius:999px;padding:12px;font-size:13px;font-weight:800;margin-top:9px}
+    .accountability{font-size:11.5px;color:#8A5B00;background:#FFF6E5;border-radius:9px;padding:8px 11px;margin-top:9px}
+    .pgs-cta{position:absolute;bottom:0;left:0;right:0;background:#fff;border-top:1.5px solid #E5E5E5;padding:11px 14px calc(11px + env(safe-area-inset-bottom));display:flex;gap:9px;align-items:center}
+    .pgs-cta .price{flex:1}
+    .pgs-cta .price b{font-size:17px;color:var(--wa-ink);display:block}
+    .pgs-cta .price span{font-size:10.5px;color:#667781}
+    .pgs-cta .book{background:var(--lime);color:var(--navy);border-radius:999px;padding:13px 22px;font-size:13.5px;font-weight:800}
+    .pgs-cta .wsh{background:#25D366;color:#fff;border-radius:999px;padding:13px 16px;font-size:13.5px;font-weight:800}
     .mtitle{font-size:14.5px;font-weight:700;color:var(--wa-ink);margin-bottom:2px}
     .mtext{font-size:13.5px;color:#303B42;margin-bottom:7px}
     .mchips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:7px}
@@ -217,6 +293,7 @@
       <span id="grpSub"></span>
     </div>
     <div class="wa-icons">
+      <button class="pref-btn" id="prefBtn" onclick="openPrefs()" aria-label="My preferences">✨</button>
       <button onclick="toastMsg('🔍 Search posts — try that in a real group chat 😉')" aria-label="Search">🔍</button>
       <button onclick="toastMsg('⋮ Mute · Group info · Report')" aria-label="Menu">⋮</button>
     </div>
@@ -303,6 +380,114 @@
   </div>
 </div>
 
+<!-- ============ BUDGET RANGE ============ -->
+<div class="overlay" id="budgetOverlay" role="dialog" aria-modal="true" aria-labelledby="budget-title" style="z-index:120">
+  <div class="sheet">
+    <h2 id="budget-title">💰 Budget range</h2>
+    <p class="note">Drag both ends — any range you want, per person per month.</p>
+    <div class="brange-vals">
+      <span class="v" id="bMinV"></span><span class="to">to</span><span class="v" id="bMaxV"></span>
+    </div>
+    <div class="range-wrap">
+      <div class="range-track"></div>
+      <div class="range-fill" id="bFill"></div>
+      <input type="range" id="bMin">
+      <input type="range" id="bMax">
+    </div>
+    <div class="range-hint" id="bHint"></div>
+    <div class="sheet-actions">
+      <button class="b-cancel" onclick="clearBudget()">Any budget</button>
+      <button class="b-post" onclick="applyBudget()">Done</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PREFERENCES ============ -->
+<div class="overlay" id="prefsOverlay" role="dialog" aria-modal="true" aria-labelledby="prefs-title">
+  <div class="sheet">
+    <h2 id="prefs-title">✨ Save your details</h2>
+    <p class="note">Who you are + what you're hunting for — our matching uses both, and we'll alert you when new matches land.</p>
+    <div class="field">
+      <label>About you — I am a</label>
+      <div class="seg" id="pRole">
+        <button data-v="student">🎓 Student</button>
+        <button data-v="pro">💼 Working professional</button>
+      </div>
+    </div>
+    <div id="pStuFields" class="hidden">
+      <div class="field-row">
+        <div class="field"><label for="p-college">College / university</label><input id="p-college" placeholder="e.g. Hansraj College"></div>
+        <div class="field"><label for="p-course">Course</label><input id="p-course" placeholder="e.g. B.Com (H)"></div>
+      </div>
+      <div class="field"><label for="p-year">Year</label><select id="p-year"><option value="">Select year</option><option>1st year</option><option>2nd year</option><option>3rd year</option><option>4th year</option><option>PG / Masters</option></select></div>
+    </div>
+    <div id="pProFields" class="hidden">
+      <div class="field-row">
+        <div class="field"><label for="p-company">Company / organisation</label><input id="p-company" placeholder="e.g. Deloitte"></div>
+        <div class="field"><label for="p-jobrole">Role / profile</label><input id="p-jobrole" placeholder="e.g. Analyst"></div>
+      </div>
+    </div>
+    <div class="field">
+      <label>My lifestyle (pick any)</label>
+      <div class="multi-chips" id="pLife">
+        <button data-v="early">🌅 Early bird</button>
+        <button data-v="night">🌙 Night owl</button>
+        <button data-v="veg">🥗 Vegetarian</button>
+        <button data-v="gym">💪 Gym regular</button>
+        <button data-v="nosmoke">🚭 Non-smoker</button>
+        <button data-v="quiet">📚 Quiet / studious</button>
+        <button data-v="social">🎉 Social</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="p-aims">Your aims — what matters right now?</label>
+      <textarea id="p-aims" placeholder="e.g. UPSC prep, need a quiet place · MBA grind, network matters · saving hard this year"></textarea>
+    </div>
+    <div class="field">
+      <label>I'm looking for</label>
+      <div class="seg" id="pIntent">
+        <button data-v="any" class="on">Anything</button>
+        <button data-v="roommate">🙋 Roommate</button>
+        <button data-v="flat">🏠 Flat</button>
+        <button data-v="pg">🛏️ PG</button>
+        <button data-v="squad">🤝 Squad</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>For</label>
+      <div class="seg" id="pGender">
+        <button data-v="any" class="on">Anyone</button>
+        <button data-v="Girls">🙋‍♀️ Girls</button>
+        <button data-v="Boys">🙋‍♂️ Boys</button>
+      </div>
+    </div>
+    <div class="field">
+      <label>Budget range</label>
+      <div class="seg"><button id="pBudgetBtn" onclick="openBudget('prefs')" style="flex:1">💰 Set my range ▾</button></div>
+    </div>
+    <div class="field">
+      <label>Preferred areas (pick any)</label>
+      <div class="multi-chips" id="pAreas"></div>
+    </div>
+    <div class="prefs-note">🔔 In the app, matches also come as notifications — a new post in your budget & area pings you before it's gone.</div>
+    <div class="sheet-actions">
+      <button class="b-cancel" onclick="clearPrefs()">Clear & turn off</button>
+      <button class="b-post" onclick="savePrefs()">Save my details ✨</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PG PROFILE ============ -->
+<div class="pg-sheet" id="pgSheet" role="dialog" aria-modal="true">
+  <div class="pgs-head"><b id="pgsName"></b><button class="pgs-x" onclick="closePG()">✕</button></div>
+  <div class="pgs-body" id="pgsBody"></div>
+  <div class="pgs-cta">
+    <div class="price"><b id="pgsPrice"></b><span>all-in monthly · zero brokerage</span></div>
+    <button class="wsh" onclick="sharePG(currentPG)">↗</button>
+    <button class="book" onclick="toastMsg('🏠 Visit request sent — <span class=g>Dyng team will confirm your slot</span>')">Book a visit</button>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <nav class="appbar" aria-label="App navigation">
@@ -354,21 +539,102 @@ const campuses=[
 // Dyng-verified PG inventory per campus
 const dyngPGs={
   du:[
-    {name:'Sunrise Girls PG',area:'Kamla Nagar',gender:'Girls',sharing:'Double sharing',rent:11000,deposit:'₹10,000 refundable',food:'3 meals included',amen:['AC','WiFi','Laundry','CCTV'],art:['🛏️','🚿','🍛'],desc:'2 min from the market. Physically verified by the Dyng team — photos are of the actual rooms.'},
-    {name:'Scholars Boys PG',area:'Hudson Lane',gender:'Boys',sharing:'Single & double',rent:13500,deposit:'₹13,500 refundable',food:'2 meals included',amen:['AC','WiFi 200 Mbps','Housekeeping'],art:['🛏️','💻','☕'],desc:'Above the café strip. Owner identity verified, full breakdown confirmed on visit.'},
-    {name:'Campus View Girls PG',area:'Vijay Nagar',gender:'Girls',sharing:'Triple sharing',rent:8500,deposit:'₹8,000 refundable',food:'3 meals included',amen:['Cooler','WiFi','Warden','CCTV'],art:['🛏️','🌳','🍛'],desc:'Budget pick, 5 min from GTB metro. Verified & visited by Dyng.'}
+    {id:'du1',name:'Sunrise Girls PG',area:'Kamla Nagar',gender:'Girls',occ:['double'],rooms:[{t:'Double sharing',r:11000}],rent:11000,deposit:'\u20B910,000 refundable',food:'3 meals included',amen:['AC','WiFi','Laundry','CCTV','RO water'],tags:['ac','wifi','meals','laundry'],art:['\u{1F6CF}\uFE0F','\u{1F6BF}','\u{1F35B}'],desc:'2 min from the market. Physically verified by the Dyng team \u2014 photos are of the actual rooms.',loc:'Bungalow Road lane 3, 2 min from Kamla Nagar market, 8 min walk to campus',rules:['Gate closes 11 PM','Visitors in common area till 8 PM','No smoking inside'],
+     monthly:[4.4,4.5,4.3,4.6,4.5,4.7],tenants:22,
+     reviews:[
+      {n:'Shreya \u00B7 Miranda House',s:5,m:0,vt:true,p:'Food quality actually improved after last month\u2019s reviews. Aunty reads these \u{1F60C}'},
+      {n:'Tanvi \u00B7 Daulat Ram',s:4,m:1,vt:true,p:'WiFi dipped for a week. Flagged it in my monthly review \u2014 fixed in 3 days.',reply:'Upgraded the router on the 18th. Thanks for flagging \u2014 Sunrise PG'},
+      {n:'Ishita \u00B7 Hansraj',s:4,m:2,vt:true,p:'Clean, safe, food is fresh. Warden is strict about the gate but fair.'}
+     ]},
+    {id:'du2',name:'Scholars Boys PG',area:'Hudson Lane',gender:'Boys',occ:['single','double'],rooms:[{t:'Single room',r:16000},{t:'Double sharing',r:13500}],rent:13500,deposit:'\u20B913,500 refundable',food:'2 meals included',amen:['AC','WiFi 200 Mbps','Housekeeping','Fridge access'],tags:['ac','wifi','meals'],art:['\u{1F6CF}\uFE0F','\u{1F4BB}','\u2615'],desc:'Above the caf\u00E9 strip. Owner identity verified, full breakdown confirmed on visit.',loc:'Hudson Lane main strip, 5 min to GTB Nagar metro',rules:['No gate time','Quiet hours after 11 PM','No smoking inside'],
+     monthly:[4.2,4.1,4.4,4.3,4.5,4.5],tenants:18,
+     reviews:[
+      {n:'Aman \u00B7 KMC',s:5,m:0,vt:true,p:'200 Mbps is real. Best WiFi of any PG I visited. 4th month here, still no complaints.'},
+      {n:'Raghav \u00B7 Hansraj',s:4,m:1,vt:true,p:'Slightly pricey but the single room privacy is worth it.'},
+      {n:'Dev \u00B7 Ramjas',s:3,m:2,vt:true,p:'Housekeeping skipped two weekends this month. Rating honestly.',reply:'Fixed the roster \u2014 weekends covered from March. \u2014 Scholars PG'}
+     ]},
+    {id:'du3',name:'Campus View Girls PG',area:'Vijay Nagar',gender:'Girls',occ:['triple'],rooms:[{t:'Triple sharing',r:8500}],rent:8500,deposit:'\u20B98,000 refundable',food:'3 meals included',amen:['Cooler','WiFi','Warden','CCTV'],tags:['wifi','meals'],art:['\u{1F6CF}\uFE0F','\u{1F333}','\u{1F35B}'],desc:'Budget pick, 5 min from GTB metro. Verified & visited by Dyng.',loc:'Vijay Nagar single storey, 5 min to GTB Nagar metro',rules:['Gate closes 10:30 PM','Warden on premises','Guests with prior notice'],
+     monthly:[4.0,4.1,3.9,4.2,4.1,4.3],tenants:15,
+     reviews:[
+      {n:'Nidhi \u00B7 SRCC',s:4,m:0,vt:true,p:'Best value in Vijay Nagar. Rooms are simple but clean.'},
+      {n:'Pooja \u00B7 Miranda House',s:4,m:1,vt:true,p:'Cooler struggled in peak June. Otherwise solid for the price.'}
+     ]}
   ],
   mumbai:[
-    {name:'Seaview Girls PG',area:'Santacruz',gender:'Girls',sharing:'Double sharing',rent:16000,deposit:'₹15,000 refundable',food:'2 meals included',amen:['AC','WiFi','Laundry'],art:['🛏️','🌊','🍛'],desc:'4 min from Santacruz station. Verified & visited by the Dyng Mumbai team.'},
-    {name:'Campus Nest Boys PG',area:'Vile Parle East',gender:'Boys',sharing:'Double & triple',rent:14500,deposit:'₹14,000 refundable',food:'2 meals included',amen:['WiFi','Housekeeping','CCTV'],art:['🛏️','🚆','☕'],desc:'8 min walk to NMIMS. Full rent breakdown confirmed on visit.'}
+    {id:'mb1',name:'Seaview Girls PG',area:'Santacruz',gender:'Girls',occ:['double'],rooms:[{t:'Double sharing',r:16000}],rent:16000,deposit:'\u20B915,000 refundable',food:'2 meals included',amen:['AC','WiFi','Laundry'],tags:['ac','wifi','meals','laundry'],art:['\u{1F6CF}\uFE0F','\u{1F30A}','\u{1F35B}'],desc:'4 min from Santacruz station. Verified & visited by the Dyng Mumbai team.',loc:'Santacruz West, 4 min from the station',rules:['Gate closes 11:30 PM','No smoking'],
+     monthly:[4.5,4.4,4.6,4.5,4.6,4.7],tenants:12,
+     reviews:[
+      {n:'Kiara \u00B7 NMIMS',s:5,m:0,vt:true,p:'Safe lane, quick to the station, aunty is chill about timings.'},
+      {n:'Ritika \u00B7 Xavier\u2019s',s:4,m:1,vt:true,p:'Monsoon leak in the corridor got fixed within the week after my review.'}
+     ]},
+    {id:'mb2',name:'Campus Nest Boys PG',area:'Vile Parle East',gender:'Boys',occ:['double','triple'],rooms:[{t:'Double sharing',r:14500},{t:'Triple sharing',r:12000}],rent:12000,deposit:'\u20B914,000 refundable',food:'2 meals included',amen:['WiFi','Housekeeping','CCTV'],tags:['wifi','meals'],art:['\u{1F6CF}\uFE0F','\u{1F686}','\u2615'],desc:'8 min walk to NMIMS. Full rent breakdown confirmed on visit.',loc:'Vile Parle East, 8 min walk to NMIMS',rules:['Quiet hours after 11 PM','Visitors till 9 PM'],
+     monthly:[4.1,4.2,4.0,4.3,4.2,4.4],tenants:20,
+     reviews:[
+      {n:'Ishaan \u00B7 NMIMS',s:4,m:0,vt:true,p:'Walkable to class, food is decent, housekeeping actually shows up.'}
+     ]}
   ],
   london:[
-    {name:'Camden Student House',area:'Camden',gender:'Any',sharing:'En-suite rooms',rent:820,deposit:'5 weeks · DPS protected',food:'Self-catered',amen:['Bills included','WiFi','Laundry'],art:['🛏️','🎸','🚇'],desc:'Dyng-partnered residence, 10 min to UCL. Contract & deposit verified.'}
+    {id:'ld1',name:'Camden Student House',area:'Camden',gender:'Any',occ:['single'],rooms:[{t:'En-suite room',r:820}],rent:820,deposit:'5 weeks \u00B7 DPS protected',food:'Self-catered',amen:['Bills included','WiFi','Laundry','Shared kitchen'],tags:['wifi','laundry'],art:['\u{1F6CF}\uFE0F','\u{1F3B8}','\u{1F687}'],desc:'Dyng-partnered residence, 10 min to UCL. Contract & deposit verified.',loc:'Camden, 10 min walk to UCL main campus',rules:['No smoking','Quiet hours after 11 PM'],
+     monthly:[4.6,4.5,4.7,4.6,4.8,4.7],tenants:9,
+     reviews:[
+      {n:'Emma \u00B7 UCL',s:5,m:0,vt:true,p:'Deposit protection sorted properly \u2014 rare. House is sociable but studious.'}
+     ]}
   ]
 };
+function monthLabels(n){
+  const M=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const d=new Date();const out=[];
+  for(let i=n-1;i>=0;i--){const x=new Date(d.getFullYear(),d.getMonth()-i,1);out.push(M[x.getMonth()]+" '"+String(x.getFullYear()).slice(2));}
+  return out;
+}
+function pgAvg(g){return (g.monthly.reduce((a,b)=>a+b,0)/g.monthly.length).toFixed(1);}
+const budgetCfg={
+  du:{min:0,max:30000,step:500},
+  mumbai:{min:0,max:40000,step:500},
+  london:{min:0,max:1500,step:25}
+};
+function kFmt(v){const cfg=budgetCfg[campus.id];return campus.cur+(cfg.max>5000&&v>=1000?(v/1000).toFixed(v%1000?1:0)+'k':v);}
+function rangeLabel(st){
+  if(st.bmin==null&&st.bmax==null)return '💰 Budget';
+  return '💰 '+kFmt(st.bmin==null?budgetCfg[campus.id].min:st.bmin)+'–'+kFmt(st.bmax==null?budgetCfg[campus.id].max:st.bmax);
+}
+function inBudget(rent,st){
+  if(st.bmin!=null&&rent<st.bmin)return false;
+  if(st.bmax!=null&&rent>st.bmax)return false;
+  return true;
+}
+const pgFilters={occ:'all',gender:'all',bmin:null,bmax:null,tags:[]};
+const prefs={active:false,intent:'any',gender:'any',bmin:null,bmax:null,areas:[],
+  role:null,college:'',course:'',year:'',company:'',jobRole:'',aims:'',lifestyle:[]};
+// Compatibility % — hard criteria gate first (matchesPrefs), then profile overlap boosts
+const LIFE_KW={early:['early sleep','early bird'],night:['night owl'],veg:['veg kitchen','vegetarian',' veg'],gym:['gym'],nosmoke:['non-smoker','no smoking','no smokers'],quiet:['quiet','studious','early sleepers'],social:['social','sociable','chill']};
+function matchPct(p){
+  let pct=72;
+  const d=(p.title+' '+(p.desc||'')).toLowerCase();
+  prefs.lifestyle.forEach(t=>{if((LIFE_KW[t]||[]).some(k=>d.includes(k)))pct+=6;});
+  if(prefs.role)pct+=3;
+  if(prefs.aims)pct+=2;
+  return Math.min(pct,97);
+}
+function profileLine(){
+  if(prefs.role==='student')return [prefs.college,prefs.course,prefs.year].filter(Boolean).join(' · ');
+  if(prefs.role==='pro')return [prefs.jobRole,prefs.company].filter(Boolean).join(' @ ');
+  return '';
+}
+function matchesPrefs(p){
+  if(!prefs.active)return false;
+  if(prefs.intent!=='any'){
+    const m={roommate:p.type==='need',flat:p.type==='avail',pg:(p.type==='need'&&p.sub==='pg'),squad:p.type==='squad'};
+    if(!m[prefs.intent])return false;
+  }
+  if(prefs.gender!=='any'&&p.gender!=='Any'&&p.gender!==prefs.gender)return false;
+  if(!inBudget(p.rent,prefs))return false;
+  if(prefs.areas.length&&!prefs.areas.includes(p.area))return false;
+  return true;
+}
 let campus=campuses[0];
 let nextId=100;
-const filters={type:'all',sub:'all',area:'all',who:'all'};
+const filters={type:'all',sub:'all',area:'all',who:'all',gender:'all',bmin:null,bmax:null};
 function whoOf(p){return p.broker?'broker':(p.owner?'owner':'resident');}
 function postLabel(p){
   if(p.type==='avail')return['avail','FLAT AVAILABLE'];
@@ -421,6 +687,7 @@ function renderFilters(){
   });
   // Main type filters
   document.getElementById('filterRow').innerHTML=`
+    ${prefs.active?'<button class="fchip" data-f="type" data-v="foryou">✨ For you</button>':''}
     <button class="fchip on" data-f="type" data-v="all">All</button>
     <button class="fchip" data-f="type" data-v="need">🙋 Roommate needed</button>
     <button class="fchip" data-f="type" data-v="avail">🏠 Flats</button>
@@ -431,7 +698,7 @@ function renderFilters(){
       const v=c.dataset.v;
       document.querySelectorAll('.fchip').forEach(x=>x.classList.remove('on'));
       c.classList.add('on');
-      filters.type=v;filters.sub='all';filters.who='all';
+      filters.type=v;filters.sub='all';filters.who='all';filters.gender='all';filters.bmin=null;filters.bmax=null;
       if(v==='all'){filters.area='all';document.querySelectorAll('.achip').forEach(x=>x.classList.remove('on'));}
       renderSubRow();
       render();
@@ -440,6 +707,13 @@ function renderFilters(){
   renderSubRow();
 }
 
+function commonGroups(){
+  return `<span class="lbl">For</span>
+      <button class="schip ${filters.gender==='all'?'on':''}" data-k="gender" data-v="all">Any</button>
+      <button class="schip ${filters.gender==='Girls'?'on':''}" data-k="gender" data-v="Girls">🙋‍♀️ Girls</button>
+      <button class="schip ${filters.gender==='Boys'?'on':''}" data-k="gender" data-v="Boys">🙋‍♂️ Boys</button>
+      <button class="schip ${filters.bmin!=null||filters.bmax!=null?'on':''}" data-k="brange">${rangeLabel(filters)} ▾</button>`;
+}
 function renderSubRow(){
   const row=document.getElementById('subRow');
   if(filters.type==='need'){
@@ -447,22 +721,60 @@ function renderSubRow(){
     row.innerHTML=`<span class="lbl">Where?</span>
       <button class="schip ${filters.sub==='all'?'on':''}" data-k="sub" data-v="all">All rooms</button>
       <button class="schip ${filters.sub==='flat'?'on':''}" data-k="sub" data-v="flat">🏠 In a flat</button>
-      <button class="schip ${filters.sub==='pg'?'on':''}" data-k="sub" data-v="pg">🛏️ In a PG</button>`;
+      <button class="schip ${filters.sub==='pg'?'on':''}" data-k="sub" data-v="pg">🛏️ In a PG</button>
+      ${commonGroups()}`;
   } else if(filters.type==='avail'){
     row.classList.remove('hidden');
     row.innerHTML=`<span class="lbl">Posted by</span>
       <button class="schip ${filters.who==='all'?'on':''}" data-k="who" data-v="all">Everyone</button>
       <button class="schip ${filters.who==='resident'?'on':''}" data-k="who" data-v="resident">🧑 Residents</button>
       <button class="schip ${filters.who==='owner'?'on':''}" data-k="who" data-v="owner">🔑 Owners</button>
-      <button class="schip ${filters.who==='broker'?'on':''}" data-k="who" data-v="broker">🏢 Brokers</button>`;
+      <button class="schip ${filters.who==='broker'?'on':''}" data-k="who" data-v="broker">🏢 Brokers</button>
+      ${commonGroups()}`;
+  } else if(filters.type==='squad'){
+    row.classList.remove('hidden');
+    row.innerHTML=commonGroups();
+  } else if(filters.type==='dyngpg'){
+    row.classList.remove('hidden');
+    row.innerHTML=`<span class="lbl">Occupancy</span>
+      <button class="schip ${pgFilters.occ==='all'?'on':''}" data-k="occ" data-v="all">Any</button>
+      <button class="schip ${pgFilters.occ==='single'?'on':''}" data-k="occ" data-v="single">Single</button>
+      <button class="schip ${pgFilters.occ==='double'?'on':''}" data-k="occ" data-v="double">Double</button>
+      <button class="schip ${pgFilters.occ==='triple'?'on':''}" data-k="occ" data-v="triple">Triple</button>
+      <span class="lbl">For</span>
+      <button class="schip ${pgFilters.gender==='all'?'on':''}" data-k="gender" data-v="all">Any</button>
+      <button class="schip ${pgFilters.gender==='Girls'?'on':''}" data-k="gender" data-v="Girls">🙋‍♀️ Girls</button>
+      <button class="schip ${pgFilters.gender==='Boys'?'on':''}" data-k="gender" data-v="Boys">🙋‍♂️ Boys</button>
+      <button class="schip ${pgFilters.bmin!=null||pgFilters.bmax!=null?'on':''}" data-k="brange">${rangeLabel(pgFilters)} ▾</button>
+      <span class="lbl">Amenities</span>
+      <button class="schip ${pgFilters.tags.includes('ac')?'on':''}" data-k="tag" data-v="ac">AC</button>
+      <button class="schip ${pgFilters.tags.includes('wifi')?'on':''}" data-k="tag" data-v="wifi">WiFi</button>
+      <button class="schip ${pgFilters.tags.includes('meals')?'on':''}" data-k="tag" data-v="meals">Meals</button>
+      <button class="schip ${pgFilters.tags.includes('laundry')?'on':''}" data-k="tag" data-v="laundry">Laundry</button>`;
+    row.querySelectorAll('.schip').forEach(s=>{
+      s.addEventListener('click',()=>{
+        const k=s.dataset.k,v=s.dataset.v;
+        if(k==='brange'){openBudget('pg');return;}
+        if(k==='tag'){
+          const i=pgFilters.tags.indexOf(v);
+          i>=0?pgFilters.tags.splice(i,1):pgFilters.tags.push(v);
+        } else {
+          pgFilters[k]=v;
+        }
+        renderSubRow();render();
+      });
+    });
+    return;
   } else {
     row.classList.add('hidden');row.innerHTML='';return;
   }
   row.querySelectorAll('.schip').forEach(s=>{
     s.addEventListener('click',()=>{
-      row.querySelectorAll('.schip').forEach(x=>x.classList.remove('on'));
+      const k=s.dataset.k;
+      if(k==='brange'){openBudget('filters');return;}
+      row.querySelectorAll(`.schip[data-k="${k}"]`).forEach(x=>x.classList.remove('on'));
       s.classList.add('on');
-      filters[s.dataset.k]=s.dataset.v;
+      filters[k]=s.dataset.v;
       render();
     });
   });
@@ -471,7 +783,10 @@ function renderSubRow(){
 // ============ RENDER ============
 function render(){
   const list=campus.posts.filter(p=>{
+    if(filters.type==='foryou')return matchesPrefs(p)&&daysLeft(p.posted)>0;
     if(filters.type!=='all'&&p.type!==filters.type)return false;
+    if(filters.gender!=='all'&&p.gender!=='Any'&&p.gender!==filters.gender)return false;
+    if(!inBudget(p.rent,filters))return false;
     if(filters.type==='need'&&filters.sub!=='all'&&p.sub!==filters.sub)return false;
     if(filters.area!=='all'&&p.area!==filters.area)return false;
     if(filters.who==='student'&&p.broker)return false;
@@ -479,16 +794,23 @@ function render(){
     return daysLeft(p.posted)>0;
   }).sort((a,b)=>a.posted-b.posted);
 
-  const pgs=(dyngPGs[campus.id]||[]).filter(g=>filters.area==='all'||g.area===filters.area);
+  const pgs=(dyngPGs[campus.id]||[]).filter(g=>{
+    if(filters.area!=='all'&&g.area!==filters.area)return false;
+    if(pgFilters.occ!=='all'&&!g.occ.includes(pgFilters.occ))return false;
+    if(pgFilters.gender!=='all'&&g.gender!=='Any'&&g.gender!==pgFilters.gender)return false;
+    if(!inBudget(g.rent,pgFilters))return false;
+    if(pgFilters.tags.length&&!pgFilters.tags.every(t=>g.tags.includes(t)))return false;
+    return true;
+  });
 
   // ✓ Dyng PGs tab: official verified listings as business-style messages
   if(filters.type==='dyngpg'){
     let html=`<div class="sys"><span>✓ These PGs are <b>physically verified by the Dyng team</b> — real photos, full rent breakdown, owner identity checked. Zero brokerage.</span></div>`;
-    if(!pgs.length)html+=`<div class="sys"><span>No verified PGs in this area yet — clear the area filter or check back soon.</span></div>`;
+    if(!pgs.length)html+=`<div class="sys"><span>No verified PGs match these filters — loosen one and try again.</span></div>`;
     pgs.forEach(g=>{
       html+=`
       <div class="msg">
-        <div class="bubble official">
+        <div class="bubble official" onclick="openPG('${g.id}')">
           <div class="sender" style="color:var(--wa-green)">Dyng <span class="offbadge">✓ OFFICIAL · VERIFIED PG</span></div>
           <div class="mtitle">${g.name} · ${g.area}</div>
           <div class="pg-photos">${g.art.map(a=>`<i>${a}</i>`).join('')}</div>
@@ -503,10 +825,11 @@ function render(){
           <div class="mfoot">
             <span class="avail-tag">✓ Verified & visited by Dyng</span>
             <div class="mact">
-              <button class="book-b" onclick="toastMsg('🏠 Visit request sent — <span class=g>Dyng team will confirm your slot</span>')">Book a visit</button>
-              <button onclick="sharePG('${g.name.replace(/'/g,'')}')">Share ↗</button>
+              <button class="book-b" onclick="event.stopPropagation();toastMsg('🏠 Visit request sent — <span class=g>Dyng team will confirm your slot</span>')">Book a visit</button>
+              <button onclick="event.stopPropagation();sharePG('${g.id}')">Share ↗</button>
             </div>
           </div>
+          <button class="view-prof">View full profile →</button>
           <div class="meta">${timeOf(Date.now())}</div>
         </div>
       </div>`;
@@ -521,6 +844,7 @@ function render(){
   let html=`
     <div class="sys"><span>🔒 Anyone can post — but <b>every post is labelled</b>: 🧑 verified resident · 🔑 owner · 🏢 broker. You always know who you're talking to.</span></div>
     <div class="pinned">📌 <span><b>Group rules:</b> every poster labelled 🧑/🔑/🏢 · no place yet? post "🤝 Find together" & squad up · posts auto-expire in 14 days</span></div>
+    ${prefs.active?`<div class="sys"><span>✨ <b>Matching is on</b>${profileLine()?' for <b>'+profileLine()+'</b>':''} — ${campus.posts.filter(p=>matchesPrefs(p)&&daysLeft(p.posted)>0).length} live post(s) fit you. New matches get flagged too.</span></div>`:''}
     ${pgs.length?`<div class="pg-teaser" onclick="openDyngPGs()">
       <span class="ic">✓</span>
       <span><b>${pgs.length} Dyng-verified PG${pgs.length!==1?'s':''} on this campus</b><span>Physically visited · full rent breakdown · zero brokerage</span></span>
@@ -541,7 +865,7 @@ function render(){
     <div class="msg ${mine?'mine':''} ${p.rx?'has-rx':''}">
       <div class="bubble">
         <div class="sender" style="color:${mine?'var(--wa-green)':sColor(p.name)}">
-          ${mine?'You':p.name} ${p.broker?'<span class="bbadge">🏢 BROKER</span>':(p.owner?'<span class="obadge">🔑 OWNER</span>':'<span class="vbadge">✓ '+(p.org||'RESIDENT')+'</span>')} <span class="ptype ${cls}">${label}</span>
+          ${mine?'You':p.name} ${p.broker?'<span class="bbadge">🏢 BROKER</span>':(p.owner?'<span class="obadge">🔑 OWNER</span>':'<span class="vbadge">✓ '+(p.org||'RESIDENT')+'</span>')} <span class="ptype ${cls}">${label}</span> ${matchesPrefs(p)?'<span class="matchbadge">✨ '+matchPct(p)+'% MATCH</span>':''}
         </div>
         <div class="mtitle">${p.title}</div>
         <div class="mtext">${p.desc}</div>
@@ -578,13 +902,195 @@ function render(){
 }
 
 // ============ ACTIONS ============
+// ============ BUDGET RANGE SHEET ============
+let budgetTarget='filters';
+function budgetState(){return budgetTarget==='pg'?pgFilters:(budgetTarget==='prefs'?prefs:filters);}
+function openBudget(target){
+  budgetTarget=target;
+  const cfg=budgetCfg[campus.id],st=budgetState();
+  const mn=document.getElementById('bMin'),mx=document.getElementById('bMax');
+  mn.min=mx.min=cfg.min;mn.max=mx.max=cfg.max;mn.step=mx.step=cfg.step;
+  mn.value=st.bmin!=null?st.bmin:cfg.min;
+  mx.value=st.bmax!=null?st.bmax:cfg.max;
+  document.getElementById('bHint').textContent='Range: '+campus.cur+cfg.min.toLocaleString('en')+' – '+campus.cur+cfg.max.toLocaleString('en');
+  syncBudgetUI();
+  document.getElementById('budgetOverlay').classList.add('open');
+}
+function syncBudgetUI(){
+  const cfg=budgetCfg[campus.id];
+  const mn=document.getElementById('bMin'),mx=document.getElementById('bMax');
+  let a=+mn.value,b=+mx.value;
+  if(a>b){const t=a;a=b;b=t;}
+  document.getElementById('bMinV').textContent=campus.cur+a.toLocaleString('en');
+  document.getElementById('bMaxV').textContent=campus.cur+b.toLocaleString('en');
+  const span=cfg.max-cfg.min;
+  document.getElementById('bFill').style.left=((a-cfg.min)/span*100)+'%';
+  document.getElementById('bFill').style.right=(100-(b-cfg.min)/span*100)+'%';
+}
+document.getElementById('bMin').addEventListener('input',syncBudgetUI);
+document.getElementById('bMax').addEventListener('input',syncBudgetUI);
+function applyBudget(){
+  const cfg=budgetCfg[campus.id],st=budgetState();
+  let a=+document.getElementById('bMin').value,b=+document.getElementById('bMax').value;
+  if(a>b){const t=a;a=b;b=t;}
+  st.bmin=(a<=cfg.min)?null:a;
+  st.bmax=(b>=cfg.max)?null:b;
+  document.getElementById('budgetOverlay').classList.remove('open');
+  if(budgetTarget==='prefs'){openPrefs();return;}
+  renderSubRow();render();
+}
+function clearBudget(){
+  const st=budgetState();
+  st.bmin=null;st.bmax=null;
+  document.getElementById('budgetOverlay').classList.remove('open');
+  if(budgetTarget==='prefs'){openPrefs();return;}
+  renderSubRow();render();
+}
+document.getElementById('budgetOverlay').addEventListener('click',e=>{if(e.target.id==='budgetOverlay')e.target.classList.remove('open');});
+
+// ============ PREFERENCES ============
+function openPrefs(){
+  document.getElementById('pBudgetBtn').textContent=(prefs.bmin!=null||prefs.bmax!=null)?rangeLabel(prefs)+' ▾':'💰 Set my range ▾';
+  document.getElementById('pBudgetBtn').classList.toggle('on',prefs.bmin!=null||prefs.bmax!=null);
+  document.getElementById('pAreas').innerHTML=campus.areas.map(a=>
+    `<button data-v="${a}" class="${prefs.areas.includes(a)?'on':''}">${a}</button>`).join('');
+  document.querySelectorAll('#pIntent button').forEach(b=>b.classList.toggle('on',b.dataset.v===prefs.intent));
+  document.querySelectorAll('#pGender button').forEach(b=>b.classList.toggle('on',b.dataset.v===prefs.gender));
+  document.querySelectorAll('#pRole button').forEach(b=>b.classList.toggle('on',b.dataset.v===prefs.role));
+  document.getElementById('pStuFields').classList.toggle('hidden',prefs.role!=='student');
+  document.getElementById('pProFields').classList.toggle('hidden',prefs.role!=='pro');
+  document.getElementById('p-college').value=prefs.college;
+  document.getElementById('p-course').value=prefs.course;
+  document.getElementById('p-year').value=prefs.year;
+  document.getElementById('p-company').value=prefs.company;
+  document.getElementById('p-jobrole').value=prefs.jobRole;
+  document.getElementById('p-aims').value=prefs.aims;
+  document.querySelectorAll('#pLife button').forEach(b=>{
+    b.classList.toggle('on',prefs.lifestyle.includes(b.dataset.v));
+    b.onclick=()=>{
+      b.classList.toggle('on');
+      const i=prefs.lifestyle.indexOf(b.dataset.v);
+      i>=0?prefs.lifestyle.splice(i,1):prefs.lifestyle.push(b.dataset.v);
+    };
+  });
+  bindSeg('pIntent',v=>prefs.intent=v);
+  bindSeg('pGender',v=>prefs.gender=v);
+  bindSeg('pRole',v=>{
+    prefs.role=v;
+    document.getElementById('pStuFields').classList.toggle('hidden',v!=='student');
+    document.getElementById('pProFields').classList.toggle('hidden',v!=='pro');
+  });
+  document.querySelectorAll('#pAreas button').forEach(b=>{
+    b.onclick=()=>{
+      b.classList.toggle('on');
+      const i=prefs.areas.indexOf(b.dataset.v);
+      i>=0?prefs.areas.splice(i,1):prefs.areas.push(b.dataset.v);
+    };
+  });
+  document.getElementById('prefsOverlay').classList.add('open');
+}
+function bindSeg(id,set){
+  document.querySelectorAll('#'+id+' button').forEach(b=>{
+    b.onclick=()=>{document.querySelectorAll('#'+id+' button').forEach(x=>x.classList.remove('on'));b.classList.add('on');set(b.dataset.v);};
+  });
+}
+function savePrefs(){
+  prefs.college=document.getElementById('p-college').value.trim();
+  prefs.course=document.getElementById('p-course').value.trim();
+  prefs.year=document.getElementById('p-year').value;
+  prefs.company=document.getElementById('p-company').value.trim();
+  prefs.jobRole=document.getElementById('p-jobrole').value.trim();
+  prefs.aims=document.getElementById('p-aims').value.trim();
+  prefs.active=true;
+  document.getElementById('prefsOverlay').classList.remove('open');
+  document.getElementById('prefBtn').classList.add('active');
+  const n=campus.posts.filter(p=>matchesPrefs(p)&&daysLeft(p.posted)>0).length;
+  toastMsg('✨ Profile saved'+(profileLine()?' — <span class=g>'+profileLine()+'</span>':'')+' · '+n+' live match(es) right now');
+  renderFilters();render();
+}
+function clearPrefs(){
+  prefs.active=false;prefs.intent='any';prefs.gender='any';prefs.bmin=null;prefs.bmax=null;prefs.areas=[];
+  prefs.role=null;prefs.college='';prefs.course='';prefs.year='';prefs.company='';prefs.jobRole='';prefs.aims='';prefs.lifestyle=[];
+  document.getElementById('prefsOverlay').classList.remove('open');
+  document.getElementById('prefBtn').classList.remove('active');
+  if(filters.type==='foryou'){filters.type='all';}
+  toastMsg('Matching turned off');
+  renderFilters();render();
+}
+document.getElementById('prefsOverlay').addEventListener('click',e=>{if(e.target.id==='prefsOverlay')e.target.classList.remove('open');});
+
+let currentPG=null,rateSel=0;
+function pickStar(n){
+  rateSel=n;
+  document.querySelectorAll('#rateStars span').forEach(s=>s.classList.toggle('on',+s.dataset.s<=n));
+}
+function submitMonthly(id){
+  if(!rateSel){toastMsg('⭐ Tap a star rating first');return;}
+  const g=(dyngPGs[campus.id]||[]).find(x=>x.id===id);
+  const tags=[...document.querySelectorAll('#rateTags button.on')].map(b=>b.textContent).join(' · ');
+  const txt=document.getElementById('rateTxt').value.trim();
+  g.reviews.unshift({n:'You',s:rateSel,m:0,vt:true,p:(txt||'Rated this month.')+(tags?' ['+tags+']':'')});
+  g.monthly[g.monthly.length-1]=+((g.monthly[g.monthly.length-1]*g.tenants+rateSel)/(g.tenants+1)).toFixed(1);
+  rateSel=0;
+  toastMsg('✓ '+monthLabels(1)[0]+' review locked — <span class=g>next window opens on the 1st</span>');
+  openPG(id);
+}
+function openPG(id){
+  const g=(dyngPGs[campus.id]||[]).find(x=>x.id===id);
+  currentPG=id;
+  document.getElementById('pgsName').textContent=g.name;
+  document.getElementById('pgsPrice').textContent=money(g.rent)+'/mo';
+  document.getElementById('pgsBody').innerHTML=`
+    <div class="pgs-hero">${g.art.map(a=>`<i>${a}</i>`).join('')}</div>
+    <div class="pgs-title">
+      <h2>${g.name} <span class="offbadge">✓ VERIFIED</span></h2>
+      <div class="sub">📍 ${g.loc} · ${g.gender==='Any'?'👥 Anyone':(g.gender==='Girls'?'🙋‍♀️ Girls only':'🙋‍♂️ Boys only')}</div>
+      <div class="rate-sum">
+        <span class="big">${pgAvg(g)}</span><span class="st">${'★'.repeat(Math.round(pgAvg(g)))}</span>
+        <span class="sub2">this month: <b>${g.monthly[g.monthly.length-1]}★</b> · ${g.tenants} current tenants</span>
+        <span class="streak">🟢 Reviewed every month · ${g.monthly.length}-mo streak</span>
+      </div>
+    </div>
+    <div class="pgs-sec"><h3>Monthly pulse — rated by tenants living here</h3>
+      <div class="pulse">${g.monthly.map((v,i)=>{const L=monthLabels(g.monthly.length);return `<div class="pb"><span class="bv">${v}</span><div class="bar ${v<4.2?'low':''}" style="height:${(v-3)*36}px"></div><span class="bm">${L[i]}</span></div>`;}).join('')}</div>
+      <div class="accountability">⚖️ <b>Why trust this:</b> only verified current tenants can rate, once a month. PGs that skip 2 months of tenant reviews lose their ✓ badge.</div>
+    </div>
+    <div class="pgs-sec"><h3>Rooms & pricing</h3>
+      ${g.rooms.map(r=>`<div class="room-row"><b>${r.t}</b><span class="rr">${money(r.r)}/mo</span></div>`).join('')}
+      <div class="room-row"><b>Food</b><span>${g.food}</span></div>
+      <div class="room-row"><b>Deposit</b><span>${g.deposit}</span></div>
+    </div>
+    <div class="pgs-sec"><h3>About</h3><p style="font-size:13.5px;color:#3B4A54">${g.desc}</p></div>
+    <div class="pgs-sec"><h3>Amenities</h3><div class="amen-grid">${g.amen.map(a=>`<span>${a}</span>`).join('')}</div></div>
+    <div class="pgs-sec"><h3>House rules</h3>${g.rules.map(r=>`<div class="rule-li">✓ <span>${r}</span></div>`).join('')}</div>
+    <div class="pgs-sec"><h3>Monthly tenant reviews</h3>
+      ${g.reviews.map(r=>{const L=monthLabels(6);return `<div class="rev"><b>${r.n}</b> ${r.vt?'<span class="vt">✓ VERIFIED TENANT</span>':''} <span class="rm">· ${L[L.length-1-(r.m||0)]}</span> <span class="stars">${'★'.repeat(r.s)}${'☆'.repeat(5-r.s)}</span><p>${r.p}</p>${r.reply?`<div class="owner-reply"><b>↳ Owner replied</b><br>${r.reply}</div>`:''}</div>`;}).join('')}
+    </div>
+    <div class="pgs-sec rate-box"><h3 style="color:var(--navy)">🏠 Live here? Rate this month</h3>
+      <p style="font-size:12px;color:#5C7030;margin-bottom:4px">Your monthly review keeps this PG honest — and helps the next person choose right.</p>
+      <div class="rate-stars" id="rateStars">${[1,2,3,4,5].map(i=>`<span data-s="${i}" onclick="pickStar(${i})">⭐</span>`).join('')}</div>
+      <div class="rate-tags" id="rateTags">
+        ${['🍛 Food','🧹 Cleanliness','📶 WiFi','🤝 Owner behaviour','🔒 Safety'].map(t=>`<button onclick="this.classList.toggle('on')">${t}</button>`).join('')}
+      </div>
+      <textarea id="rateTxt" placeholder="What was this month like? (optional)"></textarea>
+      <button class="rate-submit" onclick="submitMonthly('${g.id}')">Submit ${monthLabels(1)[0]} review ✓</button>
+    </div>
+    <div class="pgs-sec" style="background:#FDFFF6;border:1.5px solid var(--lime)"><h3 style="color:var(--navy)">✓ Dyng verification</h3>
+      <div class="rule-li">✓ <span>Physically visited by the Dyng team</span></div>
+      <div class="rule-li">✓ <span>Owner identity checked</span></div>
+      <div class="rule-li">✓ <span>Rent breakdown confirmed — no hidden charges</span></div>
+    </div>`;
+  document.getElementById('pgSheet').classList.add('open');
+}
+function closePG(){document.getElementById('pgSheet').classList.remove('open');}
+
 function openDyngPGs(){
   filters.type='dyngpg';filters.sub='all';filters.who='all';
   document.querySelectorAll('.fchip').forEach(x=>x.classList.toggle('on',x.dataset.v==='dyngpg'));
   renderSubRow();render();
 }
-function sharePG(name){
-  const g=(dyngPGs[campus.id]||[]).find(x=>x.name.replace(/'/g,'')===name);
+function sharePG(id){
+  const g=(dyngPGs[campus.id]||[]).find(x=>x.id===id);
   const msg=`🏠 *${g.name}* — ✓ Dyng Verified PG\n\n💰 ${money(g.rent)}/mo (${g.sharing})\n🍛 ${g.food} · Deposit: ${g.deposit}\n📍 ${g.area}, ${campus.name}\n\n${g.desc}\n\n✅ Physically verified · zero brokerage\n👉 https://www.dyng.in/housing`;
   window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank');
   toastMsg('Share card ready — <span class=g>send it to your squad</span>');
